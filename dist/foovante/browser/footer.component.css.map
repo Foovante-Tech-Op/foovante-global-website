@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/shared/components/footer/footer.component.scss"],
+  "sourcesContent": [":host { display: block; }\n"],
+  "mappings": ";AAAA;AAAQ,WAAA;;",
+  "names": []
+}

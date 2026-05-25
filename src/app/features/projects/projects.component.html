@@ -1,0 +1,286 @@
+<fv-nav [dark]="true" [cta]="{label: 'Apply to list', routerLink: '/projects'}"></fv-nav>
+
+<fv-hero
+  [slides]="heroSlides"
+  eyebrow="For project developers"
+  [lines]="['Turn your land work into', 'real climate finance.']"
+  lead="Foovante helps African renewable-energy, agriculture, and forestry projects generate, verify, and sell carbon credits, without London middlemen taking 40%. Built in Accra, for projects on the continent."
+  [cta1]="{label: 'Apply to list your project', routerLink: '/projects'}"
+  [cta2]="{label: 'See methodology library'}"
+></fv-hero>
+
+<!-- Stats Band -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><div class="n">~12 wks</div><div class="l">Time to first credit issuance</div></div>
+      <div class="stat"><div class="n">72%</div><div class="l">Of revenue returned to project</div></div>
+      <div class="stat"><div class="n">54</div><div class="l">Supported methodologies</div></div>
+      <div class="stat"><div class="n">96%</div><div class="l">Developer renewal rate</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- How It Works -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">How to list</div>
+        <h2 style="margin-top:24px">Four steps from land to listed.</h2>
+      </div>
+      <div class="right">
+        <p>Most platforms take 18–24 months to get a project to first issuance. Foovante's unified MRV and standards pipeline averages twelve weeks, because we've already done the standards work for you.</p>
+      </div>
+    </div>
+    <div class="steps">
+      @for (s of steps; track s.n) {
+        <div class="step">
+          <div class="step-n">{{ s.n }}</div>
+          <h3>{{ s.h }}</h3>
+          <p>{{ s.p }}</p>
+          <div class="meta">{{ s.meta }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Verify Section -->
+<section class="verify-band" id="verify">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">How we verify</div>
+        <h2 style="margin-top:24px">Every tonne, watched from orbit and the ground.</h2>
+      </div>
+      <div class="right">
+        <p>You shouldn't have to take our word for any credit. Foovante runs a four-layer verification stack: satellite, field, third-party, on-chain. Every funder gets the full audit trail, per tonne.</p>
+      </div>
+    </div>
+    <div class="verify-grid">
+      <div class="verify-card">
+        <div class="num">01</div>
+        <h4>Satellite baseline</h4>
+        <p>7+ years of Sentinel-2 imagery for every project polygon. Monitored every 5 days at 10m resolution, automatically.</p>
+      </div>
+      <div class="verify-card">
+        <div class="num">02</div>
+        <h4>Field truth</h4>
+        <p>Local agents capture soil samples, biomass plots, and household surveys via the Foovante mobile app. Lab results upload directly to the audit trail.</p>
+      </div>
+      <div class="verify-card">
+        <div class="num">03</div>
+        <h4>Independent verifier</h4>
+        <p>Verra, Gold Standard, and Plan Vivo verifiers receive a unified dossier. Average review cycle: six weeks, not six months.</p>
+      </div>
+      <div class="verify-card">
+        <div class="num">04</div>
+        <h4>On-chain serialisation</h4>
+        <p>Every issued credit hashed and serialised. You see the exact tonne, polygon, and vintage; so does anyone you share it with.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology Library -->
+<section class="methods" id="methodology">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Methodology library</div>
+        <h2 style="margin-top:24px">54 methodologies. Pick the one that fits your land.</h2>
+      </div>
+      <div class="right">
+        <p>Foovante supports the full Verra, Gold Standard, and Plan Vivo catalog. Below are the six most common methodologies for African projects; there are 48 more.</p>
+      </div>
+    </div>
+    <div class="method-grid">
+      @for (m of methods; track m.badge) {
+        <div class="method">
+          <div class="badge">{{ m.badge }}</div>
+          <h4>{{ m.h }}</h4>
+          <p class="desc">{{ m.desc }}</p>
+          <div class="footer">
+            <span>Min. size <strong>{{ m.minSize }}</strong></span>
+            <span>Crediting <strong>{{ m.dur }}</strong></span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Project Network Map -->
+<section id="network">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Live project network</div>
+        <h2 style="margin-top:24px">You'd be joining 282 projects in 14 countries.</h2>
+      </div>
+      <div class="right">
+        <p>From Senegal mangroves to Ethiopian highland reforestation, every project on Foovante is monitored from the same Accra-based operations center.</p>
+      </div>
+    </div>
+    <fv-map-section></fv-map-section>
+  </div>
+</section>
+
+<!-- Priority Requirements -->
+<section class="priority-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">What we look for</div>
+        <h2 style="margin-top:24px">Four things every listed project must have.</h2>
+      </div>
+      <div class="right">
+        <p>We review every application individually. These are the four non-negotiables; everything else we can work with you on.</p>
+      </div>
+    </div>
+    <div class="pri-grid">
+      @for (p of priorities; track p.n) {
+        <div class="pri">
+          <div class="num">{{ p.n }}</div>
+          <div>
+            <h4>{{ p.h }}</h4>
+            <p>{{ p.p }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Apply Form Section -->
+<section class="apply" id="apply">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Start your application</div>
+        <h2 style="margin-top:24px">Tell us about your project. We'll be back within 24 hours.</h2>
+      </div>
+      <div class="right">
+        <p>A quick application. You'll need a rough outline of your project area, your contact details, and any existing verification documents if available.</p>
+      </div>
+    </div>
+
+    <div class="apply-grid">
+      <!-- Testimonial side -->
+      <div>
+        <div class="story">
+          <div class="eyebrow">From the network</div>
+          <blockquote style="margin-top:24px;font-size:28px">
+            "Before Foovante we waited 18 months for our first credit issuance. With them, <em>eleven weeks</em>. The team in Accra actually understood what our co-op needed."
+          </blockquote>
+          <div class="attrib">
+            <div class="av"></div>
+            <div>
+              <div class="nm">Kwame Boadi</div>
+              <div class="ro">Lead, Akagera Agroforestry Co-op</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:48px;margin-top:48px;flex-wrap:wrap">
+            <div>
+              <div style="font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing:-0.03em;line-height:1">11 wks</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:8px;font-weight:500">Time to first issuance</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing:-0.03em;line-height:1">72%</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:8px;font-weight:500">To project work</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing:-0.03em;line-height:1">96%</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:8px;font-weight:500">Renewal rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apply Form -->
+      <div class="apply-form">
+        <div>
+          <h3>Project intake</h3>
+          <p class="sub">Step 1 of 3 · Basic project details</p>
+        </div>
+        <div class="stepper">
+          <span class="dot active"></span>
+          <span class="seg active"></span>
+          <span class="dot"></span>
+          <span class="seg"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="field">
+          <label>Project name</label>
+          <input type="text" placeholder="e.g. Volta Estuary Mangroves">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Country</label>
+            <select>
+              <option value="gh">Ghana</option>
+              <option value="ng">Nigeria</option>
+              <option value="ke">Kenya</option>
+              <option value="rw">Rwanda</option>
+              <option value="et">Ethiopia</option>
+              <option value="tz">Tanzania</option>
+              <option value="ug">Uganda</option>
+              <option value="sn">Senegal</option>
+              <option value="ci">Côte d'Ivoire</option>
+              <option value="cm">Cameroon</option>
+              <option value="za">South Africa</option>
+              <option value="mz">Mozambique</option>
+              <option value="mw">Malawi</option>
+              <option value="zm">Zambia</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Methodology type</label>
+            <select>
+              <option>Forestry · REDD+</option>
+              <option>Agriculture · ARR</option>
+              <option>Renewable energy</option>
+              <option>Cookstoves</option>
+              <option>Blue carbon</option>
+              <option>Biogas / waste</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Estimated project area (hectares)</label>
+          <input type="number" placeholder="e.g. 2500">
+        </div>
+        <div class="field">
+          <label>Your name & role</label>
+          <input type="text" placeholder="e.g. Kwame Asante · Project Manager">
+        </div>
+        <div class="field">
+          <label>Email address</label>
+          <input type="email" placeholder="you@project.org">
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center">
+          Submit application <span class="arrow">→</span>
+        </button>
+        <p style="font-size:12px;color:var(--muted);text-align:center;margin:0">
+          We review every application personally. Response within 24 hours.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <h2>Ready to list your project?</h2>
+    <p>Join 282 projects already verified and funded on Foovante. Apply in 10 minutes; we'll be back within 24 hours.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary btn-lg">Apply to list <span class="arrow">→</span></a>
+      <a class="btn btn-ghost btn-lg">Talk to the team</a>
+    </div>
+  </div>
+</section>
+
+<fv-footer></fv-footer>

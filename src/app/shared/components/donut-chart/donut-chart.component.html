@@ -1,0 +1,21 @@
+<div class="donut-wrap">
+  <svg viewBox="0 0 140 140" style="transform:rotate(-90deg)">
+    <circle cx="70" cy="70" r="56" fill="none" stroke="var(--sage-2)" stroke-width="16"/>
+    @for (slice of slices; track slice.color) {
+      <circle
+        cx="70"
+        cy="70"
+        r="56"
+        fill="none"
+        [attr.stroke]="slice.color"
+        stroke-width="16"
+        [attr.stroke-dasharray]="slice.dashArray"
+        [attr.stroke-dashoffset]="slice.dashOffset"
+      />
+    }
+  </svg>
+  <div class="donut-center">
+    <div class="donut-n">49.2k</div>
+    <div class="donut-l">Households</div>
+  </div>
+</div>

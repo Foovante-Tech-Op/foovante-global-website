@@ -1,0 +1,187 @@
+<fv-nav [dark]="true" [cta]="{label: 'Talk to the founders', routerLink: '/'}"></fv-nav>
+
+<fv-hero
+  [slides]="heroSlides"
+  eyebrow="About Foovante Global"
+  [lines]="['We\'re building the verification layer', 'for African carbon.']"
+  lead="Foovante is a climate-tech company headquartered in Accra, Ghana, operating verification, marketplace, and capital infrastructure for African carbon projects across 14 countries."
+  [cta1]="{label: 'Talk to the founders'}"
+  [cta2]="{label: 'Read the founder brief'}"
+></fv-hero>
+
+<!-- Mission Section -->
+<section class="mission" id="mission">
+  <div class="wrap mission-grid">
+    <div>
+      <div class="eyebrow">Our mission</div>
+      <blockquote style="margin-top:24px">
+        Africa holds <em>10% of global carbon credit potential</em> and now issues <em>close to 5% as of 2025</em>. We exist to help close that gap further.
+      </blockquote>
+    </div>
+    <div class="mission-body">
+      <p>The voluntary carbon market is on track to reach $50–$200B by 2030, and African ecosystems (forests, mangroves, drylands, agroforestry systems) are the highest-quality natural carbon assets on Earth. They should be the supply side of that market.</p>
+      <p>They are not. Today, African projects generate fewer than 2% of global credits, because the verification, certification, and trading infrastructure was built for the global North, not for a cooperative in Rwanda or a community forest in Ghana.</p>
+      <p><strong>Foovante is building that infrastructure from Accra.</strong> Continuous satellite monitoring, on-the-ground verification by local agents, multi-standard issuance, and a marketplace that pays projects most of what their credits sell for. We are building the operating system for African carbon. And we are building it from the continent itself.</p>
+    </div>
+  </div>
+</section>
+
+<!-- What We Do -->
+<section class="what" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">What we do</div>
+        <h2 style="margin-top:24px">Three products. One stack.</h2>
+      </div>
+      <div class="right">
+        <p>Foovante operates as a vertically integrated platform: origination, verification, and distribution all under one roof. It is the only way to keep quality high and economics fair.</p>
+      </div>
+    </div>
+    <div class="what-grid">
+      @for (w of whatCards; track w.ix) {
+        <div class="what-card">
+          <div class="ix">{{ w.ix }}</div>
+          <h3>{{ w.h }}</h3>
+          <p>{{ w.p }}</p>
+          <div class="meta">{{ w.meta }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="timeline" id="milestones">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Achievements & milestones</div>
+        <h2 style="margin-top:24px">Expanding from West Africa across emerging carbon markets globally.</h2>
+      </div>
+      <div class="right">
+        <p>From West Africa to the Caribbean and South America, Foovante is building the infrastructure for carbon markets that have long been underserved. Full updates available in the data room.</p>
+      </div>
+    </div>
+    <div class="tl-placeholder">
+      <p>A detailed milestones view is coming soon. Contact us for the full partner and investor update.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership Team -->
+<section id="team" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Leadership</div>
+        <h2 style="margin-top:24px">The founders and functional leads.</h2>
+      </div>
+      <div class="right">
+        <p>Our four-person leadership team brings deep backgrounds in African climate finance, earth-observation engineering, agtech distribution, and carbon standards verification.</p>
+      </div>
+    </div>
+    <div class="lead-grid">
+      @for (p of leadership; track p.name) {
+        <div class="lead-card">
+          <div class="lead-pic" [style.background-image]="'url(' + p.pic + ')'"></div>
+          <div class="lead-body">
+            <div class="role">{{ p.role }}</div>
+            <h3>{{ p.name }}</h3>
+            <p>{{ p.bio }}</p>
+            <div class="prior">{{ p.prior }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Operating Team -->
+<section class="ops" id="ops">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Operating team</div>
+        <h2 style="margin-top:24px">The people running it, region by region.</h2>
+      </div>
+      <div class="right">
+        <p>Foovante's eight-person operating team leads regional operations across West, East, Southern, and Francophone Africa, covering MRV science, engineering, funder ops, and legal. Together they oversee 38 in-country agents.</p>
+      </div>
+    </div>
+    <div class="ops-grid">
+      @for (p of opsTeam; track p.name) {
+        <div class="person">
+          <div class="pic" [style.background-image]="'url(' + p.pic + ')'"></div>
+          <h4 class="name">{{ p.name }}</h4>
+          <p class="role">{{ p.role }}</p>
+          <p class="loc">📍 {{ p.loc }}</p>
+          <p class="prior">{{ p.prior }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Advisory Board -->
+<section class="advisors-band">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Advisory board</div>
+        <h2 style="margin-top:24px">Backed by senior voices from standards, capital, and climate.</h2>
+      </div>
+      <div class="right">
+        <p>Our advisory board provides governance, standards-body relationships, and capital-allocator perspective: quarterly cadence, with full board observation rights for lead investors.</p>
+      </div>
+    </div>
+    <div class="advisors-grid">
+      @for (a of advisors; track a.nm) {
+        <div class="advisor">
+          <div class="ix">{{ a.ix }}</div>
+          <div class="nm">{{ a.nm }}</div>
+          <div class="from">{{ a.from }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Credentials -->
+<section class="creds" id="credentials">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Credentials &amp; compliance</div>
+        <h2 style="margin-top:24px">Registered, audited, accountable.</h2>
+      </div>
+      <div class="right">
+        <p>We hold the registrations and certifications you would expect of any infrastructure operator handling climate capital. Full legal memo and audit reports available on request.</p>
+      </div>
+    </div>
+    <div class="creds-grid">
+      @for (c of credCards; track c.h) {
+        <div class="cred-card">
+          <h4>{{ c.h }}</h4>
+          <div class="v">{{ c.v }}</div>
+          <p>{{ c.d }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="cta-in">
+    <h2>Want to talk to us directly?</h2>
+    <p>Our founders take introductions from funders, projects, partners, and press personally. Drop a note; we typically reply within one business day.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary btn-lg">Talk to the founders <span class="arrow">→</span></a>
+      <a class="btn btn-ghost btn-lg">Press &amp; media</a>
+      <a class="btn btn-ghost btn-lg">Careers</a>
+    </div>
+  </div>
+</section>
+
+<fv-footer></fv-footer>

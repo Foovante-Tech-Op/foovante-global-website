@@ -1,0 +1,26 @@
+import { MapPoint } from '../models/map.model';
+
+export const FV_MAP: MapPoint[] = [
+  { name: 'Kakum REDD+',         country: 'Ghana',         type: 'forestry', lat:  5.35, lng:  -1.38 },
+  { name: 'Volta Mangroves',      country: 'Ghana',         type: 'forestry', lat:  5.80, lng:   0.50 },
+  { name: 'Sahel Cookstoves',     country: 'Ghana',         type: 'energy',   lat:  9.40, lng:  -0.85 },
+  { name: 'Lagos Biogas',         country: 'Nigeria',       type: 'waste',    lat:  6.52, lng:   3.38 },
+  { name: 'Cross River REDD',     country: 'Nigeria',       type: 'forestry', lat:  5.90, lng:   8.60 },
+  { name: 'Turkana Solar',        country: 'Kenya',         type: 'energy',   lat:  3.10, lng:  36.10 },
+  { name: 'Mt Kenya ARR',         country: 'Kenya',         type: 'agri',     lat: -0.15, lng:  37.30 },
+  { name: 'Akagera Agroforestry', country: 'Rwanda',        type: 'agri',     lat: -1.47, lng:  30.47 },
+  { name: 'Selous Carbon',        country: 'Tanzania',      type: 'forestry', lat: -8.50, lng:  37.60 },
+  { name: 'Bale Mountains',       country: 'Ethiopia',      type: 'forestry', lat:  6.90, lng:  40.00 },
+  { name: 'Lalibela Cookstove',   country: 'Ethiopia',      type: 'energy',   lat: 12.00, lng:  39.05 },
+  { name: 'Casamance Mangroves',  country: 'Senegal',       type: 'forestry', lat: 12.55, lng: -15.30 },
+  { name: 'Mopti Agro Co-op',     country: 'Mali',          type: 'agri',     lat: 14.50, lng:  -4.20 },
+  { name: 'Ouaga Cookstoves',     country: 'Burkina Faso',  type: 'energy',   lat: 12.37, lng:  -1.53 },
+  { name: 'Bwindi REDD+',         country: 'Uganda',        type: 'forestry', lat: -0.93, lng:  29.67 },
+  { name: 'Taï Forest',           country: "Côte d'Ivoire", type: 'forestry', lat:  5.70, lng:  -7.45 },
+  { name: 'Dja Reserve',          country: 'Cameroon',      type: 'forestry', lat:  3.15, lng:  13.30 },
+  { name: 'Kafue ARR',            country: 'Zambia',        type: 'agri',     lat: -14.50, lng:  26.40 },
+  { name: 'Lilongwe Agro',        country: 'Malawi',        type: 'agri',     lat: -13.97, lng:  33.79 },
+  { name: 'Gorongosa',            country: 'Mozambique',    type: 'forestry', lat: -18.97, lng:  34.36 },
+  { name: 'Karoo Solar',          country: 'South Africa',  type: 'energy',   lat: -32.30, lng:  22.50 },
+  { name: 'Andasibe Forest',      country: 'Madagascar',    type: 'forestry', lat: -18.94, lng:  48.42 },
+];

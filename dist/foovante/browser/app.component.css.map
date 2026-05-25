@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;c483ff224f1484acb700866912871b7e5c89b6f8fd751c798859cf5ef8b16b4a;/home/tollesoft/Documents/Project/foovante-angular/foovante/src/app/app.component.ts"],
+  "sourcesContent": [":host { display: block; }"],
+  "mappings": ";AAAA;AAAQ,WAAS;AAAO;",
+  "names": []
+}

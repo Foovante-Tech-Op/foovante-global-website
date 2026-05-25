@@ -1,0 +1,22 @@
+<nav [ngClass]="{'nav': true, 'dark': dark}">
+  <div class="nav-in">
+    <a routerLink="/" class="brand">
+      <img src="assets/images/LOGO .png" alt="Foovante Logo" class="" />
+      
+    </a>
+
+    <nav class="nav-links">
+      @for (link of navLinks; track link.route) {
+        <a [routerLink]="link.route" routerLinkActive="active"
+           [routerLinkActiveOptions]="link.route === '/' ? {exact: true} : {exact: false}">{{ link.label }}</a>
+      }
+    </nav>
+
+    <div class="nav-cta">
+      <a routerLink="/" class="btn btn-ghost btn-sm">Sign in</a>
+      <a [routerLink]="cta.routerLink || '/About'" class="btn btn-primary btn-sm">
+        {{ cta.label }}
+      </a>
+    </div>
+  </div>
+</nav>

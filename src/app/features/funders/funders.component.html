@@ -1,0 +1,253 @@
+<fv-nav [dark]="true" [cta]="{label: 'Browse projects', routerLink: '/funders'}"></fv-nav>
+
+<fv-hero
+  [slides]="heroSlides"
+  eyebrow="For funders & corporates"
+  [lines]="['Buy credits.', 'Back projects.', 'Claim real impact.']"
+  lead="The cleanest way to put capital into African carbon. Foovante lets you pre-purchase credits at fixed prices or take a stake in a project and earn as it issues, with a full audit trail per tonne."
+  [cta1]="{label: 'Browse all projects', routerLink: '/funders'}"
+  [cta2]="{label: 'How staking works'}"
+></fv-hero>
+
+<!-- Stats -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><div class="n">282</div><div class="l">Verified projects</div></div>
+      <div class="stat"><div class="n">$18.40</div><div class="l">Avg. price / tCO₂e</div></div>
+      <div class="stat"><div class="n">96%</div><div class="l">Funder renewal rate</div></div>
+      <div class="stat"><div class="n">T+1</div><div class="l">Settlement cycle</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- How It Works -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">How it works</div>
+        <h2 style="margin-top:24px">Two ways to deploy capital.</h2>
+      </div>
+      <div class="right">
+        <p>Credit purchase or stake: both settle T+1 with on-chain serialised certificates. Both give you the same audit trail. Choose the structure that fits your mandate.</p>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01. Browse</div>
+        <h3>Filter by methodology, region, or vintage</h3>
+        <p>282 projects across 14 countries. Filter by type, standard, IRR target, or co-benefits. Full MRV documentation attached to every listing.</p>
+        <div class="meta">Verra · Gold Standard · Plan Vivo</div>
+      </div>
+      <div class="step">
+        <div class="step-n">02. Choose</div>
+        <h3>Credit purchase or stake</h3>
+        <p>Pre-purchase future credits at a fixed price, or stake into a project and earn a proportion of every tonne it issues over its lifetime.</p>
+        <div class="meta">Forward purchases up to 5 years</div>
+      </div>
+      <div class="step">
+        <div class="step-n">03. Settle</div>
+        <h3>T+1 with on-chain certificate</h3>
+        <p>Every transaction settles in one business day. On-chain serialised certificate maps each tonne to its polygon, vintage, and verification record.</p>
+        <div class="meta">SOC 2 Type II · GDPR-compliant</div>
+      </div>
+      <div class="step">
+        <div class="step-n">04. Track</div>
+        <h3>Live portfolio dashboard</h3>
+        <p>Your portfolio dashboard shows every tonne you own, what's been retired, and live impact metrics: hectares, households, SDG alignment.</p>
+        <div class="meta">Updated every 5 days from orbit</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Project Listings -->
+<section id="portfolio" class="portfolio">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Featured projects</div>
+        <h2 style="margin-top:24px">Ready to fund now.</h2>
+      </div>
+      <div class="right">
+        <p>Six of 282 active listings. Each comes with satellite-verified baseline, independent verifier audit, and a live MRV feed from the field.</p>
+      </div>
+    </div>
+
+    <div class="project-grid">
+      @for (p of projects; track p.id) {
+        <div class="project-card">
+          @if (p.img) {
+            <div class="proj-img" [style.background-image]="'url(' + p.img + ')'">
+              <span class="proj-badge">{{ p.standard }}</span>
+            </div>
+          }
+          <div class="proj-body">
+            <div class="proj-type">{{ p.type }}</div>
+            <h3>{{ p.name }}</h3>
+            <div class="proj-place">📍 {{ p.place }}</div>
+
+            <div class="proj-funding">
+              <div class="proj-bar">
+                <div class="proj-fill" [style.width.%]="getRaisedPct(p)"></div>
+              </div>
+              <div class="proj-meta">
+                <span><strong>{{ getRaisedPct(p) }}%</strong> funded</span>
+                <span>${{ p.raised | number }}<small> of ${{ p.target | number }}</small></span>
+              </div>
+            </div>
+
+            <div class="proj-stats">
+              <div class="ps"><span class="ps-n">${{ p.price }}</span><span class="ps-l">/tCO₂e</span></div>
+              <div class="ps"><span class="ps-n">{{ p.irr }}%</span><span class="ps-l">Target IRR</span></div>
+              <div class="ps"><span class="ps-n">{{ (p.available / 1000).toFixed(0) }}k</span><span class="ps-l">Available</span></div>
+            </div>
+
+            <div class="proj-sdg">
+              @for (sdg of p.sdg; track sdg) {
+                <span class="sdg-chip">SDG {{ sdg }}</span>
+              }
+            </div>
+
+            <button class="btn btn-primary" style="width:100%;justify-content:center">
+              Fund this project <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Dashboard Preview -->
+<section style="background:var(--paper)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Your portfolio, fully visible</div>
+        <h2 style="margin-top:24px">Every tonne. Every project. Every claim.</h2>
+      </div>
+      <div class="right">
+        <p>Foovante's funder dashboard shows you exactly what you own, what's been retired, and the live impact of every project you've backed.</p>
+      </div>
+    </div>
+
+    <div class="impact-grid">
+      <div class="panel">
+        <div>
+          <h3>Tonnes in your portfolio</h3>
+          <p class="sub">Across all funded projects</p>
+        </div>
+        <div class="big-n">12,840 <small>tCO₂e</small></div>
+        <div style="margin-top:auto;display:flex;gap:12px">
+          <span class="delta">↑ 28% QoQ</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div>
+          <h3>Capital deployed</h3>
+          <p class="sub">Stakes & pre-purchases combined</p>
+        </div>
+        <div class="big-n">$246<small>k</small></div>
+        <div style="margin-top:auto;font-size:14px;color:var(--ink-2)">
+          Across <strong>9 active projects</strong> in <strong>5 African countries</strong>.
+        </div>
+      </div>
+
+      <div class="panel">
+        <div>
+          <h3>Live IRR</h3>
+          <p class="sub">Trailing weighted across stakes</p>
+        </div>
+        <div class="big-n">9.7<small>%</small></div>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+          <div class="progress-row">
+            <div class="lbl">Forestry</div>
+            <div class="track"><div class="fill" style="width:72%"></div></div>
+            <div class="v">8.9%</div>
+          </div>
+          <div class="progress-row">
+            <div class="lbl">Energy</div>
+            <div class="track"><div class="fill" style="width:94%"></div></div>
+            <div class="v">11.2%</div>
+          </div>
+          <div class="progress-row">
+            <div class="lbl">Agri</div>
+            <div class="track"><div class="fill" style="width:78%"></div></div>
+            <div class="v">9.4%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel half">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <h3>Quarterly credit issuance</h3>
+            <p class="sub">Tonnes issued · trailing 12 months</p>
+          </div>
+          <span class="delta">+38% YoY</span>
+        </div>
+        <div class="bars">
+          @for (v of barData; track v; let i = $index) {
+            <div [class]="i % 3 === 2 ? 'bar alt' : 'bar'">
+              <div class="b" [style.height]="getBarHeight(v)"></div>
+              <div>{{ months[i] }}</div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="panel">
+        <div>
+          <h3>Household impact</h3>
+          <p class="sub">Lives directly touched</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:24px;margin-top:auto">
+          <fv-donut-chart></fv-donut-chart>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--ink-2)">
+            @for (item of donutLegend; track item.label) {
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0"
+                      [style.background]="item.color"></span>
+                <span>{{ item.label }}</span>
+                <span style="margin-left:auto;font-weight:600;color:var(--ink)">{{ item.pct }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map Network -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Live project network</div>
+        <h2 style="margin-top:24px">282 projects across 14 African countries.</h2>
+      </div>
+      <div class="right">
+        <p>From Senegal mangrove restoration to Ethiopian highland reforestation, the Foovante network spans the continent and grows weekly.</p>
+      </div>
+    </div>
+    <fv-map-section></fv-map-section>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <h2>Start with a single project.</h2>
+    <p>Create a free funder account, browse 282 verified projects, and make your first commitment in under 10 minutes.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary btn-lg">Create funder account <span class="arrow">→</span></a>
+      <a class="btn btn-ghost btn-lg">Talk to the team</a>
+    </div>
+  </div>
+</section>
+
+<fv-footer></fv-footer>

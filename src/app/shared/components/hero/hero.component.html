@@ -1,0 +1,71 @@
+<section class="hero">
+  <!-- Background Slideshow -->
+  <div class="hero-bg">
+    @for (slide of slides; track slide.img; let i = $index) {
+      <div
+        class="hero-slide"
+        [attr.data-on]="getSlideState(i) || null"
+      >
+        <div
+          class="hero-img"
+          [ngStyle]="{'background-image': 'url(' + slide.img + ')'}"
+        ></div>
+      </div>
+    }
+  </div>
+
+  <!-- Counter -->
+  <div class="hero-counter">
+    {{ (currentSlide + 1).toString().padStart(2, '0') }} / {{ slides.length.toString().padStart(2, '0') }}
+  </div>
+
+  <!-- Main Content -->
+  <div class="wrap">
+    <div class="eyebrow">{{ eyebrow }}</div>
+
+    <h1>
+      @for (line of lines; track line; let i = $index) {
+        <span class="reveal">
+          <span [style.animation-delay]="(0.18 + i * 0.14) + 's'">
+            @if (i === lines.length - 1 && lines.length > 1) {
+              From the <em>soil up.</em>
+            } @else {
+              {{ line }}
+            }
+          </span>
+        </span>
+      }
+    </h1>
+
+    <p class="lead">{{ lead }}</p>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" (click)="navigateTo(cta1)">
+        {{ cta1.label }} <span class="arrow">→</span>
+      </a>
+      <button class="btn-link" (click)="navigateTo(cta2)">
+        {{ cta2.label }} <span class="arrow">→</span>
+      </button>
+    </div>
+
+
+  </div>
+
+  
+
+  <!-- Dots Navigation -->
+  <div class="hero-dots">
+    @for (slide of slides; track slide.img; let i = $index) {
+      <button
+        [attr.data-on]="i === currentSlide ? '1' : null"
+        (click)="goTo(i)"
+        [attr.aria-label]="'Go to slide ' + (i + 1)"
+      ></button>
+    }
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="hero-progress">
+    <div class="fill"></div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+<fv-nav [dark]="true" [cta]="{label: 'Browse projects', routerLink: '/funders'}"></fv-nav>
+
+<fv-hero
+  [slides]="heroSlides"
+  eyebrow="African carbon markets, built right"
+  [lines]="['High-integrity carbon credits.', 'From the soil up.']"
+  lead="Foovante is the verification, marketplace, and capital layer for African carbon. Whether you fund projects, run one, or want to invest in the company: start here."
+  [cta1]="{label: 'Browse projects', routerLink: '/funders'}"
+  [cta2]="{label: 'Apply to list a project', routerLink: '/projects'}"
+></fv-hero>
+
+<!-- Live Band -->
+<div class="live-band">
+  <div class="wrap">
+    <div class="live-strip">
+      <div><strong>847,200</strong> tCO₂e retired YTD</div>
+      <div><strong>282</strong> active projects</div>
+      <div><strong>14</strong> African countries</div>
+      <div><strong>$14.6M</strong> climate finance unlocked</div>
+    </div>
+  </div>
+</div>
+
+<!-- Picker Section -->
+<section class="picker">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Three audiences. One platform.</div>
+        <h2 style="margin-top:24px">Tell us who you are.</h2>
+      </div>
+      <div class="right">
+        <p>Foovante serves the people who fund carbon work, the people who run it, and the people backing the company itself. Pick the door that fits.</p>
+      </div>
+    </div>
+
+    <div class="picker-grid">
+      @for (p of picks; track p.tag) {
+        <a [routerLink]="p.route" class="pick">
+          <div class="photo" [style.background-image]="'url(' + p.photo + ')'"></div>
+          <div class="body">
+            <span class="tag">{{ p.tag }}</span>
+            <h3>{{ p.h }}</h3>
+            <p class="pick-lead">{{ p.lead }}</p>
+            <ul class="features">
+              @for (f of p.features; track f) {
+                <li>{{ f }}</li>
+              }
+            </ul>
+            <span class="open">{{ p.open }} <span class="arrow">→</span></span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Values Section -->
+<section class="values">
+  <div class="wrap values-grid">
+    <div>
+      <div class="eyebrow">Why Foovante</div>
+      <h2 style="margin-top:24px">African carbon, run by people on the ground.</h2>
+      <p class="lead" style="margin-top:24px">
+        The carbon market is broken because verification is broken. We're rebuilding it from Accra, with satellites, soil samples, and local agents, so credits issued in Africa stand up to any scrutiny, anywhere.
+      </p>
+    </div>
+    <div class="values-list">
+      @for (v of values; track v.h) {
+        <div class="v-item">
+          <h4>{{ v.h }}</h4>
+          <p>{{ v.p }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="cta-in">
+    <h2>One platform. Three doors. The same goal.</h2>
+    <p>Pick the door that fits, and start moving real climate capital into real African projects, with real verification behind it.</p>
+    <div class="cta-actions">
+      <a routerLink="/funders" class="btn btn-primary btn-lg">For Funders <span class="arrow">→</span></a>
+      <a routerLink="/projects" class="btn btn-ghost btn-lg">For Projects <span class="arrow">→</span></a>
+      <a routerLink="/investors" class="btn btn-ghost btn-lg">For Investors <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<fv-footer></fv-footer>

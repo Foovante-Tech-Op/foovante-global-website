@@ -1,0 +1,9 @@
+<div class="growth-bars">
+  @for (bar of bars; track bar.month) {
+    <div class="g-bar">
+      <div class="g-val">${{ bar.value }}k</div>
+      <div class="g-fill" [style.height]="bar.height"></div>
+      <div class="g-lbl">{{ bar.month }}</div>
+    </div>
+  }
+</div>

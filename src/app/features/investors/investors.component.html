@@ -1,0 +1,178 @@
+<fv-nav [dark]="true" [cta]="{label: 'Request data room', routerLink: '/investors'}"></fv-nav>
+
+<fv-hero
+  [slides]="heroSlides"
+  eyebrow="For investors"
+  [lines]="['Back the verification', 'layer of African carbon.']"
+  lead="We're raising the company building the rails for Africa's carbon markets. $12M Series A, open to thesis-aligned funds through Q3 2026."
+  [cta1]="{label: 'Request the data room'}"
+  [cta2]="{label: 'Read the investor update'}"
+></fv-hero>
+
+<!-- Stats Band -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><div class="n">$1.4M</div><div class="l">ARR run-rate · Q2 2026</div></div>
+      <div class="stat"><div class="n">38%</div><div class="l">MoM growth · 9 straight months</div></div>
+      <div class="stat"><div class="n">282</div><div class="l">Active projects</div></div>
+      <div class="stat"><div class="n">96%</div><div class="l">Revenue retention</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Traction Section -->
+<section class="traction" id="traction">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Traction</div>
+        <h2 style="margin-top:24px">Real GMV. Real growth. Real signals.</h2>
+      </div>
+      <div class="right">
+        <p>$1.4M ARR run-rate as of Q2 2026, growing 38% month-over-month for nine straight months. Below: live dashboard you'll see in the data room.</p>
+      </div>
+    </div>
+
+    <div class="traction-grid">
+      <div class="panel">
+        <div>
+          <h3>Annualised revenue</h3>
+          <p class="sub">Run-rate · Q2 2026</p>
+        </div>
+        <div class="big-n">$1.4<small>M ARR</small></div>
+        <div style="margin-top:auto"><span class="delta">↑ 38% MoM avg.</span></div>
+      </div>
+
+      <div class="panel">
+        <div>
+          <h3>Active projects</h3>
+          <p class="sub">Across 14 African countries</p>
+        </div>
+        <div class="big-n">282</div>
+        <div style="margin-top:auto;font-size:14px;color:var(--ink-2)">
+          From <strong>14 at YE2023</strong> · 20× in 18 months
+        </div>
+      </div>
+
+      <div class="panel">
+        <div>
+          <h3>Renewal rate</h3>
+          <p class="sub">Project developers · trailing 12M</p>
+        </div>
+        <div class="big-n">96<small>%</small></div>
+        <div style="margin-top:auto;font-size:14px;color:var(--ink-2)">
+          Net-revenue retention <strong>132%</strong> across funder cohort.
+        </div>
+      </div>
+
+      <div class="panel large">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <h3>Monthly GMV ($k) · trailing 12 months</h3>
+            <p class="sub">Total platform credit volume settled · Jul 2025 → Jun 2026</p>
+          </div>
+          <span class="delta">+38% MoM</span>
+        </div>
+        <div class="growth-chart">
+          <fv-growth-chart></fv-growth-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Moat Section -->
+<section class="moat" id="moat" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">The product moat</div>
+        <h2 style="margin-top:24px">We're not a marketplace. We're the verification layer.</h2>
+      </div>
+      <div class="right">
+        <p>Anyone can build a marketplace. The defensible asset is the MRV stack; it's a 7-year, multi-million-dollar effort to replicate. We're three years in.</p>
+      </div>
+    </div>
+    <div class="moat-grid">
+      @for (m of moatCards; track m.n) {
+        <div class="moat-card">
+          <div class="num">{{ m.n }}</div>
+          <h4>{{ m.h }}</h4>
+          <p>{{ m.p }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Business Model -->
+<section id="model">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Business model</div>
+        <h2 style="margin-top:24px">Three fee streams. One platform.</h2>
+      </div>
+      <div class="right">
+        <p>Every dollar of revenue is attached to real carbon infrastructure work, not arbitrage. As the market grows, so do our take rates.</p>
+      </div>
+    </div>
+
+    <div class="model-grid">
+      <div class="model-visual">
+        <div class="credit-stack">
+          <div class="cs-row">
+            <i style="background:var(--green)"></i>
+            <strong>$13.32</strong>
+            <span>Project owner · 72% of credit value</span>
+          </div>
+          <div class="cs-row">
+            <i style="background:var(--gold)"></i>
+            <strong>$2.78</strong>
+            <span>Foovante platform fee · 15%</span>
+          </div>
+          <div class="cs-row">
+            <i style="background:var(--ink-2)"></i>
+            <strong>$1.85</strong>
+            <span>Verification &amp; issuance · 10%</span>
+          </div>
+          <div class="cs-row">
+            <i style="background:var(--muted)"></i>
+            <strong>$0.55</strong>
+            <span>Methodology &amp; spec costs</span>
+          </div>
+        </div>
+        <div class="credit-label">Per $18.50 credit · illustrative</div>
+      </div>
+
+      <div>
+        <p style="font-family:var(--font-display);font-size:28px;font-weight:600;letter-spacing:-0.025em;margin:0 0 24px">
+          Three platform-fee streams.
+        </p>
+        <ul class="fee-list">
+          @for (f of feeStreams; track f.pct) {
+            <li>
+              <strong class="fee-pct">{{ f.pct }}</strong>
+              <span><strong>{{ f.h }}</strong> {{ f.d }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <h2>Ready to see the data room?</h2>
+    <p>We share financials, cap table, investor update, and full technical documentation with thesis-aligned funds. Drop your details and we'll send access within one business day.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary btn-lg">Request data room <span class="arrow">→</span></a>
+      <a class="btn btn-ghost btn-lg">Talk to the founders</a>
+    </div>
+  </div>
+</section>
+
+<fv-footer></fv-footer>
