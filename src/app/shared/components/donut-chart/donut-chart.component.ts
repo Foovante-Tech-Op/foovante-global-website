@@ -9,11 +9,10 @@ interface DonutSlice {
 }
 
 @Component({
-  selector: 'fv-donut-chart',
-  standalone: true,
-  imports: [NgStyle],
-  templateUrl: './donut-chart.component.html',
-  styleUrl: './donut-chart.component.scss'
+    selector: 'fv-donut-chart',
+    imports: [],
+    templateUrl: './donut-chart.component.html',
+    styleUrl: './donut-chart.component.scss'
 })
 export class DonutChartComponent implements OnInit {
   slices: DonutSlice[] = [];

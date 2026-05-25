@@ -10,11 +10,10 @@ import { FV_PROJECTS } from '../../core/data/projects.data';
 import { Project } from '../../core/models/project.model';
 
 @Component({
-  selector: 'fv-funders',
-  standalone: true,
-  imports: [NavComponent, FooterComponent, HeroComponent, MapSectionComponent, DonutChartComponent, DecimalPipe],
-  templateUrl: './funders.component.html',
-  styleUrl: './funders.component.scss'
+    selector: 'fv-funders',
+    imports: [NavComponent, FooterComponent, HeroComponent, MapSectionComponent, DonutChartComponent, DecimalPipe],
+    templateUrl: './funders.component.html',
+    styleUrl: './funders.component.scss'
 })
 export class FundersComponent {
   projects: Project[] = FV_PROJECTS;

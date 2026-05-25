@@ -17,11 +17,10 @@ const TYPE_COLORS: Record<MapPoint['type'], string> = {
 };
 
 @Component({
-  selector: 'fv-map-section',
-  standalone: true,
-  imports: [],
-  templateUrl: './map-section.component.html',
-  styleUrl: './map-section.component.scss'
+    selector: 'fv-map-section',
+    imports: [],
+    templateUrl: './map-section.component.html',
+    styleUrl: './map-section.component.scss'
 })
 export class MapSectionComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapEl', { static: true }) mapEl!: ElementRef<HTMLDivElement>;

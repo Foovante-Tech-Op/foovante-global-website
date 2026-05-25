@@ -9,11 +9,10 @@ export interface NavCta {
 }
 
 @Component({
-  selector: 'fv-nav',
-  standalone: true,
-  imports: [RouterLink, RouterLinkActive, NgClass],
-  templateUrl: './nav.component.html',
-  styleUrl: './nav.component.scss'
+    selector: 'fv-nav',
+    imports: [RouterLink, RouterLinkActive, NgClass],
+    templateUrl: './nav.component.html',
+    styleUrl: './nav.component.scss'
 })
 export class NavComponent {
   @Input() dark = false;

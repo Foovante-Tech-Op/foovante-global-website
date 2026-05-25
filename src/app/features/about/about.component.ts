@@ -7,11 +7,10 @@ import { LEADERSHIP, OPS_TEAM, ADVISORS } from '../../core/data/team.data';
 import { TeamMember, Advisor } from '../../core/models/team.model';
 
 @Component({
-  selector: 'fv-about',
-  standalone: true,
-  imports: [NavComponent, FooterComponent, HeroComponent],
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+    selector: 'fv-about',
+    imports: [NavComponent, FooterComponent, HeroComponent],
+    templateUrl: './about.component.html',
+    styleUrl: './about.component.scss'
 })
 export class AboutComponent {
   leadership: TeamMember[] = LEADERSHIP;

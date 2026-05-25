@@ -11,11 +11,10 @@ export interface HeroCta {
 }
 
 @Component({
-  selector: 'fv-hero',
-  standalone: true,
-  imports: [NgStyle],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+    selector: 'fv-hero',
+    imports: [NgStyle],
+    templateUrl: './hero.component.html',
+    styleUrl: './hero.component.scss'
 })
 export class HeroComponent implements OnInit, OnDestroy {
   @Input() slides: HeroSlide[] = [];

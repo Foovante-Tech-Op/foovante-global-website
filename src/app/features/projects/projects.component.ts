@@ -8,11 +8,10 @@ import { METHODS } from '../../core/data/team.data';
 import { Method } from '../../core/models/team.model';
 
 @Component({
-  selector: 'fv-projects',
-  standalone: true,
-  imports: [NavComponent, FooterComponent, HeroComponent, MapSectionComponent],
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+    selector: 'fv-projects',
+    imports: [NavComponent, FooterComponent, HeroComponent, MapSectionComponent],
+    templateUrl: './projects.component.html',
+    styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
   methods: Method[] = METHODS;

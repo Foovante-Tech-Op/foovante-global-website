@@ -6,11 +6,10 @@ import { HeroComponent } from '../../shared/components/hero/hero.component';
 import { HeroSlide } from '../../core/models/hero-slide.model';
 
 @Component({
-  selector: 'fv-home',
-  standalone: true,
-  imports: [NavComponent, FooterComponent, HeroComponent, RouterLink],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'fv-home',
+    imports: [NavComponent, FooterComponent, HeroComponent, RouterLink],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   heroSlides: HeroSlide[] = [

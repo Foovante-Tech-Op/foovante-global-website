@@ -6,11 +6,10 @@ import { GrowthChartComponent } from '../../shared/components/growth-chart/growt
 import { HeroSlide } from '../../core/models/hero-slide.model';
 
 @Component({
-  selector: 'fv-investors',
-  standalone: true,
-  imports: [NavComponent, FooterComponent, HeroComponent, GrowthChartComponent],
-  templateUrl: './investors.component.html',
-  styleUrl: './investors.component.scss'
+    selector: 'fv-investors',
+    imports: [NavComponent, FooterComponent, HeroComponent, GrowthChartComponent],
+    templateUrl: './investors.component.html',
+    styleUrl: './investors.component.scss'
 })
 export class InvestorsComponent {
   heroSlides: HeroSlide[] = [
