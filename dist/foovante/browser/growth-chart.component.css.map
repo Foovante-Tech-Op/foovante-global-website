@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/shared/components/growth-chart/growth-chart.component.scss"],
-  "sourcesContent": [":host { display: block; }\n\n.growth-bars {\n  display: flex;\n  align-items: flex-end;\n  gap: 6px;\n  height: 200px;\n  padding-top: 32px;\n  width: 100%;\n}\n\n.g-bar {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 6px;\n  position: relative;\n}\n\n.g-val {\n  font-size: 9px;\n  color: var(--muted);\n  font-weight: 500;\n  white-space: nowrap;\n}\n\n.g-fill {\n  width: 100%;\n  background: linear-gradient(180deg, var(--green) 0%, var(--green-deep) 100%);\n  border-radius: 3px 3px 0 0;\n  transition: height 0.8s ease;\n  min-height: 4px;\n}\n\n.g-lbl {\n  font-size: 10px;\n  color: var(--muted);\n  font-weight: 500;\n}\n"],
-  "mappings": ";AAAA;AAAQ,WAAA;;AAER,CAAA;AACE,WAAA;AACA,eAAA;AACA,OAAA;AACA,UAAA;AACA,eAAA;AACA,SAAA;;AAGF,CAAA;AACE,QAAA;AACA,WAAA;AACA,kBAAA;AACA,eAAA;AACA,OAAA;AACA,YAAA;;AAGF,CAAA;AACE,aAAA;AACA,SAAA,IAAA;AACA,eAAA;AACA,eAAA;;AAGF,CAAA;AACE,SAAA;AACA;IAAA;MAAA,MAAA;MAAA,IAAA,SAAA,EAAA;MAAA,IAAA,cAAA;AACA,iBAAA,IAAA,IAAA,EAAA;AACA,cAAA,OAAA,KAAA;AACA,cAAA;;AAGF,CAAA;AACE,aAAA;AACA,SAAA,IAAA;AACA,eAAA;;",
-  "names": []
-}
