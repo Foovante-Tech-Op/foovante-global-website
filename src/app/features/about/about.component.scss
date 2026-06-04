@@ -315,3 +315,9 @@
     padding: 28px 0 !important;
   }
 }
+
+@media (max-width: 640px) {
+  .advisors-grid { grid-template-columns: 1fr; }
+  .creds-grid    { grid-template-columns: 1fr; }
+  .cred-card .v  { font-size: 22px; }
+}

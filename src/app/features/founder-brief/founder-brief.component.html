@@ -1,0 +1,66 @@
+<fv-nav [dark]="true" [cta]="{label: 'Talk to the founders', routerLink: '/'}"></fv-nav>
+
+<fv-hero
+  [slides]="heroSlides"
+  eyebrow="The founder brief"
+  [lines]="['The people behind Foovante,', 'and why they built it.']"
+  lead="Practitioners who spent their careers in climate finance, earth-observation engineering, climate-tech distribution, carbon market access, and carbon standards verification — and eventually decided to build the infrastructure they kept wishing existed."
+  [cta1]="{label: 'Meet the founders', routerLink: '/founder-brief'}"
+  [cta2]="{label: 'Back to about', routerLink: '/'}"
+></fv-hero>
+
+<!-- Founding Context -->
+<section class="context" style="background:var(--paper)">
+  <div class="wrap context-grid">
+    <div>
+      <div class="eyebrow">Why we exist</div>
+      <h2 style="margin-top:24px">We saw the same bottleneck from different angles.</h2>
+    </div>
+    <div class="context-body">
+      <p>Africa holds roughly 10% of the world's carbon credit potential but issues a fraction of that, not because the ecosystems are any less real, but because the verification, certification, and trading infrastructure was built for the global North. The four of us had each spent years watching high-quality African projects stall, under-price, or fail entirely at the verification stage.</p>
+      <p>Foovante started as a single shared conviction: that continuous satellite monitoring, local field agents, and multi-standard issuance could solve the bottleneck — and that building it from the continent itself was the only way to do it at the quality level the market deserves.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Founder Profiles -->
+<section class="founders">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Meet the founders</div>
+        <h2 style="margin-top:24px">Four people, one shared conviction.</h2>
+      </div>
+      <div class="right">
+        <p>Each founder brings a distinct technical or market background. Together they cover the full stack of what an infrastructure operator in African carbon needs to run at scale.</p>
+      </div>
+    </div>
+    <div class="founder-grid">
+      @for (f of founders; track f.name) {
+        <div class="founder-card">
+          <div class="founder-pic" [style.background-image]="'url(' + f.pic + ')'"></div>
+          <div class="founder-body">
+            <div class="role">{{ f.role }}</div>
+            <h3>{{ f.name }}</h3>
+            <p>{{ f.bio }}</p>
+            <div class="prior">{{ f.prior }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Talk to the founders CTA -->
+<section class="founders-cta" id="contact">
+  <div class="cta-in">
+    <h2>Want to speak with us directly?</h2>
+    <p>Our founders take introductions from funders, projects, partners, and press personally. Drop a note and we typically reply within one business day.</p>
+    <div class="cta-actions">
+      <a href="mailto:founders@foovante.com" class="btn btn-primary btn-lg">Talk to the founders <span class="arrow">→</span></a>
+      <a routerLink="/" class="btn btn-ghost btn-lg">Back to about</a>
+    </div>
+  </div>
+</section>
+
+<fv-footer></fv-footer>

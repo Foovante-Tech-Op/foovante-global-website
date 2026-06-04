@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { HeroComponent } from '../../shared/components/hero/hero.component';
@@ -7,7 +8,7 @@ import { HeroSlide } from '../../core/models/hero-slide.model';
 
 @Component({
     selector: 'fv-investors',
-    imports: [NavComponent, FooterComponent, HeroComponent, GrowthChartComponent],
+    imports: [NavComponent, FooterComponent, HeroComponent, GrowthChartComponent, RouterLink],
     templateUrl: './investors.component.html',
     styleUrl: './investors.component.scss'
 })
@@ -24,8 +25,8 @@ export class InvestorsComponent {
       img:  'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=80&auto=format&fit=crop',
       lbl:  'Traction',
       ttl:  '$1.4M ARR · 38% MoM',
-      sub:  '282 projects · 14 countries',
-      live: '20× growth in 18 months'
+      sub:  '3 projects · baseline phase · Ghana',
+      live: 'Pre-seed round open'
     }
   ];
 
@@ -43,12 +44,12 @@ export class InvestorsComponent {
     {
       n: '3',
       h: 'Standards integrations',
-      p: 'Verra, Gold Standard, and Plan Vivo each took 8–14 months to onboard. We are the only African platform certified for all three.'
+      p: 'Verra, Gold Standard, and Plan Vivo each take 8–14 months to onboard. We are targeting approval as an operator for all three — a defined milestone in our pre-seed roadmap.'
     },
     {
-      n: '38',
-      h: 'In-country agents',
-      p: 'Local field teams across 14 countries. Trust is built in person, and our agent network is what makes 12-week issuance possible.'
+      n: '10',
+      h: 'Smallholder programs',
+      p: 'Local field teams on the ground in Ghana. Trust is built in person, and our agent network is what makes 12-week issuance possible.'
     }
   ];
 

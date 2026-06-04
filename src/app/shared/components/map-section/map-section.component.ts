@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy, ElementRef, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, ElementRef, ViewChild, PLATFORM_ID, Inject, NgZone } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { FV_MAP } from '../../../core/data/map.data';
 import { MapPoint } from '../../../core/models/map.model';
@@ -27,8 +27,12 @@ export class MapSectionComponent implements AfterViewInit, OnDestroy {
 
   private map: any;
   private L: any;
+  private resizeObserver?: ResizeObserver;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: object,
+    private zone: NgZone,
+  ) {}
 
   async ngAfterViewInit(): Promise<void> {
     if (!isPlatformBrowser(this.platformId)) return;
@@ -36,21 +40,30 @@ export class MapSectionComponent implements AfterViewInit, OnDestroy {
     const L = await import('leaflet');
     this.L = L;
 
-    this.map = L.map(this.mapEl.nativeElement, {
-      center: [2, 22],
-      zoom: 3,
-      zoomControl: false,
-      attributionControl: false,
-      scrollWheelZoom: false,
-      dragging: false,
-      doubleClickZoom: false,
-      touchZoom: false,
-    });
+    this.zone.runOutsideAngular(() => {
+      this.map = L.map(this.mapEl.nativeElement, {
+        center: [2, 22],
+        zoom: 3,
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false,
+        dragging: false,
+        doubleClickZoom: false,
+        touchZoom: false,
+      });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-      subdomains: 'abcd',
-      maxZoom: 6,
-    }).addTo(this.map);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+        subdomains: 'abcd',
+        maxZoom: 6,
+      }).addTo(this.map);
+
+      // Recalculate size once the browser has painted the container
+      setTimeout(() => this.map?.invalidateSize(), 0);
+
+      // Keep map correct if the container resizes (e.g. sidebar open/close)
+      this.resizeObserver = new ResizeObserver(() => this.map?.invalidateSize());
+      this.resizeObserver.observe(this.mapEl.nativeElement);
+    });
 
     await this.addCountryLayer();
     this.addProjectMarkers(L);
@@ -101,6 +114,7 @@ export class MapSectionComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.resizeObserver?.disconnect();
     this.map?.remove();
   }
 }

@@ -32,6 +32,12 @@ export const routes: Routes = [
     title: 'For Investors — Foovante Global'
   },
   {
+    path: 'founder-brief',
+    loadComponent: () =>
+      import('./features/founder-brief/founder-brief.component').then(m => m.FounderBriefComponent),
+    title: 'The Founder Brief — Foovante Global'
+  },
+  {
     path: '**',
     redirectTo: ''
   }

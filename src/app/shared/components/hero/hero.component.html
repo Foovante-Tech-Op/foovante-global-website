@@ -26,13 +26,7 @@
     <h1>
       @for (line of lines; track line; let i = $index) {
         <span class="reveal">
-          <span [style.animation-delay]="(0.18 + i * 0.14) + 's'">
-            @if (i === lines.length - 1 && lines.length > 1) {
-              From the <em>soil up.</em>
-            } @else {
-              {{ line }}
-            }
-          </span>
+          <span [style.animation-delay]="(0.18 + i * 0.14) + 's'">{{ line }}</span>
         </span>
       }
     </h1>

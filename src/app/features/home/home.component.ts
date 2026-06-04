@@ -53,9 +53,9 @@ export class HomeComponent {
   picks = [
     {
       tag:      'For Funders',
-      h:        'Buy carbon credits, or back the project that creates them.',
-      lead:     'Browse 282 verified African projects. Pre-purchase credits, or take a stake in a project and earn as it issues.',
-      features: ['Stake-style or credit purchase', 'Full audit trail per tonne', 'Forward purchases up to 5y'],
+      h:        'Pre-purchase verified African carbon credits.',
+      lead:     'Foovante connects capital to high-integrity African carbon projects. Pre-purchase credits at fixed prices with a full audit trail per tonne.',
+      features: ['Credit pre-purchase at fixed prices', 'Full audit trail per tonne', 'Satellite-verified baselines'],
       open:     'Browse projects',
       route:    '/funders',
       photo:    'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1400&q=80&auto=format&fit=crop'
@@ -63,8 +63,8 @@ export class HomeComponent {
     {
       tag:      'For Projects',
       h:        'Turn your land work into real climate finance.',
-      lead:     'African renewable-energy and agriculture projects: register, baseline, verify, and list, without losing 40% to London middlemen.',
-      features: ['~12 weeks to first issuance', '72% of every credit to project', 'Sentinel-2 baselining included'],
+      lead:     'African renewable-energy, agriculture, and forestry projects: register, baseline, verify, and list — without losing a large share to middlemen.',
+      features: ['~12 weeks to first issuance', 'Competitive revenue share to project', 'Sentinel-2 baselining included'],
       open:     'Apply to list your project',
       route:    '/projects',
       photo:    'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=80&auto=format&fit=crop'
@@ -72,8 +72,8 @@ export class HomeComponent {
     {
       tag:      'For Investors',
       h:        'Back the verification layer of African carbon.',
-      lead:     "We're raising the company building the rails for Africa's carbon markets. Series A is open to thesis-aligned funds.",
-      features: ['$1.4M ARR, 38% MoM', '282 projects · 14 countries', 'Backed by leading climate funds'],
+      lead:     "We're raising the company building the rails for Africa's carbon markets. Pre-seed round open to thesis-aligned investors.",
+      features: ['3 live projects · baseline phase', '8,100 ha under MRV by Q2 2026', 'Pre-seed round open'],
       open:     'Request the data room',
       route:    '/investors',
       photo:    'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1400&q=80&auto=format&fit=crop'
@@ -87,11 +87,11 @@ export class HomeComponent {
     },
     {
       h: 'Most of the money goes to the project',
-      p: '72% of every credit sale flows back to project work. Industry average is 40%.'
+      p: 'We are designing our fee structure so the majority of every credit sale flows back to project work. Industry average is around 40%; we intend to do significantly better.'
     },
     {
-      h: 'Operated from the continent',
-      p: 'Headquartered in Accra with regional teams across West, East, and Southern Africa. No flying experts in from Geneva.'
+      h: 'Built on the continent',
+      p: 'Headquartered in Accra, operating in Ghana today with expansion planned across the continent. No flying experts in from Geneva.'
     },
     {
       h: 'Standards-anchored',

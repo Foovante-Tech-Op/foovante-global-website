@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { HeroComponent } from '../../shared/components/hero/hero.component';
@@ -9,7 +10,7 @@ import { Method } from '../../core/models/team.model';
 
 @Component({
     selector: 'fv-projects',
-    imports: [NavComponent, FooterComponent, HeroComponent, MapSectionComponent],
+    imports: [NavComponent, FooterComponent, HeroComponent, MapSectionComponent, RouterLink],
     templateUrl: './projects.component.html',
     styleUrl: './projects.component.scss'
 })
@@ -62,8 +63,8 @@ export class ProjectsComponent {
     {
       n: '04',
       h: 'List and fund',
-      p: 'Your project goes live on the Foovante marketplace. Funders can pre-purchase credits or stake into the project. Revenue flows to you T+1.',
-      meta: '78% of credit revenue to project'
+      p: 'Your project goes live on the Foovante marketplace. Funders can pre-purchase credits at fixed prices. Revenue flows to you as credits are issued.',
+      meta: 'Competitive revenue share to project'
     }
   ];
 
