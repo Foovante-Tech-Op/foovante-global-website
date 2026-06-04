@@ -215,3 +215,9 @@
   .picker-grid { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: 1fr; gap: 48px; }
 }
+
+@media (max-width: 640px) {
+  .pick         { min-height: 380px; padding: 28px; }
+  .pick h3      { font-size: 26px; }
+  .live-strip   { gap: 20px; font-size: 13px; }
+}

@@ -5,8 +5,8 @@
   eyebrow="For investors"
   [lines]="['Back the verification', 'layer of African carbon.']"
   lead="We're raising the company building the rails for Africa's carbon markets. $12M Series A, open to thesis-aligned funds through Q3 2026."
-  [cta1]="{label: 'Request the data room'}"
-  [cta2]="{label: 'Read the investor update'}"
+  [cta1]="{label: 'Request the data room', routerLink: '/founder-brief'}"
+  [cta2]="{label: 'Talk to the founders', routerLink: '/founder-brief'}"
 ></fv-hero>
 
 <!-- Stats Band -->
@@ -47,7 +47,7 @@
       <div class="panel">
         <div>
           <h3>Active projects</h3>
-          <p class="sub">Across 14 African countries</p>
+          <p class="sub">Active projects · baseline phase</p>
         </div>
         <div class="big-n">282</div>
         <div style="margin-top:auto;font-size:14px;color:var(--ink-2)">
@@ -169,8 +169,8 @@
     <h2>Ready to see the data room?</h2>
     <p>We share financials, cap table, investor update, and full technical documentation with thesis-aligned funds. Drop your details and we'll send access within one business day.</p>
     <div class="cta-actions">
-      <a class="btn btn-primary btn-lg">Request data room <span class="arrow">→</span></a>
-      <a class="btn btn-ghost btn-lg">Talk to the founders</a>
+      <a class="btn btn-primary btn-lg" routerLink="/founder-brief">Request data room <span class="arrow">→</span></a>
+      <a class="btn btn-ghost btn-lg" routerLink="/founder-brief">Talk to the founders</a>
     </div>
   </div>
 </section>

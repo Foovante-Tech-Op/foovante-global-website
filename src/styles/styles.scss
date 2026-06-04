@@ -716,3 +716,26 @@ footer {
 
   .nav-links { display: none; }
 }
+
+@media (max-width: 640px) {
+  section { padding: 72px 0; }
+
+  .sec-head { margin-bottom: 36px; }
+
+  h1 { font-size: 38px; }
+  h2 { font-size: 28px; }
+
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .stat .n    { font-size: 32px; }
+
+  .steps { grid-template-columns: 1fr; }
+  .step  {
+    padding: 24px 0;
+    border-right: 0;
+    border-top: 1px solid var(--line);
+    &:first-child { border-top: 0; }
+    &:not(:first-child) { padding-left: 0; }
+  }
+
+  .ft-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+}

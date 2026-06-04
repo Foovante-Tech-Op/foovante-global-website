@@ -2,6 +2,7 @@ import {
   Component, Input, OnInit, OnDestroy, ChangeDetectorRef
 } from '@angular/core';
 import { NgClass, NgStyle } from '@angular/common';
+import { Router } from '@angular/router';
 import { HeroSlide } from '../../../core/models/hero-slide.model';
 
 export interface HeroCta {
@@ -29,7 +30,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   private timer: ReturnType<typeof setInterval> | null = null;
   slideDuration = 6000;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, private router: Router) {}
 
   ngOnInit(): void {
     if (this.slides.length > 1) {
@@ -81,7 +82,7 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   navigateTo(cta: HeroCta): void {
     if (cta.routerLink) {
-      window.location.href = cta.routerLink;
+      this.router.navigate([cta.routerLink]);
     } else if (cta.href) {
       window.location.href = cta.href;
     }

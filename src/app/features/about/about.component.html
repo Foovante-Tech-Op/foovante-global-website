@@ -4,9 +4,9 @@
   [slides]="heroSlides"
   eyebrow="About Foovante Global"
   [lines]="['We\'re building the verification layer', 'for African carbon.']"
-  lead="Foovante is a climate-tech company headquartered in Accra, Ghana, operating verification, marketplace, and capital infrastructure for African carbon projects across 14 countries."
-  [cta1]="{label: 'Talk to the founders'}"
-  [cta2]="{label: 'Read the founder brief'}"
+  lead="Foovante is a climate-tech company building the verification, marketplace, and capital infrastructure for African carbon projects."
+  [cta1]="{label: 'Take a tour', routerLink: '/home'}"
+  [cta2]="{label: 'Read the founder brief', routerLink: '/founder-brief'}"
 ></fv-hero>
 
 <!-- Mission Section -->
@@ -33,9 +33,6 @@
       <div>
         <div class="eyebrow">What we do</div>
         <h2 style="margin-top:24px">Three products. One stack.</h2>
-      </div>
-      <div class="right">
-        <p>Foovante operates as a vertically integrated platform: origination, verification, and distribution all under one roof. It is the only way to keep quality high and economics fair.</p>
       </div>
     </div>
     <div class="what-grid">
@@ -65,6 +62,7 @@
     </div>
     <div class="tl-placeholder">
       <p>A detailed milestones view is coming soon. Contact us for the full partner and investor update.</p>
+      <a routerLink="/founder-brief" fragment="contact" class="btn btn-primary" style="margin-top:24px;display:inline-flex;align-items:center;gap:8px">Talk to the team <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -78,7 +76,7 @@
         <h2 style="margin-top:24px">The founders and functional leads.</h2>
       </div>
       <div class="right">
-        <p>Our four-person leadership team brings deep backgrounds in African climate finance, earth-observation engineering, agtech distribution, and carbon standards verification.</p>
+        <p>Our leadership team brings deep backgrounds in climate finance, earth-observation engineering, climate-tech distribution, carbon market access, and carbon standards verification.</p>
       </div>
     </div>
     <div class="lead-grid">
@@ -97,31 +95,7 @@
   </div>
 </section>
 
-<!-- Operating Team -->
-<section class="ops" id="ops">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Operating team</div>
-        <h2 style="margin-top:24px">The people running it, region by region.</h2>
-      </div>
-      <div class="right">
-        <p>Foovante's eight-person operating team leads regional operations across West, East, Southern, and Francophone Africa, covering MRV science, engineering, funder ops, and legal. Together they oversee 38 in-country agents.</p>
-      </div>
-    </div>
-    <div class="ops-grid">
-      @for (p of opsTeam; track p.name) {
-        <div class="person">
-          <div class="pic" [style.background-image]="'url(' + p.pic + ')'"></div>
-          <h4 class="name">{{ p.name }}</h4>
-          <p class="role">{{ p.role }}</p>
-          <p class="loc">📍 {{ p.loc }}</p>
-          <p class="prior">{{ p.prior }}</p>
-        </div>
-      }
-    </div>
-  </div>
-</section>
+<!-- Operating Team: hidden until regional track record is established -->
 
 <!-- Advisory Board -->
 <section class="advisors-band">
@@ -153,10 +127,10 @@
     <div class="sec-head">
       <div>
         <div class="eyebrow">Credentials &amp; compliance</div>
-        <h2 style="margin-top:24px">Registered, audited, accountable.</h2>
+        <h2 style="margin-top:24px">Built to meet the highest bar.</h2>
       </div>
       <div class="right">
-        <p>We hold the registrations and certifications you would expect of any infrastructure operator handling climate capital. Full legal memo and audit reports available on request.</p>
+        <p>We are on the path to holding the registrations and certifications you would expect of any infrastructure operator handling climate capital. Securing these credentials is a primary use of funds from our pre-seed round.</p>
       </div>
     </div>
     <div class="creds-grid">
@@ -177,9 +151,9 @@
     <h2>Want to talk to us directly?</h2>
     <p>Our founders take introductions from funders, projects, partners, and press personally. Drop a note; we typically reply within one business day.</p>
     <div class="cta-actions">
-      <a class="btn btn-primary btn-lg">Talk to the founders <span class="arrow">→</span></a>
-      <a class="btn btn-ghost btn-lg">Press &amp; media</a>
-      <a class="btn btn-ghost btn-lg">Careers</a>
+      <a routerLink="/founder-brief" class="btn btn-primary btn-lg">Talk to the founders <span class="arrow">→</span></a>
+      <a href="mailto:press@foovante.com" class="btn btn-ghost btn-lg">Press &amp; media</a>
+      <a href="mailto:careers@foovante.com" class="btn btn-ghost btn-lg">Careers</a>
     </div>
   </div>
 </section>

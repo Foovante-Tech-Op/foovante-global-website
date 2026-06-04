@@ -283,3 +283,18 @@
   .pri-grid       { grid-template-columns: 1fr; }
   .apply-grid     { grid-template-columns: 1fr; gap: 48px; }
 }
+
+@media (max-width: 640px) {
+  .verify-grid { grid-template-columns: 1fr; }
+  .verify-card {
+    border-bottom: 1px solid var(--line);
+    padding: 24px 0;
+    &:last-child  { border-bottom: 0; }
+    &:not(:first-child) { padding-left: 0; }
+  }
+  .method-grid { grid-template-columns: 1fr; }
+  .field-row   { grid-template-columns: 1fr; }
+  .apply-grid  { gap: 32px; }
+  .apply-form  { padding: 24px; }
+  .pri         { padding: 24px; }
+}
