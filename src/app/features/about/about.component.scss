@@ -220,6 +220,52 @@
   }
 }
 
+// Partners carousel
+.partners-band {
+  padding: 64px 0;
+  background: var(--paper);
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  overflow: hidden;
+}
+
+.carousel-track-wrap {
+  overflow: hidden;
+  width: 100%;
+  cursor: default;
+
+  &:hover .carousel-track { animation-play-state: paused; }
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+  animation: carousel-scroll 28s linear infinite;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 110px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 1; }
+  }
+}
+
+@keyframes carousel-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 // Advisors
 .advisors-band {
   padding: 80px 0;
@@ -230,7 +276,7 @@
 
 .advisors-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 24px;
 }
 

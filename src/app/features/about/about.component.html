@@ -15,13 +15,14 @@
     <div>
       <div class="eyebrow">Our mission</div>
       <blockquote style="margin-top:24px">
-        Africa holds <em>10% of global carbon credit potential</em> and now issues <em>close to 5% as of 2025</em>. We exist to help close that gap further.
+        Africa holds <em>significant carbon credit potential</em>, yet only <em>5% of its nature-based capacity has been unlocked as of 2025</em>. We exist to help close that gap.
       </blockquote>
     </div>
     <div class="mission-body">
-      <p>The voluntary carbon market is on track to reach $50–$200B by 2030, and African ecosystems (forests, mangroves, drylands, agroforestry systems) are the highest-quality natural carbon assets on Earth. They should be the supply side of that market.</p>
-      <p>They are not. Today, African projects generate fewer than 2% of global credits, because the verification, certification, and trading infrastructure was built for the global North, not for a cooperative in Rwanda or a community forest in Ghana.</p>
-      <p><strong>Foovante is building that infrastructure from Accra.</strong> Continuous satellite monitoring, on-the-ground verification by local agents, multi-standard issuance, and a marketplace that pays projects most of what their credits sell for. We are building the operating system for African carbon. And we are building it from the continent itself.</p>
+      <p>The voluntary carbon market is projected to reach $23.99B by 2030, and African ecosystems — forests, mangroves, drylands, and agroforestry systems — represent some of the highest-quality natural carbon assets on Earth. They should be the supply side of that market.</p>
+      <p>They are not. Today, African projects remain severely underrepresented in global carbon markets, because the verification, certification, and trading infrastructure was built for the global North — not for a cooperative in Rwanda or a community forest in Ghana. The result: $2.6B in value lost to verification delays by 2030 if nothing changes.</p>
+      <p><strong>Foovante Global is building that infrastructure from Accra.</strong> Through Crevy, our digital platform, project developers can document sustainable practices, receive real-time IoT monitoring data, and build the verified evidence trail required for carbon credit issuance — going from zero documentation to audit-ready in weeks, not years.</p>
+      <p>We are building the operating system for African carbon. And we are building it from the continent itself.</p>
     </div>
   </div>
 </section>
@@ -32,7 +33,7 @@
     <div class="sec-head">
       <div>
         <div class="eyebrow">What we do</div>
-        <h2 style="margin-top:24px">Three products. One stack.</h2>
+        <h2 style="margin-top:24px">Three capabilities. One platform.</h2>
       </div>
     </div>
     <div class="what-grid">
@@ -67,35 +68,6 @@
   </div>
 </section>
 
-<!-- Leadership Team -->
-<section id="team" style="background:var(--paper)">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Leadership</div>
-        <h2 style="margin-top:24px">The founders and functional leads.</h2>
-      </div>
-      <div class="right">
-        <p>Our leadership team brings deep backgrounds in climate finance, earth-observation engineering, climate-tech distribution, carbon market access, and carbon standards verification.</p>
-      </div>
-    </div>
-    <div class="lead-grid">
-      @for (p of leadership; track p.name) {
-        <div class="lead-card">
-          <div class="lead-pic" [style.background-image]="'url(' + p.pic + ')'"></div>
-          <div class="lead-body">
-            <div class="role">{{ p.role }}</div>
-            <h3>{{ p.name }}</h3>
-            <p>{{ p.bio }}</p>
-            <div class="prior">{{ p.prior }}</div>
-          </div>
-        </div>
-      }
-    </div>
-  </div>
-</section>
-
-<!-- Operating Team: hidden until regional track record is established -->
 
 <!-- Advisory Board -->
 <section class="advisors-band">
@@ -121,16 +93,37 @@
   </div>
 </section>
 
+<!-- Partners -->
+<section class="partners-band">
+  <div class="wrap">
+    <div class="eyebrow" style="margin-bottom:40px">Our partners</div>
+  </div>
+  <div class="carousel-track-wrap">
+    <div class="carousel-track" #carouselTrack>
+      @for (p of partnerLogos; track p.name) {
+        <div class="carousel-item">
+          <img [src]="p.logo" [alt]="p.name" height="110" />
+        </div>
+      }
+      @for (p of partnerLogos; track p.name + '_dup') {
+        <div class="carousel-item" aria-hidden="true">
+          <img [src]="p.logo" [alt]="p.name" height="110" />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
 <!-- Credentials -->
 <section class="creds" id="credentials">
   <div class="wrap">
     <div class="sec-head">
       <div>
         <div class="eyebrow">Credentials &amp; compliance</div>
-        <h2 style="margin-top:24px">Built to meet the highest bar.</h2>
+        <h2 style="margin-top:24px">Built to meet the standards the market requires.</h2>
       </div>
       <div class="right">
-        <p>We are on the path to holding the registrations and certifications you would expect of any infrastructure operator handling climate capital. Securing these credentials is a primary use of funds from our pre-seed round.</p>
+        <p>We are building the compliance foundation expected of any platform handling verified carbon assets. Securing these credentials is part of our pre-seed roadmap.</p>
       </div>
     </div>
     <div class="creds-grid">

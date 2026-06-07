@@ -120,37 +120,3 @@
   }
 }
 
-.founders-cta {
-  padding: 120px 24px;
-  background: var(--ink);
-  text-align: center;
-
-  .cta-in {
-    max-width: 600px;
-    margin: 0 auto;
-
-    h2 {
-      color: var(--paper);
-      font-family: var(--font-display);
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin: 0 0 20px;
-    }
-
-    p {
-      color: var(--ink-3);
-      font-size: 17px;
-      line-height: 1.65;
-      margin: 0 0 40px;
-    }
-  }
-
-  .cta-actions {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-}

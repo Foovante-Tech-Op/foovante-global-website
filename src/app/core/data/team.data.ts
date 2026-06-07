@@ -91,10 +91,11 @@ export const OPS_TEAM: TeamMember[] = [
 ];
 
 export const ADVISORS: Advisor[] = [
-  { ix: 'Standards', nm: 'Dr. Folake Olatunbosun', from: 'Ex-Verra · CDM Methodology Panel' },
-  { ix: 'Industry',  nm: 'Magnus Eriksson',        from: 'CMO · Hydra Maritime' },
-  { ix: 'Capital',   nm: 'Kemi Adeyemi',           from: 'Partner · Future Africa' },
-  { ix: 'Climate',   nm: 'Dr. Jamie Park',         from: 'Head of Climate Tech · UNEP FI' }
+  { ix: 'Business Dev. & Market Access',      nm: 'Stacey J. Amamoo',  from: '' },
+  { ix: 'Partnership Building',               nm: 'Isaac Newton Aquah', from: '' },
+  { ix: 'Business Analysis & Partnerships',   nm: 'Stephen Adomako',    from: '' },
+  { ix: 'Financial Advisory & Due Diligence', nm: 'Nicholas Clerk',     from: '' },
+  { ix: 'Carbon Market Analysis',             nm: 'Dr. Gina',           from: '' }
 ];
 
 export const METHODS: Method[] = [

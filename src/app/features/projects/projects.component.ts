@@ -44,50 +44,54 @@ export class ProjectsComponent {
   steps = [
     {
       n: '01',
-      h: 'Submit intake form',
-      p: 'Ten-minute application. Polygon (or KML), project type, primary contact, and any prior verification work. We review within 48 hours.',
-      meta: 'Free · No commitment'
+      h: 'Submit Your Project',
+      p: 'Tell us about your project. Share your project type, location, and any prior documentation. Our team reviews your submission and onboards you to the Crevy platform.',
+      meta: 'Free · No commitment · Agriculture, Energy, Waste'
     },
     {
       n: '02',
-      h: 'Satellite baseline',
-      p: 'Our team runs 7+ years of Sentinel-2 imagery on your polygon and delivers a preliminary baseline report within two weeks.',
-      meta: '10m resolution · 5-day cadence'
+      h: 'Build Your Evidence Trail',
+      p: 'IoT monitoring begins and your project record starts accumulating real-time MRV data. Every data point is timestamped and feeds directly into your verification dossier.',
+      meta: 'MRV framework · IoT integration · International standards aligned'
     },
     {
       n: '03',
-      h: 'Verification dossier',
-      p: 'Field agents capture soil samples, biomass plots, and household surveys via the Foovante mobile app. We assemble the verifier dossier.',
-      meta: '6-week avg. review cycle'
+      h: 'Pre-Verification',
+      p: 'Your project moves through our pre-verification pipeline. Our team — including our Verification Lead and Article 6 Expert assembles your audit-ready dossier aligned with Ghana CMO and international frameworks.',
+      meta: 'Ghana CMO aligned · International frameworks · Local verification agents'
     },
     {
       n: '04',
-      h: 'List and fund',
-      p: 'Your project goes live on the Foovante marketplace. Funders can pre-purchase credits at fixed prices. Revenue flows to you as credits are issued.',
-      meta: 'Competitive revenue share to project'
+      h: 'List and Connect to Buyers',
+      p: 'Your verified project connects to global buyers through the Crevy marketplace. Buyers receive full traceability and CSRD-ready documentation. Your community receives a minimum 25% of credit revenue.',
+      meta: 'Fully traceable · CSRD-ready · 25% community benefit-sharing'
     }
   ];
 
   priorities = [
     {
-      n:  'P1',
-      h:  'African projects only',
-      p:  'We focus exclusively on Sub-Saharan African projects. Every member of our verification team operates on the continent.'
+      n:    'P1',
+      h:    'African Projects Only',
+      p:    'We focus exclusively on African projects. Every member of our verification team operates on the continent. Our current pilots are active in Ghana with Nigeria expansion planned for Q2 2027.',
+      meta: 'Ghana active · Nigeria pipeline · Sub-Saharan focus'
     },
     {
-      n:  'P2',
-      h:  'Land tenure and community consent documented',
-      p:  'We require proof of land rights and free, prior, and informed consent from affected communities before listing.'
+      n:    'P2',
+      h:    'Land or Energy Activity with Documented Practices',
+      p:    'Your project must involve measurable sustainable activity — agriculture, energy, or waste management — with a willingness to document practices through the Crevy platform from day one.',
+      meta: 'Agriculture · Energy · Waste · Documentation required'
     },
     {
-      n:  'P3',
-      h:  'Eligible under at least one major standard',
-      p:  'Projects must be eligible for Verra VCS, Gold Standard, or Plan Vivo certification. We\'ll help you find the right methodology.'
+      n:    'P3',
+      h:    'Community Benefit-Sharing Agreement',
+      p:    'Every Foovante-supported project is required to have a community benefit-sharing arrangement in place. A minimum of 25% of credit revenue must flow back to local households.',
+      meta: 'Minimum 25% · Required · Not optional'
     },
     {
-      n:  'P4',
-      h:  'Standards-anchored, on-chain serialised',
-      p:  'Every credit issued under Verra, Gold Standard, or Plan Vivo. Every tonne hashed and serialised so any buyer can trace it back to the polygon it came from.'
+      n:    'P4',
+      h:    'Commitment to the MRV Process',
+      p:    'Projects must commit to continuous monitoring and reporting through Crevy. Real-time IoT data and ongoing documentation are what build the verified evidence trail buyers and standards bodies require.',
+      meta: 'MRV framework · IoT monitoring · Continuous reporting'
     }
   ];
 }
