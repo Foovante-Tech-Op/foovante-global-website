@@ -44,27 +44,27 @@ export class ProjectsComponent {
   steps = [
     {
       n: '01',
-      h: 'Submit intake form',
-      p: 'Ten-minute application. Polygon (or KML), project type, primary contact, and any prior verification work. We review within 48 hours.',
-      meta: 'Free · No commitment'
+      h: 'Submit Your Project',
+      p: 'Tell us about your project. Share your project type, location, and any prior documentation. Our team reviews your submission and onboards you to the Crevy platform.',
+      meta: 'Free · No commitment · Agriculture, Energy, Waste'
     },
     {
       n: '02',
-      h: 'Satellite baseline',
-      p: 'Our team runs 7+ years of Sentinel-2 imagery on your polygon and delivers a preliminary baseline report within two weeks.',
-      meta: '10m resolution · 5-day cadence'
+      h: 'Build Your Evidence Trail',
+      p: 'IoT monitoring begins and your project record starts accumulating real-time MRV data. Every data point is timestamped and feeds directly into your verification dossier.',
+      meta: 'MRV framework · IoT integration · International standards aligned'
     },
     {
       n: '03',
-      h: 'Verification dossier',
-      p: 'Field agents capture soil samples, biomass plots, and household surveys via the Foovante mobile app. We assemble the verifier dossier.',
-      meta: '6-week avg. review cycle'
+      h: 'Pre-Verification',
+      p: 'Your project moves through our pre-verification pipeline. Our team including our Verification Lead and Article 6 Expert assembles your audit-ready dossier aligned with Ghana CMO and international frameworks.',
+      meta: 'Ghana CMO aligned · International frameworks · Local verification agents'
     },
     {
       n: '04',
-      h: 'List and fund',
-      p: 'Your project goes live on the Foovante marketplace. Funders can pre-purchase credits at fixed prices. Revenue flows to you as credits are issued.',
-      meta: 'Competitive revenue share to project'
+      h: 'List and Connect to Buyers',
+      p: 'Your verified project connects to global buyers through the Crevy marketplace. Buyers receive full traceability and CSRD-ready documentation. Your community receives a minimum 25% of credit revenue.',
+      meta: 'Fully traceable · CSRD-ready · 25% community benefit-sharing'
     }
   ];
 

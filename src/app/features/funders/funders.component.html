@@ -27,7 +27,7 @@
     <div class="sec-head">
       <div>
         <div class="eyebrow">How it works</div>
-        <h2 style="margin-top:24px">How to deploy capital.</h2>
+        <h2 style="margin-top:24px">From project to verified carbon asset.</h2>
       </div>
       <div class="right">
         <p>Pre-purchase verified credits at fixed prices. Every transaction settles with a full audit trail. Choose the project that fits your mandate.</p>
@@ -35,90 +35,33 @@
     </div>
     <div class="steps">
       <div class="step">
-        <div class="step-n">01. Browse</div>
-        <h3>Filter by methodology, region, or vintage</h3>
-        <p>Browse verified African projects. Filter by type, standard, or co-benefits. Full MRV documentation attached to every listing.</p>
-        <div class="meta">Verra · Gold Standard · Plan Vivo</div>
+        <div class="step-n">01. Document</div>
+        <h3>Submit your project to Crevy</h3>
+        <p>Project developers submit their land or energy work to the Crevy platform. Our team helps you build the documentation foundation needed for verification — no lawyers, consultants, or years of paperwork required.</p>
+        <div class="meta">Agriculture · Energy · Waste projects</div>
       </div>
       <div class="step">
-        <div class="step-n">02. Choose</div>
-        <h3>Credit pre-purchase</h3>
-        <p>Pre-purchase future credits at a fixed price. Revenue flows to the project as credits are issued, with a full audit trail per tonne.</p>
-        <div class="meta">Fixed-price forward purchases</div>
+        <div class="step-n">02. Monitor</div>
+        <h3>Real-time data collection begins</h3>
+        <p>IoT sensor data feeds continuously into your project record, building the evidence trail auditors need. Every data point is timestamped and tamper-evident.</p>
+        <div class="meta">MRV framework · IoT integration</div>
       </div>
       <div class="step">
-        <div class="step-n">03. Settle</div>
-        <h3>T+1 with on-chain certificate</h3>
-        <p>Every transaction settles in one business day. On-chain serialised certificate maps each tonne to its polygon, vintage, and verification record.</p>
-        <div class="meta">SOC 2 certification targeted · GDPR-aligned</div>
+        <div class="step-n">03. Verify</div>
+        <h3>Pre-verification and audit-readiness</h3>
+        <p>Your project moves through our pre-verification pipeline, aligned with international carbon standards. From zero documentation to audit-ready in weeks, not years.</p>
+        <div class="meta">International frameworks · Ghana CMO aligned</div>
       </div>
       <div class="step">
-        <div class="step-n">04. Track</div>
-        <h3>Live portfolio dashboard</h3>
-        <p>Your portfolio dashboard shows every tonne you own, what's been retired, and live impact metrics: hectares, households, SDG alignment.</p>
-        <div class="meta">Updated every 5 days from orbit</div>
+        <div class="step-n">04. Sell</div>
+        <h3>Connect to global buyers</h3>
+        <p>Verified African carbon credits connect directly to global buyers through our marketplace. Buyers receive full traceability and CSRD-ready documentation. Communities receive a minimum 25% of credit revenue.</p>
+        <div class="meta">Fully traceable · Independently verified · CSRD-ready</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Project Listings -->
-<section id="portfolio" class="portfolio">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Featured projects</div>
-        <h2 style="margin-top:24px">Ready to fund now.</h2>
-      </div>
-      <div class="right">
-        <p>Our active listings. Each will come with a satellite-verified baseline, independent verifier audit, and a live MRV feed from the field.</p>
-      </div>
-    </div>
-
-    <div class="project-grid">
-      @for (p of projects; track p.id) {
-        <div class="project-card">
-          @if (p.img) {
-            <div class="proj-img" [style.background-image]="'url(' + p.img + ')'">
-              <span class="proj-badge">{{ p.standard }}</span>
-            </div>
-          }
-          <div class="proj-body">
-            <div class="proj-type">{{ p.type }}</div>
-            <h3>{{ p.name }}</h3>
-            <div class="proj-place">📍 {{ p.place }}</div>
-
-            <div class="proj-funding">
-              <div class="proj-bar">
-                <div class="proj-fill" [style.width.%]="getRaisedPct(p)"></div>
-              </div>
-              <div class="proj-meta">
-                <span><strong>{{ getRaisedPct(p) }}%</strong> funded</span>
-                <span>${{ p.raised | number }}<small> of ${{ p.target | number }}</small></span>
-              </div>
-            </div>
-
-            <div class="proj-stats">
-              <div class="ps"><span class="ps-n">${{ p.price }}</span><span class="ps-l">/tCO₂e</span></div>
-              <div class="ps"><span class="ps-n">{{ p.irr }}%</span><span class="ps-l">Target IRR</span></div>
-              <div class="ps"><span class="ps-n">{{ (p.available / 1000).toFixed(0) }}k</span><span class="ps-l">Available</span></div>
-            </div>
-
-            <div class="proj-sdg">
-              @for (sdg of p.sdg; track sdg) {
-                <span class="sdg-chip">SDG {{ sdg }}</span>
-              }
-            </div>
-
-            <button class="btn btn-primary" style="width:100%;justify-content:center">
-              Fund this project <span class="arrow">→</span>
-            </button>
-          </div>
-        </div>
-      }
-    </div>
-  </div>
-</section>
 
 <!-- Portfolio Dashboard Preview -->
 <section style="background:var(--paper)">
@@ -126,33 +69,33 @@
     <div class="sec-head">
       <div>
         <div class="eyebrow">Your portfolio, fully visible</div>
-        <h2 style="margin-top:24px">Every tonne. Every project. Every claim.</h2>
+        <h2 style="margin-top:24px">Every project. Every credit. Every community.</h2>
       </div>
       <div class="right">
-        <p>We are building a funder dashboard that shows you exactly what you own, what has been retired, and the live impact of every project you have backed. Here is what it will include.</p>
+        <p>We are building a funder dashboard inside Crevy that gives buyers complete visibility into the projects they have backed and the credits they hold.</p>
       </div>
     </div>
 
     <div class="dashboard-features">
       <div class="df-card">
         <div class="df-icon">◎</div>
-        <h4>Tonne-level portfolio view</h4>
-        <p>See every tonne you hold across all projects — polygon, vintage, standard, and current retirement status — in one place.</p>
+        <h4>Credit Portfolio View</h4>
+        <p>See every credit you hold across all projects — project type, verification status, and current retirement status — in one place. Fully traceable and independently verified.</p>
       </div>
       <div class="df-card">
         <div class="df-icon">◈</div>
-        <h4>Capital & credit tracking</h4>
-        <p>Track your pre-purchases from commitment through to issuance. Full audit trail per tonne from satellite baseline to on-chain certificate.</p>
+        <h4>Capital & Credit Tracking</h4>
+        <p>Track your pre-purchases from commitment through to issuance. Full audit trail per tonne, aligned with international MRV frameworks and Ghana CMO requirements.</p>
       </div>
       <div class="df-card">
         <div class="df-icon">◉</div>
-        <h4>Live MRV feed</h4>
-        <p>Satellite imagery refreshed every five days. See canopy change, biomass estimates, and field agent updates for every project you have backed.</p>
+        <h4>MRV Data Feed</h4>
+        <p>Access the real-time IoT monitoring data feeding into every project you have backed. Every data point builds the evidence trail auditors and regulators need.</p>
       </div>
       <div class="df-card">
         <div class="df-icon">◐</div>
-        <h4>Impact metrics</h4>
-        <p>Hectares protected, households reached, SDG alignment, and co-benefit scores — the numbers you need for your own reporting.</p>
+        <h4>Impact Metrics</h4>
+        <p>Hectares under active documentation, communities with benefit-sharing agreements, and SDG alignment — the numbers you need for your own CSRD reporting obligations.</p>
       </div>
     </div>
 
