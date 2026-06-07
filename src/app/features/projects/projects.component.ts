@@ -57,7 +57,7 @@ export class ProjectsComponent {
     {
       n: '03',
       h: 'Pre-Verification',
-      p: 'Your project moves through our pre-verification pipeline. Our team — including our Verification Lead and Article 6 Expert assembles your audit-ready dossier aligned with Ghana CMO and international frameworks.',
+      p: 'Your project moves through our pre-verification pipeline. Our team including our Verification Lead and Article 6 Expert assembles your audit-ready dossier aligned with Ghana CMO and international frameworks.',
       meta: 'Ghana CMO aligned · International frameworks · Local verification agents'
     },
     {
@@ -70,28 +70,24 @@ export class ProjectsComponent {
 
   priorities = [
     {
-      n:    'P1',
-      h:    'African Projects Only',
-      p:    'We focus exclusively on African projects. Every member of our verification team operates on the continent. Our current pilots are active in Ghana with Nigeria expansion planned for Q2 2027.',
-      meta: 'Ghana active · Nigeria pipeline · Sub-Saharan focus'
+      n:  'P1',
+      h:  'African projects only',
+      p:  'We focus exclusively on Sub-Saharan African projects. Every member of our verification team operates on the continent.'
     },
     {
-      n:    'P2',
-      h:    'Land or Energy Activity with Documented Practices',
-      p:    'Your project must involve measurable sustainable activity — agriculture, energy, or waste management — with a willingness to document practices through the Crevy platform from day one.',
-      meta: 'Agriculture · Energy · Waste · Documentation required'
+      n:  'P2',
+      h:  'Land tenure and community consent documented',
+      p:  'We require proof of land rights and free, prior, and informed consent from affected communities before listing.'
     },
     {
-      n:    'P3',
-      h:    'Community Benefit-Sharing Agreement',
-      p:    'Every Foovante-supported project is required to have a community benefit-sharing arrangement in place. A minimum of 25% of credit revenue must flow back to local households.',
-      meta: 'Minimum 25% · Required · Not optional'
+      n:  'P3',
+      h:  'Eligible under at least one major standard',
+      p:  'Projects must be eligible for Verra VCS, Gold Standard, or Plan Vivo certification. We\'ll help you find the right methodology.'
     },
     {
-      n:    'P4',
-      h:    'Commitment to the MRV Process',
-      p:    'Projects must commit to continuous monitoring and reporting through Crevy. Real-time IoT data and ongoing documentation are what build the verified evidence trail buyers and standards bodies require.',
-      meta: 'MRV framework · IoT monitoring · Continuous reporting'
+      n:  'P4',
+      h:  'Standards-anchored, on-chain serialised',
+      p:  'Every credit issued under Verra, Gold Standard, or Plan Vivo. Every tonne hashed and serialised so any buyer can trace it back to the polygon it came from.'
     }
   ];
 }
