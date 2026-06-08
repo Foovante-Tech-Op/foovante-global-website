@@ -13,6 +13,9 @@
 
   .panel { min-height: 280px; overflow: hidden; }
   .panel.large { grid-column: span 3; min-height: 320px; }
+  .panel-image { grid-column: span 2; padding: 0;
+    img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  }
 }
 
 .growth-chart {
@@ -163,6 +166,7 @@
 @media (max-width: 980px) {
   .traction-grid { grid-template-columns: 1fr 1fr; }
   .panel.large   { grid-column: span 2; }
+  .panel-image   { grid-column: span 2; }
   .moat-grid     { grid-template-columns: 1fr 1fr; }
   .model-grid    { grid-template-columns: 1fr; gap: 48px; }
 }
