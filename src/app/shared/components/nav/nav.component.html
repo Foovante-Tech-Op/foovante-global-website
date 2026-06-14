@@ -14,9 +14,15 @@
 
     <div class="nav-cta">
       <a routerLink="/" class="btn btn-ghost btn-sm">Sign in</a>
-      <a [routerLink]="cta.routerLink || '/About'" class="btn btn-primary btn-sm">
-        {{ cta.label }}
-      </a>
+      @if (cta.href) {
+        <a [href]="cta.href" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+          {{ cta.label }}
+        </a>
+      } @else {
+        <a [routerLink]="cta.routerLink || '/About'" class="btn btn-primary btn-sm">
+          {{ cta.label }}
+        </a>
+      }
     </div>
   </div>
 </nav>

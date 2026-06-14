@@ -81,10 +81,10 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   navigateTo(cta: HeroCta): void {
-    if (cta.routerLink) {
+    if (cta.href) {
+      window.open(cta.href, '_blank', 'noopener');
+    } else if (cta.routerLink) {
       this.router.navigate([cta.routerLink]);
-    } else if (cta.href) {
-      window.location.href = cta.href;
     }
   }
 }
