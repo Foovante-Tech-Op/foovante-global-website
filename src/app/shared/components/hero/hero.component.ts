@@ -1,7 +1,7 @@
 import {
-  Component, Input, OnInit, OnDestroy, ChangeDetectorRef
+  Component, Input, OnInit, OnDestroy, ChangeDetectorRef, PLATFORM_ID, inject
 } from '@angular/core';
-import { NgClass, NgStyle } from '@angular/common';
+import { NgClass, NgStyle, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { HeroSlide } from '../../../core/models/hero-slide.model';
 
@@ -29,11 +29,12 @@ export class HeroComponent implements OnInit, OnDestroy {
   previousSlide = -1;
   private timer: ReturnType<typeof setInterval> | null = null;
   slideDuration = 6000;
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   constructor(private cdr: ChangeDetectorRef, private router: Router) {}
 
   ngOnInit(): void {
-    if (this.slides.length > 1) {
+    if (this.isBrowser && this.slides.length > 1) {
       this.startTimer();
     }
   }
@@ -66,7 +67,9 @@ export class HeroComponent implements OnInit, OnDestroy {
     if (index === this.currentSlide) return;
     this.previousSlide = this.currentSlide;
     this.currentSlide = index;
-    this.startTimer();
+    if (this.isBrowser) {
+      this.startTimer();
+    }
     this.cdr.markForCheck();
   }
 
