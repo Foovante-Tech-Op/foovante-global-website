@@ -4,14 +4,13 @@ import { DecimalPipe } from '@angular/common';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { HeroComponent } from '../../shared/components/hero/hero.component';
-import { MapSectionComponent } from '../../shared/components/map-section/map-section.component';
 import { HeroSlide } from '../../core/models/hero-slide.model';
 import { FV_PROJECTS } from '../../core/data/projects.data';
 import { Project } from '../../core/models/project.model';
 
 @Component({
     selector: 'fv-funders',
-    imports: [NavComponent, FooterComponent, HeroComponent, MapSectionComponent, DecimalPipe, RouterLink],
+    imports: [NavComponent, FooterComponent, HeroComponent, DecimalPipe, RouterLink],
     templateUrl: './funders.component.html',
     styleUrl: './funders.component.scss'
 })

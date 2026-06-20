@@ -38,6 +38,24 @@ export const routes: Routes = [
     title: 'The Founder Brief — Foovante Global'
   },
   {
+    path: 'terms-of-service',
+    loadComponent: () =>
+      import('./features/terms-of-service/terms-of-service.component').then(m => m.TermsOfServiceComponent),
+    title: 'Terms of Service — Foovante Global'
+  },
+  {
+    path: 'privacy-policy',
+    loadComponent: () =>
+      import('./features/privacy-policy/privacy-policy.component').then(m => m.PrivacyPolicyComponent),
+    title: 'Privacy Policy — Foovante Global'
+  },
+  {
+    path: 'how-mrv-works',
+    loadComponent: () =>
+      import('./features/how-mrv-works/how-mrv-works.component').then(m => m.HowMrvWorksComponent),
+    title: 'How MRV works — Foovante Global'
+  },
+  {
     path: '**',
     redirectTo: ''
   }

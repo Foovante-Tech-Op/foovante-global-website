@@ -1,0 +1,183 @@
+<fv-nav [dark]="true" [cta]="{label: 'Talk to the founders', href: 'https://form.jotform.com/261642531528052'}"></fv-nav>
+
+<fv-hero
+  [slides]="heroSlides"
+  eyebrow="Governance Protocol"
+  [lines]="['Data privacy and', 'protection policy.']"
+  lead='Foovante Global Ltd ("Crevy", "we", "us", "our") is committed to absolute cryptographic and legal protection of your data. This protocol dictates the collection, processing, and retention of entity data within the Crevy registry ecosystem.'
+  [cta1]="{label: 'Read the protocol', routerLink: '/privacy-policy'}"
+  [cta2]="{label: 'Contact privacy team', href: 'mailto:privacy@foovante-global.com'}"
+></fv-hero>
+
+<!-- Legal meta strip -->
+<section class="pp-meta">
+  <div class="wrap">
+    <div class="meta-row">
+      <div class="meta-cell">
+        <span class="meta-label">Last Revised</span>
+        <span class="meta-value">{{ lastRevised }}</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Enforcement Date</span>
+        <span class="meta-value">{{ enforcementDate }}</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Compliance</span>
+        <span class="meta-value">{{ compliance }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Content -->
+<section class="pp-content">
+  <div class="wrap pp-grid">
+    <!-- Index -->
+    <aside class="pp-aside">
+      <div class="pp-aside-inner">
+        <p class="pp-index-label">Protocol Index</p>
+        <nav class="pp-index" aria-label="Privacy policy sections">
+          @for (s of sections; track s.id) {
+            <a routerLink="/privacy-policy" [fragment]="s.id">{{ s.label }}</a>
+          }
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Legal text -->
+    <div class="pp-body">
+      <article id="overview" class="pp-section">
+        <h2>1. Overview & Data Controller</h2>
+        <p>
+          This Privacy Policy applies to all systemic actors (Originators, Corporate Entities, Auditors) utilising the Crevy platform infrastructure, accessible at <span class="mono accent">crevy.app</span>.
+        </p>
+        <p>
+          For the purposes of the General Data Protection Regulation (GDPR) and the Ghana Data Protection Act 2012 (Act 843), the data controller is:
+        </p>
+        <div class="info-box">
+          <strong>Foovante Global Ltd</strong><br />
+          Registration No: CS-2022-84920<br />
+          Accra, Greater Accra, Ghana<br />
+          <a class="accent" href="mailto:legal@foovante-global.com">legal&#64;foovante-global.com</a>
+        </div>
+      </article>
+
+      <article id="data-collected" class="pp-section">
+        <h2>2. Telemetry & Data Collected</h2>
+        <p>We systematically collect and process the following categories of data to operate the registry:</p>
+        <ul>
+          <li><strong>Identity Metadata (KYC/KYB):</strong> Full legal names, corporate registration documents, government-issued IDs, and biometric liveness checks (processed via authorised third-party identity vendors).</li>
+          <li><strong>Financial Vectors:</strong> Mobile Money (MoMo) routing numbers, SWIFT/IBAN bank details, and Polygon/EVM wallet addresses for settlement.</li>
+          <li><strong>Spatial & Environmental Telemetry:</strong> Precise GIS polygons, GPS coordinates of sensor deployments, and continuous IoT data streams (e.g., Soil Carbon, Biomass readings) tied to your identity.</li>
+          <li><strong>System Access Logs:</strong> IP addresses, cryptographic signatures, browser types, and timestamped audit trails of platform actions.</li>
+        </ul>
+      </article>
+
+      <article id="how-we-use" class="pp-section">
+        <h2>3. Operational Usage</h2>
+        <p>The collected telemetry is utilised strictly for the following operational imperatives:</p>
+        <ul>
+          <li>To establish cryptographic proof of environmental assets (carbon credits).</li>
+          <li>To execute identity verification to prevent double-counting and financial fraud in compliance with AML/CFT regulations.</li>
+          <li>To route corporate liquidity to local project originators seamlessly.</li>
+          <li>To generate ESRS and IFRS S2 compliant ESG reports for corporate buyers.</li>
+        </ul>
+      </article>
+
+      <article id="legal-basis" class="pp-section">
+        <h2>4. Legal Basis for Processing</h2>
+        <p>We ground our data processing in the following legal bases:</p>
+        <ul>
+          <li><strong>Contractual Necessity:</strong> To fulfil our Terms of Service (e.g., issuing credits, executing payouts).</li>
+          <li><strong>Legal Obligation:</strong> To comply with Ghanaian and international financial regulations (KYC/AML).</li>
+          <li><strong>Legitimate Interest:</strong> To maintain platform security, prevent fraud, and optimise the dMRV algorithm.</li>
+          <li><strong>Explicit Consent:</strong> For non-essential marketing communications and analytical cookies.</li>
+        </ul>
+      </article>
+
+      <article id="data-sharing" class="pp-section">
+        <h2>5. Third-Party Sharing</h2>
+        <p>We do not sell entity data. Telemetry is shared exclusively with authorised infrastructure partners:</p>
+        <div class="info-box partner-list">
+          <ul>
+            <li><span>Identity Verification</span><span class="muted">SmileID · Onfido</span></li>
+            <li><span>Validation Bodies (VVB)</span><span class="muted">Verra · Gold Standard (anonymised)</span></li>
+            <li><span>Financial Settlement</span><span class="muted">Paystack · Circle (USDC)</span></li>
+            <li><span>Cloud Infrastructure</span><span class="muted">Oracle Cloud (OCI) · AWS</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article id="blockchain" class="pp-section">
+        <h2>6. Ledger Immutability</h2>
+        <div class="alert-box">
+          <div class="alert-head">Web3 architectural notice</div>
+          <p>
+            Crevy anchors carbon credit issuance data (including anonymised project IDs, GIS hashes, and credit volumes) to the public Polygon blockchain.
+            Once data is anchored to a public ledger, it is mathematically impossible to delete or alter. By using our platform, you acknowledge this immutability.
+          </p>
+        </div>
+      </article>
+
+      <article id="cookies" class="pp-section">
+        <h2>7. Cookies & Tracking</h2>
+        <p>We utilise cryptographic session tokens and minimal cookies to maintain state and secure access. We categorise these as:</p>
+        <ul>
+          <li><strong>Strictly Necessary:</strong> Authentication tokens and CSRF protection. Cannot be disabled.</li>
+          <li><strong>Analytical (Optional):</strong> Aggregated telemetry to monitor platform latency and user flow.</li>
+        </ul>
+      </article>
+
+      <article id="your-rights" class="pp-section">
+        <h2>8. Entity Rights</h2>
+        <p>Under the GDPR and GH-DPA, you possess the right to:</p>
+        <ul>
+          <li>Request a cryptographic export of all your personal data (Right to Portability).</li>
+          <li>Request correction of inaccurate identity profiles.</li>
+          <li>Request deletion of your data (Right to be Forgotten) — <em>Note: This does not apply to data already anchored to the public blockchain or data we must retain for AML compliance.</em></li>
+        </ul>
+      </article>
+
+      <article id="data-retention" class="pp-section">
+        <h2>9. Data Retention</h2>
+        <p>
+          We retain identity and financial transaction data for a minimum of <strong>seven (7) years</strong> following account termination to comply with international auditing and anti-money laundering statutes.
+          Environmental telemetry used to generate active carbon credits is stored indefinitely to ensure the lifetime integrity of the issued asset.
+        </p>
+      </article>
+
+      <article id="security" class="pp-section">
+        <h2>10. Cryptographic Security</h2>
+        <p>
+          Our infrastructure employs AES-256 encryption at rest and TLS 1.3 in transit.
+          Access to sensitive corporate and personal data is governed by strict Role-Based Access Control (RBAC), requiring Multi-Factor Authentication (MFA) for all administrative operations.
+        </p>
+      </article>
+
+      <article id="changes" class="pp-section">
+        <h2>11. Protocol Modifications</h2>
+        <p>
+          We may update this policy periodically to reflect changes in legal frameworks or system architecture.
+          Material changes will be communicated via the platform dashboard or email prior to enforcement.
+          Continued use of the platform post-enforcement constitutes acceptance of the modified protocol.
+        </p>
+      </article>
+
+      <article id="contact" class="pp-section">
+        <h2>12. Governance Contact</h2>
+        <p>
+          For inquiries regarding this protocol, data subject access requests, or to contact our Data Protection Officer (DPO):
+        </p>
+        <a class="contact-btn" href="mailto:privacy@foovante-global.com">
+          Contact privacy team <span class="arrow">→</span>
+        </a>
+      </article>
+
+      <div class="pp-footnote">
+        <p>Reviewing our other policies? <a routerLink="/terms-of-service">Terms of service</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<fv-footer></fv-footer>

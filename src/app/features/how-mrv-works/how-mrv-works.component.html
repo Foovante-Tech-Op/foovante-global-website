@@ -1,0 +1,136 @@
+<fv-nav [dark]="true" [cta]="{label: 'Apply to list', routerLink: '/projects'}"></fv-nav>
+
+<fv-hero
+  [slides]="heroSlides"
+  eyebrow="Protocol v2.4.1 · How MRV works"
+  [lines]="['The scientific notebook', 'behind every Crevy credit.']"
+  lead='We reject "estimated impact." Explore our exact data sources, Above-Ground Biomass (AGB) calculations, hardware integrity protocols, and the immutable chain-of-custody that powers every Crevy credit.'
+  [cta1]="{label: 'Apply to list your project', routerLink: '/projects'}"
+  [cta2]="{label: 'Talk to the team', routerLink: '/founder-brief'}"
+></fv-hero>
+
+<!-- Compliance band -->
+<section class="mrv-meta">
+  <div class="wrap">
+    <div class="meta-row">
+      <div class="meta-cell"><span class="meta-label">Standard</span><span class="meta-value">ISO 14064 Compliant</span></div>
+      <div class="meta-cell"><span class="meta-label">Review</span><span class="meta-value">Peer Reviewed</span></div>
+      <div class="meta-cell"><span class="meta-label">Alignment</span><span class="meta-value">Verra VM0042 · Gold Standard</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Data Ingestion Pipeline -->
+<section class="mrv-block">
+  <div class="wrap">
+    <div class="mrv-block-head">
+      <div class="eyebrow">Data ingestion pipeline</div>
+      <h2>Multi-modal planetary observation.</h2>
+      <p>Continuous satellite and edge telemetry maps the physical world onto the digital ledger. Every measurement is signed, timestamped, and archived.</p>
+    </div>
+    <div class="telemetry-grid">
+      @for (s of telemetrySpecs; track s.title) {
+        <div class="telemetry-card">
+          <h4>{{ s.title }}</h4>
+          <dl class="spec-list">
+            <div><dt>Resolution</dt><dd>{{ s.resolution }}</dd></div>
+            <div><dt>Frequency</dt><dd>{{ s.frequency }}</dd></div>
+            <div><dt>Error margin</dt><dd>{{ s.error }}</dd></div>
+          </dl>
+          <p>{{ s.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Mathematical Proofs -->
+<section class="mrv-block mrv-block-alt">
+  <div class="wrap">
+    <div class="mrv-block-head">
+      <div class="eyebrow">Rigorous mathematical proofs</div>
+      <h2>Open-source accounting, validated.</h2>
+      <p>Every credit traces back to a transparent calculation aligned with Verra VM0042 and Gold Standard. No black-box estimates.</p>
+    </div>
+    <div class="formula-grid">
+      @for (f of formulas; track f.ix) {
+        <article class="formula-card">
+          <div class="ix">{{ f.ix }}</div>
+          <h4>{{ f.h }}</h4>
+          <p class="lead">{{ f.p }}</p>
+          <div class="expr">{{ f.expr }}</div>
+          <dl class="legend">
+            @for (l of f.legend; track l.sym) {
+              <div>
+                <dt>{{ l.sym }}</dt>
+                <dd>{{ l.def }}</dd>
+              </div>
+            }
+          </dl>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Tree to Token -->
+<section class="mrv-block">
+  <div class="wrap">
+    <div class="mrv-block-head">
+      <div class="eyebrow">Tree to token</div>
+      <h2>Chain of custody.</h2>
+      <p>Explore the exact path data takes from a remote forest to an immutable public registry. No manual spreadsheets. No human tampering.</p>
+    </div>
+    <div class="t2t-grid">
+      <ol class="t2t-steps">
+        @for (s of pipelineSteps; track s.n) {
+          <li>
+            <span class="t2t-num">{{ s.n }}</span>
+            <div>
+              <h4>{{ s.h }}</h4>
+              <p>{{ s.p }}</p>
+            </div>
+          </li>
+        }
+      </ol>
+      <div class="t2t-console" aria-label="Sample ledger payload">
+        <div class="t2t-console-head">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="t2t-file">ledger_payload.json</span>
+        </div>
+<pre class="t2t-code"><span class="t-p">&#123;</span>
+  <span class="t-k">"asset_id"</span>: <span class="t-s">"crv_0x8f2a...9b1c"</span>,
+  <span class="t-k">"project_did"</span>: <span class="t-s">"did:crevy:gh:brong-ahafo:82"</span>,
+  <span class="t-k">"vintage"</span>: <span class="t-n">2026</span>,
+  <span class="t-k">"quantification"</span>: <span class="t-p">&#123;</span>
+    <span class="t-k2">"mass_tco2e"</span>: <span class="t-n">1.000</span>,
+    <span class="t-k2">"confidence_score"</span>: <span class="t-n">0.962</span>,
+    <span class="t-k2">"satellite_cid"</span>: <span class="t-s">"ipfs://QmX..."</span>
+  <span class="t-p">&#125;</span>,
+  <span class="t-k">"hardware_attestation"</span>: <span class="t-p">&#123;</span>
+    <span class="t-k2">"device_mac"</span>: <span class="t-s">"00:1B:44:11:3A:B7"</span>,
+    <span class="t-k2">"signature"</span>: <span class="t-s">"0x3e8...f1a"</span>
+  <span class="t-p">&#125;</span>
+<span class="t-p">&#125;</span></pre>
+        <div class="t2t-console-foot">
+          <span class="ok-dot"></span>
+          <span>Evidence complete · signature matches satellite hash</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <h2>Want this evidence trail for your project?</h2>
+    <p>Every project listed on Crevy gets the same dMRV pipeline, the same auditable formulas, and the same on-chain custody.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary btn-lg" routerLink="/projects">Apply to list <span class="arrow">→</span></a>
+      <a class="btn btn-ghost btn-lg" routerLink="/founder-brief">Talk to the team</a>
+    </div>
+  </div>
+</section>
+
+<fv-footer></fv-footer>

@@ -1,0 +1,170 @@
+<fv-nav [dark]="true" [cta]="{label: 'Talk to the founders', href: 'https://form.jotform.com/261642531528052'}"></fv-nav>
+
+<fv-hero
+  [slides]="heroSlides"
+  eyebrow="Governance Protocol"
+  [lines]="['The legal parameters', 'for using the Crevy platform.']"
+  lead='These Terms of Service ("Terms") dictate the legal parameters for accessing and utilizing the Crevy platform, an institutional-grade environmental asset registry operated by Foovante Global Ltd.'
+  [cta1]="{label: 'Read the protocol', routerLink: '/terms-of-service'}"
+  [cta2]="{label: 'Talk to the founders', routerLink: '/founder-brief'}"
+></fv-hero>
+
+<!-- Legal meta strip -->
+<section class="tos-meta">
+  <div class="wrap">
+    <div class="meta-row">
+      <div class="meta-cell">
+        <span class="meta-label">Last Revised</span>
+        <span class="meta-value">{{ lastRevised }}</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Enforcement Date</span>
+        <span class="meta-value">{{ enforcementDate }}</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Jurisdiction</span>
+        <span class="meta-value">{{ jurisdiction }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Content -->
+<section class="tos-content">
+  <div class="wrap tos-grid">
+    <!-- Index -->
+    <aside class="tos-aside">
+      <div class="tos-aside-inner">
+        <p class="tos-index-label">Protocol Index</p>
+        <nav class="tos-index" aria-label="Terms of service sections">
+          @for (s of sections; track s.id) {
+            <a routerLink="/terms-of-service" [fragment]="s.id">{{ s.label }}</a>
+          }
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Legal text -->
+    <div class="tos-body">
+      <article id="acceptance" class="tos-section">
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+          By accessing, registering for, or utilizing the Crevy platform infrastructure (the "Platform"), you mathematically and legally bind yourself to these Terms.
+          If you are accepting these Terms on behalf of a corporation, government entity, or other legal organization, you represent and warrant that you possess the requisite authority to bind said entity to this protocol.
+        </p>
+      </article>
+
+      <article id="definitions" class="tos-section">
+        <h2>2. Protocol Definitions</h2>
+        <ul>
+          <li><strong>"Carbon Asset" or "Credit"</strong> refers to a cryptographically verified unit representing the removal or avoidance of one metric tonne of carbon dioxide equivalent (tCO₂e).</li>
+          <li><strong>"dMRV"</strong> refers to digital Measurement, Reporting, and Verification utilizing IoT, satellite telemetry, and AI algorithms to establish asset integrity.</li>
+          <li><strong>"Originator"</strong> refers to the individual or entity managing the land or project responsible for the carbon sequestration.</li>
+          <li><strong>"Institutional Buyer"</strong> refers to a corporate entity utilizing the Platform to acquire Carbon Assets for ESG compliance or offset purposes.</li>
+          <li><strong>"Ledger"</strong> refers to the Polygon public blockchain network utilized by Crevy for immutable data anchoring.</li>
+        </ul>
+      </article>
+
+      <article id="eligibility" class="tos-section">
+        <h2>3. Identity & Eligibility</h2>
+        <p>
+          Access to the Platform is strictly gated by comprehensive Know Your Customer (KYC) and Know Your Business (KYB) protocols.
+          You must be at least 18 years of age or a legally registered corporate entity.
+          We reserve the sovereign right to deny platform access if identity verification fails or if the entity is subject to international financial sanctions.
+        </p>
+      </article>
+
+      <article id="platform-use" class="tos-section">
+        <h2>4. Infrastructure Use</h2>
+        <p>
+          You are granted a non-exclusive, non-transferable, revocable license to access the Platform.
+          You are solely responsible for maintaining the cryptographic security of your account credentials (including TOTP/MFA devices).
+          Foovante Global Ltd holds zero liability for asset loss stemming from compromised user credentials.
+        </p>
+      </article>
+
+      <article id="prohibited" class="tos-section">
+        <h2>5. Prohibited Vectors</h2>
+        <p>Under penalty of immediate account termination and legal prosecution, you agree NOT to:</p>
+        <ul>
+          <li>Tamper with, spoof, or manipulate dMRV IoT sensors or satellite telemetry data.</li>
+          <li>Attempt to register Carbon Assets that have already been issued, retired, or claimed on another registry (Double Counting).</li>
+          <li>Utilize the Platform for money laundering, terrorist financing, or sanctions evasion.</li>
+          <li>Deploy automated scripts, bots, or scrapers against the Platform APIs without explicit, written authorization.</li>
+        </ul>
+      </article>
+
+      <article id="carbon-credits" class="tos-section">
+        <h2>6. Asset Immutability & Status</h2>
+        <p>
+          Carbon Assets issued on the Platform are immutable. Once an Institutional Buyer executes a "Retirement" action, the asset is permanently burned on the public Ledger to prevent double-spending.
+          Retired assets cannot be reversed, refunded, or transferred under any circumstance.
+        </p>
+      </article>
+
+      <article id="project-owners" class="tos-section">
+        <h2>7. Originator Obligations</h2>
+        <p>
+          Originators warrant that they hold undisputed legal title or carbon rights to the registered land.
+          Originators must grant Crevy and authorized third-party auditors (VVBs) physical and digital access to the project site for verification purposes.
+          Discovery of fraudulent land claims will result in immediate asset seizure and notification of local law enforcement.
+        </p>
+      </article>
+
+      <article id="corporate-buyers" class="tos-section">
+        <h2>8. Institutional Buyer Terms</h2>
+        <p>
+          Institutional Buyers acknowledge that carbon markets carry inherent regulatory and pricing risks.
+          Foovante Global Ltd does not guarantee the future market value of any acquired Carbon Asset.
+          All acquisitions are final upon settlement.
+        </p>
+      </article>
+
+      <article id="payments" class="tos-section">
+        <h2>9. Settlement & Fees</h2>
+        <p>
+          The Platform facilitates financial settlement via fiat gateways and USDC stablecoin infrastructure.
+          We charge a dynamic platform fee on market acquisitions and payouts, which is explicitly displayed prior to transaction execution.
+          Originator payouts are subject to minimum withdrawal thresholds and standard banking/Mobile Money settlement delays.
+        </p>
+      </article>
+
+      <article id="ip" class="tos-section">
+        <h2>10. Intellectual Property</h2>
+        <p>
+          The Platform, including its underlying AI models, dMRV algorithms, UI/UX, and source code, remains the exclusive intellectual property of Foovante Global Ltd.
+          Project data submitted by Originators grants us a perpetual, royalty-free license to utilize said data for verification, machine learning optimization, and public ledger anchoring.
+        </p>
+      </article>
+
+      <article id="governing-law" class="tos-section">
+        <h2>11. Governing Law</h2>
+        <p>
+          This protocol and any systemic disputes arising from it shall be governed by and construed in accordance with the sovereign laws of the Republic of Ghana, without regard to its conflict of law principles.
+        </p>
+      </article>
+
+      <article id="disputes" class="tos-section">
+        <h2>12. Dispute Resolution</h2>
+        <p>
+          Any dispute, controversy, or claim arising out of this agreement shall be settled through binding arbitration in Accra, Ghana, in accordance with the rules of the Ghana Arbitration Centre.
+          The language of arbitration shall be English.
+        </p>
+      </article>
+
+      <article id="changes" class="tos-section">
+        <h2>13. Protocol Amendments</h2>
+        <p>
+          We reserve the right to modify these Terms to reflect updates in regulatory compliance or system architecture.
+          Continued use of the Platform after an updated protocol has been published constitutes explicit acceptance of the new Terms.
+        </p>
+      </article>
+
+      <div class="tos-footnote">
+        <p>Questions about these Terms? <a routerLink="/founder-brief">Contact the Foovante team</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<fv-footer></fv-footer>

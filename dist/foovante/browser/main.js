@@ -12,40 +12,54 @@ import {
   ɵsetClassDebugInfo,
   ɵɵdefineComponent,
   ɵɵelement
-} from "./chunk-CPO33PGZ.js";
-import "./chunk-3OV72XIM.js";
+} from "./chunk-SCSMG4QD.js";
 
 // src/app/app.routes.ts
 var routes = [
   {
     path: "",
-    loadComponent: () => import("./chunk-THY6JOF6.js").then((m) => m.AboutComponent),
+    loadComponent: () => import("./chunk-4F6YU2G4.js").then((m) => m.AboutComponent),
     title: "Foovante Global \u2014 African carbon markets, built right"
   },
   {
     path: "home",
-    loadComponent: () => import("./chunk-ZOCMUI5W.js").then((m) => m.HomeComponent),
+    loadComponent: () => import("./chunk-H4AHVWJV.js").then((m) => m.HomeComponent),
     title: "Foovante Global \u2014 African carbon markets, built right"
   },
   {
     path: "funders",
-    loadComponent: () => import("./chunk-EAMVFL4U.js").then((m) => m.FundersComponent),
+    loadComponent: () => import("./chunk-JCZ77KH2.js").then((m) => m.FundersComponent),
     title: "For Funders \u2014 Foovante Global"
   },
   {
     path: "projects",
-    loadComponent: () => import("./chunk-Y7HHCFEQ.js").then((m) => m.ProjectsComponent),
+    loadComponent: () => import("./chunk-AQLVV42F.js").then((m) => m.ProjectsComponent),
     title: "For Project Developers \u2014 Foovante Global"
   },
   {
     path: "investors",
-    loadComponent: () => import("./chunk-ORFVJZKB.js").then((m) => m.InvestorsComponent),
+    loadComponent: () => import("./chunk-SIWXUML7.js").then((m) => m.InvestorsComponent),
     title: "For Investors \u2014 Foovante Global"
   },
   {
     path: "founder-brief",
-    loadComponent: () => import("./chunk-LDFWAJUA.js").then((m) => m.FounderBriefComponent),
+    loadComponent: () => import("./chunk-VP7KECI5.js").then((m) => m.FounderBriefComponent),
     title: "The Founder Brief \u2014 Foovante Global"
+  },
+  {
+    path: "terms-of-service",
+    loadComponent: () => import("./chunk-EB5HSFOI.js").then((m) => m.TermsOfServiceComponent),
+    title: "Terms of Service \u2014 Foovante Global"
+  },
+  {
+    path: "privacy-policy",
+    loadComponent: () => import("./chunk-4EMLD2FZ.js").then((m) => m.PrivacyPolicyComponent),
+    title: "Privacy Policy \u2014 Foovante Global"
+  },
+  {
+    path: "how-mrv-works",
+    loadComponent: () => import("./chunk-A2YY5M5C.js").then((m) => m.HowMrvWorksComponent),
+    title: "How MRV works \u2014 Foovante Global"
   },
   {
     path: "**",

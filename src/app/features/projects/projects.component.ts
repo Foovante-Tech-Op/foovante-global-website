@@ -3,14 +3,13 @@ import { RouterLink } from '@angular/router';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { HeroComponent } from '../../shared/components/hero/hero.component';
-import { MapSectionComponent } from '../../shared/components/map-section/map-section.component';
 import { HeroSlide } from '../../core/models/hero-slide.model';
 import { METHODS } from '../../core/data/team.data';
 import { Method } from '../../core/models/team.model';
 
 @Component({
     selector: 'fv-projects',
-    imports: [NavComponent, FooterComponent, HeroComponent, MapSectionComponent, RouterLink],
+    imports: [NavComponent, FooterComponent, HeroComponent, RouterLink],
     templateUrl: './projects.component.html',
     styleUrl: './projects.component.scss'
 })

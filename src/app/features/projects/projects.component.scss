@@ -52,6 +52,23 @@
   }
 }
 
+.verify-deepdive {
+  margin: 48px 0 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+  color: var(--ink-2);
+  line-height: 1.6;
+
+  a {
+    color: var(--gold);
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
 // Methods
 .methods { padding: 120px 0; }
 

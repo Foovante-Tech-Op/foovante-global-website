@@ -1,0 +1,401 @@
+:host { display: block; }
+
+// Compliance band
+.mrv-meta {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 40px 0;
+}
+
+.meta-row {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.meta-cell {
+  background: var(--paper);
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .meta-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    opacity: 0.7;
+  }
+
+  .meta-value {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+}
+
+// Section blocks
+.mrv-block { padding: 96px 0; background: var(--paper); }
+.mrv-block-alt { background: #FAFAF7; }
+
+.mrv-block-head {
+  max-width: 760px;
+  margin-bottom: 48px;
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 16px 0 16px;
+    color: var(--ink);
+    line-height: 1.15;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-2);
+    margin: 0;
+  }
+}
+
+// Telemetry specs
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+}
+
+.telemetry-card {
+  padding: 40px 32px;
+  background: var(--paper);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+
+  &:last-child { border-right: 0; }
+
+  h4 {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 0 0 24px;
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.65;
+    margin: 0;
+  }
+}
+
+.spec-list {
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--line-soft);
+    padding-bottom: 8px;
+    font-size: 11px;
+  }
+
+  dt {
+    color: var(--ink-2);
+    opacity: 0.7;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  dd {
+    color: var(--ink);
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+// Formulas
+.formula-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.formula-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease;
+
+  &:hover { border-color: var(--ink); }
+
+  .ix {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    opacity: 0.7;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  h4 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+
+  .lead {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.65;
+    margin: 0 0 28px;
+  }
+
+  .expr {
+    background: var(--line-soft);
+    border: 1px solid var(--line);
+    padding: 24px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 16px;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 28px;
+    overflow-x: auto;
+  }
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+
+  > div {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  dt {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    color: var(--ink);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  dd {
+    color: var(--ink-2);
+    line-height: 1.55;
+    margin: 0;
+  }
+}
+
+// Tree to token
+.t2t-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.t2t-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: var(--line);
+  }
+
+  li {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+  }
+}
+
+.t2t-num {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+
+  .t2t-steps li:last-child & {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+}
+
+.t2t-steps h4 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 6px 0 8px;
+}
+
+.t2t-steps p {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.t2t-console {
+  background: #0E1916;
+  border: 1px solid #1F2F2A;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.t2t-console-head {
+  padding: 12px 16px;
+  background: #0A1311;
+  border-bottom: 1px solid #1F2F2A;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .dots {
+    display: inline-flex;
+    gap: 6px;
+
+    i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #2A3D37;
+    }
+  }
+
+  .t2t-file {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #7C8C87;
+  }
+}
+
+.t2t-code {
+  margin: 0;
+  padding: 24px 28px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.85;
+  color: #B7C6C0;
+  overflow-x: auto;
+  white-space: pre;
+
+  .t-k  { color: #5EE0B3; }
+  .t-k2 { color: #6FB1FF; }
+  .t-s  { color: #87CEFA; }
+  .t-n  { color: #FFB36B; }
+  .t-p  { color: #6B7C77; }
+}
+
+.t2t-console-foot {
+  padding: 14px 24px;
+  background: #0A1311;
+  border-top: 1px solid #1F2F2A;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5EE0B3;
+  font-weight: 700;
+
+  .ok-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5EE0B3;
+    box-shadow: 0 0 8px #5EE0B3;
+  }
+}
+
+@media (max-width: 1024px) {
+  .telemetry-grid { grid-template-columns: 1fr; }
+  .telemetry-card {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    &:last-child { border-bottom: 0; }
+  }
+
+  .formula-grid { grid-template-columns: 1fr; }
+
+  .t2t-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mrv-block { padding: 64px 0; }
+  .meta-row { flex-direction: column; }
+  .formula-card { padding: 24px; }
+  .formula-card .expr { font-size: 13px; padding: 16px; }
+  .legend > div { grid-template-columns: 90px 1fr; }
+  .t2t-code { font-size: 11.5px; padding: 18px; }
+}
