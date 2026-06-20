@@ -1,3 +1,13 @@
 {
-  "routes": {}
+  "routes": {
+    "/": {},
+    "/founder-brief": {},
+    "/funders": {},
+    "/home": {},
+    "/how-mrv-works": {},
+    "/investors": {},
+    "/privacy-policy": {},
+    "/projects": {},
+    "/terms-of-service": {}
+  }
 }

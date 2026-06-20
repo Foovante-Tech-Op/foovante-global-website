@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/shared/components/footer/footer.component.scss"],
-  "sourcesContent": [":host { display: block; }\n\n.ft-soon {\n  color: var(--muted);\n  font-size: 13px;\n  font-style: italic;\n  cursor: default;\n  opacity: 0.7;\n}\n"],
-  "mappings": ";AAAA;AAAQ,WAAA;;AAER,CAAA;AACE,SAAA,IAAA;AACA,aAAA;AACA,cAAA;AACA,UAAA;AACA,WAAA;;",
-  "names": []
-}
