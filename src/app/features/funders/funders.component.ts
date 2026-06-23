@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { DecimalPipe } from '@angular/common';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { HeroComponent } from '../../shared/components/hero/hero.component';
@@ -10,7 +9,7 @@ import { Project } from '../../core/models/project.model';
 
 @Component({
     selector: 'fv-funders',
-    imports: [NavComponent, FooterComponent, HeroComponent, DecimalPipe, RouterLink],
+    imports: [NavComponent, FooterComponent, HeroComponent, RouterLink],
     templateUrl: './funders.component.html',
     styleUrl: './funders.component.scss'
 })

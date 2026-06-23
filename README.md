@@ -1,13 +1,14 @@
 # Foovante Global — Angular Application
 
-African carbon markets, built right. Converted from standalone React HTML to a production-grade Angular 17 application.
+African carbon markets, built right. A production-grade Angular application with SSR/prerendering.
 
 ## Tech Stack
 
-- **Angular 17** — Standalone components, new control flow (`@for`, `@if`)
-- **TypeScript 5.4**
+- **Angular 21** — Standalone components, new control flow (`@for`, `@if`), `@angular/ssr` static prerender
+- **TypeScript 5.9**
 - **SCSS** — Scoped component styles + global design system
-- **Angular Router** — Lazy-loaded routes with `withViewTransitions()`
+- **Angular Router** — Lazy-loaded routes with `withViewTransitions()` and in-memory scroll restoration
+- **Leaflet** — Interactive Africa map (browser-only, dynamically imported)
 
 ---
 
@@ -83,11 +84,16 @@ npm run build
 
 | Path | Component | Description |
 |------|-----------|-------------|
-| `/` | HomeComponent | Landing page with audience picker |
+| `/` | AboutComponent | Landing page — mission, team, credentials |
+| `/home` | HomeComponent | Audience picker / overview |
 | `/funders` | FundersComponent | Project listings, portfolio dashboard |
 | `/projects` | ProjectsComponent | Apply to list, methodology library |
 | `/investors` | InvestorsComponent | Traction, moat, business model |
-| `/about` | AboutComponent | Mission, team, credentials |
+| `/founder-brief` | FounderBriefComponent | Founder thesis |
+| `/how-mrv-works` | HowMrvWorksComponent | MRV pipeline explainer |
+| `/terms-of-service` | TermsOfServiceComponent | ToS |
+| `/privacy-policy` | PrivacyPolicyComponent | Privacy policy |
+| `**` | NotFoundComponent | 404 fallback |
 
 ---
 

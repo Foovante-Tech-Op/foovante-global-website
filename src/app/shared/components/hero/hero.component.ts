@@ -1,7 +1,7 @@
 import {
-  Component, Input, OnInit, OnDestroy, ChangeDetectorRef, PLATFORM_ID, inject
+  Component, Input, OnInit, OnDestroy, ChangeDetectorRef, ChangeDetectionStrategy, PLATFORM_ID, inject
 } from '@angular/core';
-import { NgClass, NgStyle, isPlatformBrowser } from '@angular/common';
+import { NgStyle, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { HeroSlide } from '../../../core/models/hero-slide.model';
 
@@ -15,7 +15,8 @@ export interface HeroCta {
     selector: 'fv-hero',
     imports: [NgStyle],
     templateUrl: './hero.component.html',
-    styleUrl: './hero.component.scss'
+    styleUrl: './hero.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroComponent implements OnInit, OnDestroy {
   @Input() slides: HeroSlide[] = [];
@@ -84,7 +85,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   navigateTo(cta: HeroCta): void {
-    if (cta.href) {
+    if (cta.href && this.isBrowser) {
       window.open(cta.href, '_blank', 'noopener');
     } else if (cta.routerLink) {
       this.router.navigate([cta.routerLink]);
