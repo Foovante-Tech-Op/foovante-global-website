@@ -22,7 +22,6 @@ export class NavComponent {
     { label: 'About',         route: '/' },
     { label: 'For Funders',   route: '/funders' },
     { label: 'For Projects',  route: '/projects' },
-    { label: 'For Investors', route: '/investors' },
-    
+    { label: 'For Investors', route: '/investors' }
   ];
 }

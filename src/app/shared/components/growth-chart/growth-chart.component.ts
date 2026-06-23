@@ -8,7 +8,6 @@ interface ChartBar {
 
 @Component({
   selector: 'fv-growth-chart',
-  standalone: true,
   templateUrl: './growth-chart.component.html',
   styleUrl: './growth-chart.component.scss'
 })

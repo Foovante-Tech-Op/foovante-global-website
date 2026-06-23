@@ -1,0 +1,18 @@
+.nf {
+  min-height: calc(100vh - 73px);
+  display: flex;
+  align-items: center;
+  padding: 120px 0;
+}
+
+.nf-in {
+  max-width: 640px;
+  text-align: left;
+}
+
+.nf-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}

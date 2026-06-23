@@ -1,5 +1,7 @@
 import { Component, AfterViewInit, OnDestroy, ElementRef, ViewChild, PLATFORM_ID, Inject, NgZone } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import type * as Leaflet from 'leaflet';
+import type { Feature, GeoJsonProperties, Geometry } from 'geojson';
 import { FV_MAP } from '../../../core/data/map.data';
 import { MapPoint } from '../../../core/models/map.model';
 
@@ -25,8 +27,8 @@ const TYPE_COLORS: Record<MapPoint['type'], string> = {
 export class MapSectionComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapEl', { static: true }) mapEl!: ElementRef<HTMLDivElement>;
 
-  private map: any;
-  private L: any;
+  private map?: Leaflet.Map;
+  private L?: typeof Leaflet;
   private resizeObserver?: ResizeObserver;
 
   constructor(
@@ -75,8 +77,10 @@ export class MapSectionComponent implements AfterViewInit, OnDestroy {
       const geoJson = await res.json();
 
       const L = this.L;
+      if (!L || !this.map) return;
       L.geoJSON(geoJson, {
-        filter: (feature: any) => ACTIVE_COUNTRIES.includes(feature.properties.ADMIN),
+        filter: (feature: Feature<Geometry, GeoJsonProperties>) =>
+          !!feature.properties && ACTIVE_COUNTRIES.includes(feature.properties['ADMIN']),
         style: () => ({
           fillColor: '#F5A623',
           fillOpacity: 0.35,
@@ -89,7 +93,8 @@ export class MapSectionComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  private addProjectMarkers(L: any): void {
+  private addProjectMarkers(L: typeof Leaflet): void {
+    if (!this.map) return;
     for (const point of FV_MAP) {
       const color = TYPE_COLORS[point.type] ?? '#2D6A4F';
       const icon = L.divIcon({

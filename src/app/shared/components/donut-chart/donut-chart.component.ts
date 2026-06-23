@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgStyle } from '@angular/common';
 
 interface DonutSlice {
   value: number;

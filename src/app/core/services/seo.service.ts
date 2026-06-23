@@ -1,4 +1,5 @@
-import { DOCUMENT, Injectable, inject } from '@angular/core';
+import { DOCUMENT, Injectable, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -24,11 +25,23 @@ export class SeoService {
   private title = inject(Title);
   private meta = inject(Meta);
   private document = inject(DOCUMENT);
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   init(): void {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => this.update());
+      .subscribe(() => {
+        this.update();
+        this.scrollToTop();
+      });
+  }
+
+  private scrollToTop(): void {
+    if (!this.isBrowser) return;
+    // Respect in-page anchors (e.g. /#team) — don't override fragment scrolls.
+    if (this.router.url.includes('#')) return;
+    // Defer past view transitions so the scroll lands after the swap.
+    queueMicrotask(() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior }));
   }
 
   private update(): void {
