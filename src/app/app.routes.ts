@@ -21,8 +21,8 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/home/home.component').then(m => m.HomeComponent),
     data: {
-      title: 'Foovante Global — African carbon markets, built right',
-      description: DEFAULT_DESCRIPTION,
+      title: 'Home — Foovante Global',
+      description: 'Foovante Global — high-integrity African carbon credits across energy, forests, and blue carbon. Live MRV from project to registry.',
       ogImage: DEFAULT_OG_IMAGE
     }
   },
@@ -98,6 +98,12 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: ''
+    loadComponent: () =>
+      import('./features/not-found/not-found.component').then(m => m.NotFoundComponent),
+    data: {
+      title: 'Page not found — Foovante Global',
+      description: 'The page you were looking for doesn\'t exist or has moved.',
+      ogImage: DEFAULT_OG_IMAGE
+    }
   }
 ];
