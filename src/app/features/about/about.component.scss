@@ -230,9 +230,24 @@
 }
 
 .carousel-track-wrap {
+  position: relative;
   overflow: hidden;
   width: 100%;
   cursor: default;
+
+  // Soft fade masks on the edges so logos appear to flow in/out
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 72px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  &::before { left: 0; background: linear-gradient(to right, var(--paper), transparent); }
+  &::after  { right: 0; background: linear-gradient(to left, var(--paper), transparent); }
 
   &:hover .carousel-track { animation-play-state: paused; }
 }
@@ -242,19 +257,23 @@
   align-items: center;
   gap: 48px;
   width: max-content;
-  animation: carousel-scroll 28s linear infinite;
+  animation: carousel-scroll 32s linear infinite;
+  will-change: transform;
 }
 
 .carousel-item {
   flex-shrink: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+  height: 110px;
 
   img {
-    height: 110px;
+    max-height: 110px;
     width: auto;
+    max-width: 220px;
     object-fit: contain;
-    opacity: 0.75;
+    opacity: 0.85;
     transition: opacity 0.2s;
 
     &:hover { opacity: 1; }
@@ -263,7 +282,7 @@
 
 @keyframes carousel-scroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(calc(-100% / 5)); } // one of the 5 identical sets
 }
 
 // Advisors

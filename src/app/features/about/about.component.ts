@@ -53,6 +53,8 @@ export class AboutComponent {
     { name: 'ALX Ventures',           logo: 'assets/images/v.png' },
   ];
 
+  repeatSets = [0, 1, 2, 3, 4]; // enough copies to fill any viewport
+
   whatCards = [
     {
       ix:   '01 · Document',
