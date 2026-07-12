@@ -1,0 +1,25 @@
+[
+  {
+    "id": "223aa0fe-293f-4666-859f-7475d3137c20",
+    "name": "I'm trying to seo this website so that in google search is a…",
+    "description": "we recently did the console implementation but i wanted to know the importance of sitemap",
+    "mode": "single",
+    "steps": [
+      {
+        "id": "28d9d89b-075c-41a3-8c97-cd0f08f19ab4",
+        "agentId": "general",
+        "instruction": "I'm trying to seo this website so that in google search is a…",
+        "onComplete": "finish",
+        "onFail": "finish",
+        "status": "done",
+        "sessionId": "e49fd743-cc55-42b1-8ad6-77f0fc0e8462"
+      }
+    ],
+    "status": "done",
+    "currentStepIndex": 0,
+    "createdAt": "2026-07-12T08:00:34Z",
+    "scheduleType": "instant",
+    "workspacePath": "/home/tollesoft/Documents/Project/foovante-angular/foovante-global-website",
+    "leadSessionId": "e49fd743-cc55-42b1-8ad6-77f0fc0e8462"
+  }
+]
