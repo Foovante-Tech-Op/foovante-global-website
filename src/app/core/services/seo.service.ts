@@ -9,7 +9,7 @@ const SITE_URL = 'https://foovanteglobal.earth';
 const DEFAULT_TITLE = 'Foovante Global — African carbon markets, built right';
 const DEFAULT_DESCRIPTION =
   'Foovante is the verification, marketplace, and capital layer for African carbon. High-integrity carbon credits across energy, forests, and blue carbon.';
-const DEFAULT_OG_IMAGE = '/assets/images/logo_2.png';
+const DEFAULT_OG_IMAGE = '/assets/images/logo_1.png';
 const SITE_NAME = 'Foovante Global';
 
 interface RouteSeoData {
