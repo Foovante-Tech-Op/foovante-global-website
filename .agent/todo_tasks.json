@@ -21,5 +21,25 @@
     "scheduleType": "instant",
     "workspacePath": "/home/tollesoft/Documents/Project/foovante-angular/foovante-global-website",
     "leadSessionId": "e49fd743-cc55-42b1-8ad6-77f0fc0e8462"
+  },
+  {
+    "id": "78cf1bf4-2715-4a69-99ba-93d27b2d1040",
+    "name": "With the Knowledge in SEO of website, …",
+    "description": "With the Knowledge in SEO of website, please confirm that the Sitemap and Robots.txt for the site done, and teach me Opengraph cause i want complete this today",
+    "mode": "team",
+    "leadAgentId": "fb2c8d0a-d925-46d9-81e3-e4dfb05d45e6",
+    "teamAgentIds": [
+      "04556256-f0ff-4140-8435-816afcf3c8ab",
+      "03c3c343-aa31-4991-8fc8-a2b704d2cf29",
+      "735fc175-5aaf-4696-b750-480c5f083dad",
+      "7b9e02c3-6f3c-497f-9e18-7edc8e0a4f36"
+    ],
+    "status": "done",
+    "currentStepIndex": 0,
+    "createdAt": "2026-07-16T08:36:07.124Z",
+    "shellAutoAllow": true,
+    "scheduleType": "instant",
+    "workspacePath": "/home/tollesoft/Documents/Project/foovante-angular/foovante-global-website",
+    "leadSessionId": "5ec12634-8669-4b38-bfb6-188c1a01f50d"
   }
 ]

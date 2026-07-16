@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 const DEFAULT_DESCRIPTION =
   'Foovante is the verification, marketplace, and capital layer for African carbon. High-integrity carbon credits across energy, forests, and blue carbon.';
 
-const DEFAULT_OG_IMAGE = '/assets/images/logo_2.png';
+const DEFAULT_OG_IMAGE = '/assets/images/logo_1.png';
 
 export const routes: Routes = [
   {
