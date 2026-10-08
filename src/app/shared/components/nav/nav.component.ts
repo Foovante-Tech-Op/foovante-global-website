@@ -20,7 +20,7 @@ export class NavComponent {
 
   navLinks = [
     { label: 'About',         route: '/' },
-    { label: 'For Funders',   route: '/funders' },
+    { label: 'For Buyers',   route: '/funders' },
     { label: 'For Projects',  route: '/projects' },
     { label: 'For Investors', route: '/investors' }
   ];

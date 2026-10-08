@@ -22,28 +22,28 @@ export class FundersComponent {
       lbl:  'Forestry · REDD+',
       ttl:  'Kakum Forest Corridor',
       sub:  'Central Region, Ghana · Verra VCS',
-      live: '65% funded · 32 funders'
+      live: '65% funded · 32 buyers'
     },
     {
       img:  'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1800&q=80&auto=format&fit=crop',
       lbl:  'Renewable energy',
       ttl:  'Turkana Solar Microgrid',
       sub:  'Lodwar, Kenya · Verra VCS',
-      live: '22% funded · 14 funders'
+      live: '22% funded · 14 buyers'
     },
     {
       img:  'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=1800&q=80&auto=format&fit=crop',
       lbl:  'Blue carbon',
       ttl:  'Volta Estuary Mangroves',
       sub:  'Keta, Ghana · Plan Vivo',
-      live: '88% funded · 47 funders'
+      live: '88% funded · 47 buyers'
     },
     {
       img:  'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=80&auto=format&fit=crop',
       lbl:  'Agroforestry',
       ttl:  'Akagera Co-op',
       sub:  'Eastern Province, Rwanda · Verra VCS',
-      live: '23% funded · 9 funders'
+      live: '23% funded · 9 buyers'
     }
   ];
 

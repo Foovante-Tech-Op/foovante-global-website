@@ -76,7 +76,7 @@ export const OPS_TEAM: TeamMember[] = [
   },
   {
     name: 'Joshua Adebayo',
-    role: 'Head of Funder Operations',
+    role: 'Head of Buyer Operations',
     loc: 'Lagos',
     prior: 'Previously: Flutterwave',
     pic: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&auto=format&fit=crop'

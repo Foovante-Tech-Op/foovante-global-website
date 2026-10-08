@@ -40,6 +40,30 @@ export class ProjectsComponent {
     }
   ];
 
+  doors = [
+    {
+      tag: 'For corporate buyers',
+      h: 'Meet your climate commitments with credits that survive scrutiny.',
+      p: 'Every tonne is backed by field-level data, an integrity grade and a full audit trail, so it holds up to CSRD, SBTi and your own ESG team.',
+      cta: 'Request a credit pipeline briefing',
+      href: 'https://foovant.vercel.app/'
+    },
+    {
+      tag: 'For project developers',
+      h: 'Your project is worth more than your paperwork shows.',
+      p: 'We take you from raw project data to verification-ready documentation, and connect you to buyers before issuance.',
+      cta: 'Get a free carbon-readiness assessment',
+      href: 'https://foovant.vercel.app/'
+    },
+    {
+      tag: 'For farming programmes',
+      h: 'Turn your farmers\u2019 climate work into income.',
+      p: 'We onboard, train and monitor your farmers digitally, so their practices become measurable, verifiable and sellable.',
+      cta: 'Enrol your programme',
+      href: 'https://foovant.vercel.app/'
+    }
+  ];
+
   steps = [
     {
       n: '01',

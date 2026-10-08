@@ -21,6 +21,53 @@
   </div>
 </div>
 
+<!-- Prove it -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Prove it</div>
+        <h2 style="margin-top:24px">Most carbon credits can&rsquo;t answer one question: &ldquo;Prove it.&rdquo;</h2>
+      </div>
+      <div class="right">
+        <p>Ours come with the field data, the integrity grade and the audit trail.</p>
+      </div>
+    </div>
+    <div class="sec-head" style="margin-top:32px">
+      <div>
+        <p style="max-width:62ch">Most carbon credits fail at the same point: the data. Missing field records, unverifiable baselines and long intermediary chains are why buyers walk away and why good projects never reach the market. We fix the data, so both sides can close.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Three doors -->
+<section style="background:var(--paper)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Three doors</div>
+        <h2 style="margin-top:24px">One card per audience, each with its own next step.</h2>
+      </div>
+      <div class="right">
+        <p>Pick the door that fits you. Every path ends with field data, an integrity grade and a full audit trail.</p>
+      </div>
+    </div>
+    <div class="method-grid">
+      @for (d of doors; track d.tag) {
+        <div class="method">
+          <div class="badge">{{ d.tag }}</div>
+          <h4>{{ d.h }}</h4>
+          <p class="desc">{{ d.p }}</p>
+          <div class="footer">
+            <a class="btn btn-primary" [href]="d.href" target="_blank" rel="noopener" style="width:100%;justify-content:center">→ {{ d.cta }}</a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
 <!-- How It Works -->
 <section>
   <div class="wrap">
