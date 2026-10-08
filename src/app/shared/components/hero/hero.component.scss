@@ -281,6 +281,13 @@
   to { width: 100%; }
 }
 
+// Dynamic per-slide content (About hero: text syncs with image)
+.is-dynamic {
+  h1 { min-height: 2.4em; }
+  .eyebrow, .lead, .hero-cta { opacity: 1; transform: none; animation: none; }
+  .reveal > span { animation-name: heroLineUp; }
+}
+
 @media (max-width: 640px) {
   .hero {
     min-height: 600px;

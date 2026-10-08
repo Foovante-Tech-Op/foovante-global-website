@@ -25,6 +25,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   @Input() lead = '';
   @Input() cta1: HeroCta = { label: 'Browse projects', routerLink: '/funders' };
   @Input() cta2: HeroCta = { label: 'Apply to list a project', routerLink: '/projects' };
+  @Input() dynamicContent = false;
 
   currentSlide = 0;
   previousSlide = -1;
@@ -82,6 +83,28 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   get currentSlideData(): HeroSlide {
     return this.slides[this.currentSlide];
+  }
+
+  get activeEyebrow(): string {
+    if (!this.dynamicContent) return this.eyebrow;
+    return this.currentSlideData?.eyebrow ?? this.eyebrow;
+  }
+
+  get activeLines(): string[] {
+    if (!this.dynamicContent) return this.lines;
+    return this.currentSlideData?.lines ?? this.lines;
+  }
+
+  get activeLead(): string {
+    if (!this.dynamicContent) return this.lead;
+    return this.currentSlideData?.lead ?? this.lead;
+  }
+
+  get activeCta1(): HeroCta {
+    if (!this.dynamicContent) return this.cta1;
+    const s = this.currentSlideData;
+    if (s?.ctaLabel) return { label: s.ctaLabel, href: s.ctaHref ?? this.cta1.href, routerLink: s.ctaHref ? undefined : this.cta1.routerLink };
+    return this.cta1;
   }
 
   navigateTo(cta: HeroCta): void {

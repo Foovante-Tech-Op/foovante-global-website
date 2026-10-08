@@ -20,26 +20,28 @@
   </div>
 
   <!-- Main Content -->
-  <div class="wrap">
-    <div class="eyebrow">{{ eyebrow }}</div>
+  <div class="wrap" [class.is-dynamic]="dynamicContent" [attr.data-slide]="dynamicContent ? currentSlide : null" aria-live="polite">
+    <div class="eyebrow">{{ activeEyebrow }}</div>
 
     <h1>
-      @for (line of lines; track line; let i = $index) {
+      @for (line of activeLines; track line; let i = $index) {
         <span class="reveal">
           <span [style.animation-delay]="(0.18 + i * 0.14) + 's'">{{ line }}</span>
         </span>
       }
     </h1>
 
-    <p class="lead">{{ lead }}</p>
+    <p class="lead">{{ activeLead }}</p>
 
     <div class="hero-cta">
-      <a class="btn btn-primary btn-lg" (click)="navigateTo(cta1)">
-        {{ cta1.label }} <span class="arrow">→</span>
+      <a class="btn btn-primary btn-lg" (click)="navigateTo(activeCta1)">
+        {{ activeCta1.label }} <span class="arrow">→</span>
       </a>
-      <button class="btn-link" (click)="navigateTo(cta2)">
-        {{ cta2.label }} <span class="arrow">→</span>
-      </button>
+      @if (!dynamicContent) {
+        <button class="btn-link" (click)="navigateTo(cta2)">
+          {{ cta2.label }} <span class="arrow">→</span>
+        </button>
+      }
     </div>
 
 

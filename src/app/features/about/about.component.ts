@@ -21,24 +21,39 @@ export class AboutComponent {
   heroSlides: HeroSlide[] = [
     {
       img:  'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1800&q=80&auto=format&fit=crop',
-      lbl:  'Energy',
-      ttl:  'Renewable energy projects',
-      sub:  'Solar · Wind · Clean energy infrastructure',
-      live: 'Renewable energy carbon credits'
+      lbl:  'For corporate buyers',
+      ttl:  'Scope 3 insetting',
+      sub:  'Cocoa · Agribusiness · FMCG',
+      live: 'CSRD & SBTi-ready',
+      eyebrow: 'For corporate buyers',
+      lines: ['Meet your climate commitments', 'with credits that survive scrutiny.'],
+      lead: 'Every tonne is backed by field-level data, an integrity grade and a full audit trail, so it holds up to CSRD, SBTi and your own ESG team.',
+      ctaLabel: 'Request a credit pipeline briefing',
+      ctaHref: 'https://form.jotform.com/261642531528052'
     },
     {
       img:  'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1800&q=80&auto=format&fit=crop',
-      lbl:  'Agriculture',
-      ttl:  'Forestry & agroforestry',
-      sub:  'Forest conservation · Agroforestry systems',
-      live: '3 active projects · scaling'
+      lbl:  'For project developers',
+      ttl:  'Verification-ready docs',
+      sub:  'Raw data to buyers before issuance',
+      live: 'Audit-ready in weeks',
+      eyebrow: 'For project developers',
+      lines: ['Your project is worth more', 'than your paperwork shows.'],
+      lead: 'We take you from raw project data to verification-ready documentation, and connect you to buyers before issuance.',
+      ctaLabel: 'Get a free carbon-readiness assessment',
+      ctaHref: 'https://form.jotform.com/261642531528052'
     },
     {
       img:  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1800&q=80&auto=format&fit=crop',
-      lbl:  'Blue carbon',
-      ttl:  'Mangroves & coastal ecosystems',
-      sub:  'Oceans · Wetlands · Coastal carbon',
-      live: 'Blue carbon credits across varying markets'
+      lbl:  'For farming programmes',
+      ttl:  'Farmers’ climate work to income',
+      sub:  'Onboard · Train · Monitor digitally',
+      live: 'Measurable & sellable',
+      eyebrow: 'For farming programmes',
+      lines: ['Turn your farmers’ climate work', 'into income.'],
+      lead: 'We onboard, train and monitor your farmers digitally, so their practices become measurable, verifiable and sellable.',
+      ctaLabel: 'Enrol your programme',
+      ctaHref: 'https://form.jotform.com/261642531528052'
     }
   ];
 

@@ -31,7 +31,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/funders/funders.component').then(m => m.FundersComponent),
     data: {
-      title: 'For Funders — Foovante Global',
+      title: 'For Buyers — Foovante Global',
       description: 'Buy verified African carbon credits with full provenance — agroforestry, mangroves, solar, and more. CSRD-ready documentation and minimum 25% community benefit-sharing.',
       ogImage: DEFAULT_OG_IMAGE
     }

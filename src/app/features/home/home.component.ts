@@ -52,7 +52,7 @@ export class HomeComponent {
 
   picks = [
     {
-      tag:      'For Funders',
+      tag:      'For Buyers',
       h:        'Pre-purchase verified African carbon credits.',
       lead:     'Foovante connects capital to high-integrity African carbon projects. Pre-purchase credits at fixed prices with a full audit trail per tonne.',
       features: ['Credit pre-purchase at fixed prices', 'Full audit trail per tonne', 'Satellite-verified baselines'],
