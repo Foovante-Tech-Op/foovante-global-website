@@ -3,3 +3,63 @@
 :host {
   display: block;
 }
+
+// Hamburger toggle — mobile only
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0 8px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+}
+
+// Mobile dropdown panel
+.nav-mobile-panel {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .nav-toggle { display: inline-flex; }
+
+  // Desktop CTA moves into the dropdown panel on mobile
+  .nav-cta { display: none; }
+
+  .nav-mobile-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px var(--pad) 20px;
+    background: #fff;
+    border-top: 1px solid var(--line-soft);
+
+    a:not(.btn) {
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink-2);
+      text-decoration: none;
+
+      &:hover { background: var(--salmon-soft); color: var(--gold); }
+
+      &.active { color: var(--gold); font-weight: 600; }
+    }
+
+    .btn { margin-top: 8px; justify-content: center; }
+  }
+}

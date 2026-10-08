@@ -6,7 +6,7 @@
     </a>
 
     <nav class="nav-links">
-      @for (link of navLinks; track link.route) {
+      @for (link of navLinks; track link.label) {
         <a [routerLink]="link.route" routerLinkActive="active"
            [routerLinkActiveOptions]="link.route === '/' ? {exact: true} : {exact: false}">{{ link.label }}</a>
       }
@@ -23,5 +23,29 @@
         </a>
       }
     </div>
+
+    <button class="nav-toggle" type="button" (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+
+  @if (menuOpen) {
+    <div class="nav-mobile-panel">
+      @for (link of navLinks; track link.label) {
+        <a [routerLink]="link.route" routerLinkActive="active"
+           [routerLinkActiveOptions]="link.route === '/' ? {exact: true} : {exact: false}"
+           (click)="closeMenu()">{{ link.label }}</a>
+      }
+      @if (cta.href) {
+        <a [href]="cta.href" target="_blank" rel="noopener" class="btn btn-primary btn-sm" (click)="closeMenu()">
+          {{ cta.label }}
+        </a>
+      } @else {
+        <a [routerLink]="cta.routerLink || '/About'" class="btn btn-primary btn-sm" (click)="closeMenu()">
+          {{ cta.label }}
+        </a>
+      }
+    </div>
+  }
 </nav>

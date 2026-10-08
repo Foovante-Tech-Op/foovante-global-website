@@ -16,3 +16,7 @@
   flex-wrap: wrap;
   margin-top: 32px;
 }
+
+@media (max-width: 640px) {
+  .nf { padding: 72px 0; }
+}

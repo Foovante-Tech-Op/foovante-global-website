@@ -170,3 +170,13 @@
   .moat-grid     { grid-template-columns: 1fr 1fr; }
   .model-grid    { grid-template-columns: 1fr; gap: 48px; }
 }
+
+@media (max-width: 640px) {
+  .traction, .moat { padding: 72px 0; }
+  .traction-grid { grid-template-columns: 1fr; }
+  .panel.large, .panel-image { grid-column: span 1; }
+  .traction-grid .panel { min-height: 0; }
+  .moat-grid { grid-template-columns: 1fr; }
+  .model-visual { padding: 24px; }
+  .cs-row { padding: 16px; gap: 10px; }
+}
