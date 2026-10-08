@@ -382,7 +382,19 @@
 }
 
 @media (max-width: 640px) {
+  .mission, .what, .timeline, .ops, .creds { padding: 72px 0; }
+  .advisors-band { padding: 56px 0; }
+  .ops-grid      { grid-template-columns: 1fr; }
   .advisors-grid { grid-template-columns: 1fr; }
   .creds-grid    { grid-template-columns: 1fr; }
   .cred-card .v  { font-size: 22px; }
+  .lead-body     { padding: 24px; }
+  .carousel-item { height: 84px; }
+  .carousel-item img { max-height: 84px; max-width: 160px; }
+}
+
+@media (max-width: 380px) {
+  .mission-grid { gap: 32px; }
+  .lead-body    { padding: 20px; }
+  .lead-body h3 { font-size: 22px; }
 }

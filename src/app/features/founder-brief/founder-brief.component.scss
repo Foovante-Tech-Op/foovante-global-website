@@ -85,6 +85,13 @@
   }
 }
 
+@media (max-width: 640px) {
+  .brief-header { padding: 120px 0 64px; }
+  .context, .founders { padding: 64px 0; }
+  .founder-grid { margin-top: 40px; gap: 20px; }
+  .founder-card { padding: 24px; gap: 20px; }
+}
+
 .founder-body {
   display: flex;
   flex-direction: column;

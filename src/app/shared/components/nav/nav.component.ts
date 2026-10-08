@@ -18,10 +18,20 @@ export class NavComponent {
   @Input() dark = false;
   @Input() cta: NavCta = { label: 'Browse projects', href: '/funders', routerLink: '/funders' };
 
+  menuOpen = false;
+
   navLinks = [
     { label: 'About',         route: '/' },
     { label: 'For Buyers',   route: '/funders' },
     { label: 'For Projects',  route: '/projects' },
     { label: 'For Investors', route: '/investors' }
   ];
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
 }

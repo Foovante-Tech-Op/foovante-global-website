@@ -70,6 +70,18 @@
   }
 }
 
+@media (max-width: 640px) {
+  .leaflet-map { height: 380px; }
+  .map-overlay { top: 12px; left: 12px; right: 12px; padding: 10px 12px; }
+  .map-stats { bottom: 12px; left: 12px; right: 12px; flex-wrap: wrap; gap: 8px; }
+  .map-stats .map-stat { flex: 1 1 0; min-width: 0; padding: 8px 10px; }
+  .map-stats .map-stat .n { font-size: 18px; }
+}
+
+@media (max-width: 380px) {
+  .leaflet-map { height: 320px; }
+}
+
 /* Leaflet popup override */
 :host ::ng-deep .fv-popup .leaflet-popup-content-wrapper {
   border-radius: 6px;

@@ -63,7 +63,7 @@
 
 // ─── Reset ────────────────────────────────────────────────────────────────────
 *, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; overflow-x: clip; }
 
 body {
   background: var(--bg);
@@ -752,6 +752,8 @@ footer {
 }
 
 @media (max-width: 640px) {
+  :root { --pad: 20px; }
+
   section { padding: 72px 0; }
 
   .sec-head { margin-bottom: 36px; }
@@ -759,8 +761,26 @@ footer {
   h1 { font-size: 38px; }
   h2 { font-size: 28px; }
 
+  .brand img { height: 56px; }
+
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-  .stat .n    { font-size: 32px; }
+  .stat .n    { font-size: 32px; overflow-wrap: anywhere; }
+
+  .map-overlay {
+    left: 16px;
+    right: 16px;
+    top: 16px;
+    width: auto;
+  }
+
+  .map-stats {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .ft-bottom .partners { gap: 16px; }
 
   .steps { grid-template-columns: 1fr; }
   .step  {
@@ -772,4 +792,23 @@ footer {
   }
 
   .ft-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+
+// Very small phones (iPhone SE 320/360, Galaxy Fold 280 unfolded portrait)
+@media (max-width: 380px) {
+  :root { --pad: 16px; }
+
+  section { padding: 56px 0; }
+
+  h1 { font-size: 33px; }
+  h2 { font-size: 26px; }
+  h3 { font-size: 21px; }
+
+  .brand img { height: 44px; }
+
+  .stat .n { font-size: 27px; }
+  .big-n   { font-size: 48px; }
+
+  .btn-lg { padding: 14px 20px; font-size: 14px; }
+  .cta-actions .btn-lg { width: 100%; justify-content: center; }
 }
