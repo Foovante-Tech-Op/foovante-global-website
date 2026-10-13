@@ -29,7 +29,7 @@ export class AboutComponent {
       lines: ['Meet your climate commitments', 'with credits that survive scrutiny.'],
       lead: 'Every tonne is backed by field-level data, an integrity grade and a full audit trail, so it holds up to CSRD, SBTi and your own ESG team.',
       ctaLabel: 'Request a credit pipeline briefing',
-      ctaHref: 'https://form.jotform.com/261642531528052'
+      ctaHref: 'https://foovant.vercel.app/'
     },
     {
       img:  'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1800&q=80&auto=format&fit=crop',
@@ -41,7 +41,7 @@ export class AboutComponent {
       lines: ['Your project is worth more', 'than your paperwork shows.'],
       lead: 'We take you from raw project data to verification-ready documentation, and connect you to buyers before issuance.',
       ctaLabel: 'Get a free carbon-readiness assessment',
-      ctaHref: 'https://form.jotform.com/261642531528052'
+      ctaHref: 'https://foovant.vercel.app/'
     },
     {
       img:  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1800&q=80&auto=format&fit=crop',
@@ -53,7 +53,7 @@ export class AboutComponent {
       lines: ['Turn your farmers’ climate work', 'into income.'],
       lead: 'We onboard, train and monitor your farmers digitally, so their practices become measurable, verifiable and sellable.',
       ctaLabel: 'Enrol your programme',
-      ctaHref: 'https://form.jotform.com/261642531528052'
+      ctaHref: 'https://foovant.vercel.app/'
     }
   ];
 
