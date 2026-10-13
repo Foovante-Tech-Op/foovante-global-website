@@ -1,12 +1,12 @@
-<fv-nav [dark]="true" [cta]="{label: 'Apply to list', routerLink: '/projects'}"></fv-nav>
+<fv-nav [dark]="true" [cta]="{label: 'Apply to list', href: 'https://foovant.vercel.app/'}"></fv-nav>
 
 <fv-hero
   [slides]="heroSlides"
   eyebrow="For project developers"
   [lines]="['Turn your land work into', 'real climate finance.']"
   lead="Foovante helps African renewable-energy, agriculture, and forestry projects generate, verify, and sell carbon credits, without London middlemen taking 40%. Built in Accra, for projects on the continent."
-  [cta1]="{label: 'Apply to list your project', routerLink: '/projects'}"
-  [cta2]="{label: 'See methodology library'}"
+  [cta1]="{label: 'Apply to list your project', href: 'https://foovant.vercel.app/'}"
+  [cta2]="{label: 'See methodology library', routerLink: '/how-mrv-works'}"
 ></fv-hero>
 
 <!-- Stats Band -->
@@ -316,8 +316,8 @@
     <h2>Ready to list your project?</h2>
     <p>Be among the first projects verified on Foovante. Apply in 10 minutes; we'll be back within 24 hours.</p>
     <div class="cta-actions">
-      <a class="btn btn-primary btn-lg" href="https://form.jotform.com/261642531528052" target="_blank" rel="noopener">Apply to list <span class="arrow">→</span></a>
-      <a class="btn btn-ghost btn-lg" href="https://form.jotform.com/261642531528052" target="_blank" rel="noopener">Talk to the team</a>
+      <a class="btn btn-primary btn-lg" href="https://foovant.vercel.app/" target="_blank" rel="noopener">Apply to list <span class="arrow">→</span></a>
+      <a class="btn btn-ghost btn-lg" routerLink="/founder-brief">Talk to the team</a>
     </div>
   </div>
 </section>

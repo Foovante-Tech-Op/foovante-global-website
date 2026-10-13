@@ -16,7 +16,7 @@ export interface NavCta {
 })
 export class NavComponent {
   @Input() dark = false;
-  @Input() cta: NavCta = { label: 'Browse projects', href: '/funders', routerLink: '/funders' };
+  @Input() cta: NavCta = { label: 'Browse projects', routerLink: '/funders' };
 
   menuOpen = false;
 

@@ -9,6 +9,7 @@ export interface HeroCta {
   label: string;
   href?: string;
   routerLink?: string;
+  fragment?: string;
 }
 
 @Component({
@@ -111,7 +112,7 @@ export class HeroComponent implements OnInit, OnDestroy {
     if (cta.href && this.isBrowser) {
       window.open(cta.href, '_blank', 'noopener');
     } else if (cta.routerLink) {
-      this.router.navigate([cta.routerLink]);
+      this.router.navigate([cta.routerLink], { fragment: cta.fragment, onSameUrlNavigation: 'reload' });
     }
   }
 }

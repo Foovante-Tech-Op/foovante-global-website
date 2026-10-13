@@ -18,7 +18,7 @@
           {{ cta.label }}
         </a>
       } @else {
-        <a [routerLink]="cta.routerLink || '/About'" class="btn btn-primary btn-sm">
+        <a [routerLink]="cta.routerLink || '/'" class="btn btn-primary btn-sm">
           {{ cta.label }}
         </a>
       }
@@ -42,7 +42,7 @@
           {{ cta.label }}
         </a>
       } @else {
-        <a [routerLink]="cta.routerLink || '/About'" class="btn btn-primary btn-sm" (click)="closeMenu()">
+        <a [routerLink]="cta.routerLink || '/'" class="btn btn-primary btn-sm" (click)="closeMenu()">
           {{ cta.label }}
         </a>
       }
