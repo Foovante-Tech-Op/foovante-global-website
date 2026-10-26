@@ -38,8 +38,15 @@
             "scripts": [],
             "server": "src/main.server.ts",
             "outputMode": "static",
+            "ssr": {
+              "entry": "src/main.server.ts",
+              "experimentalPlatform": "node"
+            },
+            "prerender": {
+              "routesFile": "routes.txt"
+            },
             "security": {
-              "allowedHosts": []
+              "allowedHosts": ["foovanteglobal.earth", "www.foovanteglobal.earth"]
             }
           },
           "configurations": {

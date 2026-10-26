@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /.git/
+Crawl-delay: 1
 
 Sitemap: https://foovanteglobal.earth/sitemap.xml

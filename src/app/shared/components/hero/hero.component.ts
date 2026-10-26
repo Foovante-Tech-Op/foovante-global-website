@@ -109,8 +109,8 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   navigateTo(cta: HeroCta): void {
-    if (cta.href && this.isBrowser) {
-      window.open(cta.href, '_blank', 'noopener');
+    if (cta.href && this.isBrowser && /^https?:\/\//i.test(cta.href) && !/^javascript:/i.test(cta.href)) {
+      window.open(cta.href, '_blank', 'noopener,noreferrer');
     } else if (cta.routerLink) {
       this.router.navigate([cta.routerLink], { fragment: cta.fragment, onSameUrlNavigation: 'reload' });
     }
