@@ -1,129 +1,66 @@
 :host { display: block; }
 
-.brief-header {
-  padding: 160px 0 100px;
-
-  .eyebrow { margin-bottom: 24px; }
-
-  h1 {
-    max-width: 720px;
-    margin: 0 0 28px;
-  }
-
-  .lead {
-    max-width: 640px;
-    font-size: 18px;
-    line-height: 1.7;
-    color: var(--ink-2);
-    margin: 0;
-  }
+// ─── A letter: one narrow column on paper ───────────────────────────────────
+.letter {
+  background: var(--paper);
+  padding: 140px var(--pad) 160px;
 }
 
-.context { padding: 100px 0; }
+.letter-in {
+  max-width: 640px;
+  margin: 0 auto;
 
-.context-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-.context-body {
-  p {
-    color: var(--ink-2);
+  > p {
+    font-size: 19px;
     line-height: 1.75;
-    margin: 0 0 20px;
+    color: var(--ink-2);
+    margin: 0 0 24px;
+  }
 
-    &:last-child { margin-bottom: 0; }
+  h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    margin: 0 0 48px;
   }
 }
 
-.founders { padding: 100px 0; }
-
-.founder-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  margin-top: 64px;
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
+.letter-place {
+  font-size: 15px !important;
+  color: var(--muted) !important;
+  margin-bottom: 20px !important;
 }
 
-.founder-card {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 32px;
-  padding: 36px;
-  border: 1px solid var(--line);
+.signoff {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink) !important;
+  margin-top: 48px !important;
+  padding-top: 24px;
+  border-top: 2px solid var(--gold);
+  display: inline-block;
+}
+
+// The call to action, set as a postscript
+.ps {
+  margin-top: 80px;
+  padding: 36px 40px;
   border-radius: 16px;
-  background: var(--bg);
-  align-items: start;
+  background: var(--gold-soft);
+  scroll-margin-top: 120px;
 
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-  }
+  h3 { font-size: 22px; margin: 0 0 10px; }
+  p { margin: 0 0 24px; font-size: 16px; color: var(--ink-2); line-height: 1.6; }
 }
 
-.founder-pic {
-  width: 180px;
-  height: 220px;
-  border-radius: 12px;
-  background-size: cover;
-  background-position: center top;
-  flex-shrink: 0;
-
-  @media (max-width: 600px) {
-    width: 100%;
-    height: 240px;
-  }
+.ps-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 640px) {
-  .brief-header { padding: 120px 0 64px; }
-  .context, .founders { padding: 64px 0; }
-  .founder-grid { margin-top: 40px; gap: 20px; }
-  .founder-card { padding: 24px; gap: 20px; }
+  .letter { padding: 80px var(--pad) 96px; }
+  .letter-in > p { font-size: 17px; }
+  .letter-in h2 { margin-bottom: 32px; }
+  .ps { padding: 28px 24px; margin-top: 56px; }
+  .ps-actions .btn { width: 100%; justify-content: center; }
 }
-
-.founder-body {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  .role {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  h3 {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin: 0;
-  }
-
-  p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--ink-2);
-    margin: 4px 0 0;
-  }
-
-  .prior {
-    font-size: 12px;
-    color: var(--ink-3);
-    margin-top: 4px;
-  }
-}
-

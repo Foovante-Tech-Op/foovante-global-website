@@ -22,21 +22,12 @@
 </div>
 
 <!-- Prove it -->
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Prove it</div>
-        <h2 style="margin-top:24px">Most carbon credits can&rsquo;t answer one question: &ldquo;Prove it.&rdquo;</h2>
-      </div>
-      <div class="right">
-        <p>Ours come with the field data, the integrity grade and the audit trail.</p>
-      </div>
-    </div>
-    <div class="sec-head" style="margin-top:32px">
-      <div>
-        <p style="max-width:62ch">Most carbon credits fail at the same point: the data. Missing field records, unverifiable baselines and long intermediary chains are why buyers walk away and why good projects never reach the market. We fix the data, so both sides can close.</p>
-      </div>
+<section class="prove">
+  <div class="wrap prove-grid">
+    <h2>Most carbon credits can&rsquo;t answer one question: &ldquo;Prove it.&rdquo;</h2>
+    <div class="prove-body">
+      <p class="prove-lead">Ours come with the field data, the integrity grade and the audit trail.</p>
+      <p>Most carbon credits fail at the same point: the data. Missing field records, unverifiable baselines and long intermediary chains are why buyers walk away and why good projects never reach the market. We fix the data, so both sides can close.</p>
     </div>
   </div>
 </section>
@@ -68,97 +59,70 @@
   </div>
 </section>
 
-<!-- How It Works -->
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">How to list</div>
-        <h2 style="margin-top:24px">Four steps from project to verified carbon asset.</h2>
-      </div>
-      <div class="right">
-        <p>The carbon verification process has historically taken years. Crevy is built to get African projects from zero documentation to audit-ready in weeks, not years because we have already built the standards framework for you.</p>
-      </div>
+<!-- How to list: sticky heading, vertical timeline -->
+<section class="listing">
+  <div class="wrap listing-grid">
+    <div class="listing-head">
+      <h2>Four steps from project to verified carbon asset.</h2>
+      <p>Verification has historically taken years. Crevy gets African projects from zero documentation to audit-ready in weeks, because the standards framework is already built.</p>
     </div>
-    <div class="steps">
+    <ol class="timeline">
       @for (s of steps; track s.n) {
-        <div class="step">
-          <div class="step-n">{{ s.n }}</div>
-          <h3>{{ s.h }}</h3>
-          <p>{{ s.p }}</p>
-          <div class="meta">{{ s.meta }}</div>
-        </div>
+        <li class="tl-step">
+          <div class="tl-n">{{ s.n }}</div>
+          <div>
+            <h3>{{ s.h }}</h3>
+            <p>{{ s.p }}</p>
+            <div class="meta">{{ s.meta }}</div>
+          </div>
+        </li>
       }
-    </div>
+    </ol>
   </div>
 </section>
 
-<!-- Verify Section -->
+<!-- How we verify: gold evidence band -->
 <section class="verify-band" id="verify">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">How we verify</div>
-        <h2 style="margin-top:24px">Every project, documented and evidenced.</h2>
-      </div>
-      <div class="right">
-        <p>You shouldn't have to take our word for any credit. Crevy builds a continuous evidence trail from the moment a project is onboarded — combining IoT monitoring, on-the-ground verification, and international framework alignment. Every buyer gets the full audit trail.</p>
-      </div>
+    <div class="verify-head">
+      <h2>Every project, documented and evidenced.</h2>
+      <p>You shouldn't have to take our word for any credit. Crevy builds a continuous evidence trail from the moment a project is onboarded, combining IoT monitoring, on-the-ground verification and international framework alignment.</p>
     </div>
     <div class="verify-grid">
-      <div class="verify-card">
-        <div class="num">01</div>
-        <h4>Project Documentation</h4>
-        <p>Project developers document their sustainable practices on Crevy from day one. Every activity is recorded, timestamped, and stored as part of the verification evidence trail.</p>
-        <div class="meta">Document · Monitor · Report · Verify</div>
-      </div>
-      <div class="verify-card">
-        <div class="num">02</div>
-        <h4>Real-Time MRV Monitoring</h4>
-        <p>IoT sensor data feeds continuously into your project record. Every data point builds the evidence auditors and standards bodies need to issue credits.</p>
-        <div class="meta">MRV framework · IoT integration · Real-time data</div>
-      </div>
-      <div class="verify-card">
-        <div class="num">03</div>
-        <h4>Local Verification</h4>
-        <p>Our on-the-ground team — including our Verification Lead and Article 6 Expert — conducts assessments and assembles the verification dossier. We work with local agents who know the land and the communities.</p>
-        <div class="meta">Ghana CMO aligned · Local agents · International frameworks</div>
-      </div>
-      <div class="verify-card">
-        <div class="num">04</div>
-        <h4>Pre-Verification Pipeline</h4>
-        <p>Projects move through our structured pre-verification process aligned with international carbon standards. From zero documentation to audit-ready in weeks, not years.</p>
-        <div class="meta">International frameworks · Ghana CMO · CSRD-ready output</div>
-      </div>
+      @for (v of evidence; track v.h) {
+        <div class="verify-card">
+          <h3>{{ v.h }}</h3>
+          <p>{{ v.p }}</p>
+          <div class="meta">{{ v.meta }}</div>
+        </div>
+      }
     </div>
     <p class="verify-deepdive">
-      Want the full protocol — telemetry specs, AGB formulas, and the on-chain payload schema? <a routerLink="/how-mrv-works">Read the scientific notebook →</a>
+      Want the full protocol, with telemetry specs, AGB formulas and the on-chain payload schema? <a routerLink="/how-mrv-works">Read the scientific notebook →</a>
     </p>
   </div>
 </section>
 
-<!-- Methodology Library -->
+<!-- Methodology library: a table you can scan -->
 <section class="methods" id="methodology">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Methodology library</div>
-        <h2 style="margin-top:24px">6 core methodologies. Pick the one that fits your land.</h2>
-      </div>
-      <div class="right">
-        <p>Foovante is building toward full Verra, Gold Standard, and Plan Vivo catalog coverage. These six methodologies cover the vast majority of qualifying African land types and are supported on the platform today.</p>
-      </div>
+    <div class="methods-head">
+      <h2>6 core methodologies. Pick the one that fits your land.</h2>
+      <p>Foovante is building toward full Verra, Gold Standard and Plan Vivo coverage. These six cover most qualifying African land types and are supported today.</p>
     </div>
-    <div class="method-grid">
+    <div class="method-table" role="table" aria-label="Supported methodologies">
+      <div class="mt-row mt-headrow" role="row">
+        <span role="columnheader">Methodology</span>
+        <span role="columnheader">What it covers</span>
+        <span role="columnheader">Minimum size</span>
+        <span role="columnheader">Crediting period</span>
+      </div>
       @for (m of methods; track m.badge) {
-        <div class="method">
-          <div class="badge">{{ m.badge }}</div>
-          <h4>{{ m.h }}</h4>
-          <p class="desc">{{ m.desc }}</p>
-          <div class="footer">
-            <span>Min. size <strong>{{ m.minSize }}</strong></span>
-            <span>Crediting <strong>{{ m.dur }}</strong></span>
-          </div>
+        <div class="mt-row" role="row">
+          <span class="mt-name" role="cell"><small>{{ m.badge }}</small>{{ m.h }}</span>
+          <span class="mt-desc" role="cell">{{ m.desc }}</span>
+          <span class="mt-num" role="cell"><em>Minimum size</em>{{ m.minSize }}</span>
+          <span class="mt-num" role="cell"><em>Crediting period</em>{{ m.dur }}</span>
         </div>
       }
     </div>

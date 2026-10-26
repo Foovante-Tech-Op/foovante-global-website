@@ -20,115 +20,80 @@
   </div>
 </div>
 
-<!-- How It Works -->
-<section>
+<!-- How It Works: one connected track -->
+<section class="journey-sec">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">How it works</div>
-        <h2 style="margin-top:24px">From project to verified carbon asset.</h2>
-      </div>
-      <div class="right">
-        <p>Pre-purchase verified credits at fixed prices. Every transaction settles with a full audit trail. Choose the project that fits your mandate.</p>
-      </div>
+    <div class="journey-head">
+      <h2>From project to verified carbon asset.</h2>
+      <p>Pre-purchase verified credits at fixed prices. Every transaction settles with a full audit trail.</p>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-n">01. Document</div>
-        <h3>Submit your project to Crevy</h3>
-        <p>Project developers submit their land or energy work to the Crevy platform. Our team helps you build the documentation foundation needed for verification — no lawyers, consultants, or years of paperwork required.</p>
-        <div class="meta">Agriculture · Energy · Waste projects</div>
-      </div>
-      <div class="step">
-        <div class="step-n">02. Monitor</div>
-        <h3>Real-time data collection begins</h3>
-        <p>IoT sensor data feeds continuously into your project record, building the evidence trail auditors need. Every data point is timestamped and tamper-evident.</p>
-        <div class="meta">MRV framework · IoT integration</div>
-      </div>
-      <div class="step">
-        <div class="step-n">03. Verify</div>
-        <h3>Pre-verification and audit-readiness</h3>
-        <p>Your project moves through our pre-verification pipeline, aligned with international carbon standards. From zero documentation to audit-ready in weeks, not years.</p>
-        <div class="meta">International frameworks · Ghana CMO aligned</div>
-      </div>
-      <div class="step">
-        <div class="step-n">04. Sell</div>
-        <h3>Connect to global buyers</h3>
-        <p>Verified African carbon credits connect directly to global buyers through our marketplace. Buyers receive full traceability and CSRD-ready documentation. Communities receive a minimum 25% of credit revenue.</p>
-        <div class="meta">Fully traceable · Independently verified · CSRD-ready</div>
-      </div>
-    </div>
+
+    <ol class="journey">
+      @for (s of journey; track s.stage) {
+        <li class="stop">
+          <span class="stop-dot" aria-hidden="true"></span>
+          <span class="stop-stage">{{ s.stage }}</span>
+          <h3>{{ s.h }}</h3>
+          <p>{{ s.p }}</p>
+          <span class="stop-meta">{{ s.meta }}</span>
+        </li>
+      }
+    </ol>
   </div>
 </section>
 
+<!-- Portfolio dashboard preview -->
+<section class="dash-sec">
+  <div class="wrap dash-grid">
+    <div class="dash-copy">
+      <h2>Every project. Every credit. Every community.</h2>
+      <p class="dash-lead">We are building a buyer dashboard inside Crevy that shows the projects you have backed and the credits you hold.</p>
 
-<!-- Portfolio Dashboard Preview -->
-<section style="background:var(--paper)">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Your portfolio, fully visible</div>
-        <h2 style="margin-top:24px">Every project. Every credit. Every community.</h2>
-      </div>
-      <div class="right">
-        <p>We are building a buyer dashboard inside Crevy that gives buyers complete visibility into the projects they have backed and the credits they hold.</p>
+      <dl class="feat-list">
+        @for (f of dashFeatures; track f.h) {
+          <div class="feat">
+            <dt>{{ f.h }}</dt>
+            <dd>{{ f.p }}</dd>
+          </div>
+        }
+      </dl>
+
+      <div class="dashboard-cta">
+        <p><strong>Launching with our first credit issuances.</strong> Early buyers get access as soon as projects complete baseline.</p>
+        <a class="btn btn-primary" routerLink="/founder-brief">Join the early list</a>
       </div>
     </div>
 
-    <div class="dashboard-features">
-      <div class="df-card">
-        <div class="df-icon">◎</div>
-        <h4>Credit Portfolio View</h4>
-        <p>See every credit you hold across all projects — project type, verification status, and current retirement status — in one place. Fully traceable and independently verified.</p>
+    <figure class="dash-mock" aria-label="Preview of the buyer dashboard with sample data">
+      <div class="dm-bar">
+        <span class="dm-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="dm-title">Crevy · Portfolio</span>
+        <span class="dm-tag">Sample data</span>
       </div>
-      <div class="df-card">
-        <div class="df-icon">◈</div>
-        <h4>Capital & Credit Tracking</h4>
-        <p>Track your pre-purchases from commitment through to issuance. Full audit trail per tonne, aligned with international MRV frameworks and Ghana CMO requirements.</p>
+      <div class="dm-summary">
+        <div><span class="dm-n">{{ portfolioTonnes | number }}</span><span class="dm-l">tCO₂e pre-purchased</span></div>
+        <div><span class="dm-n">{{ portfolio.length }}</span><span class="dm-l">Projects backed</span></div>
       </div>
-      <div class="df-card">
-        <div class="df-icon">◉</div>
-        <h4>MRV Data Feed</h4>
-        <p>Access the real-time IoT monitoring data feeding into every project you have backed. Every data point builds the evidence trail auditors and regulators need.</p>
-      </div>
-      <div class="df-card">
-        <div class="df-icon">◐</div>
-        <h4>Impact Metrics</h4>
-        <p>Hectares under active documentation, communities with benefit-sharing agreements, and SDG alignment — the numbers you need for your own CSRD reporting obligations.</p>
-      </div>
-    </div>
-
-    <div class="dashboard-cta" style="margin-top:56px;padding:40px;background:var(--sage-2);border-radius:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
-      <div>
-        <div style="font-family:var(--font-display);font-size:20px;font-weight:600;letter-spacing:-0.02em">Dashboard launching with our first credit issuances.</div>
-        <p style="font-size:15px;color:var(--ink-2);margin:8px 0 0">Early buyers will get access as soon as projects complete baseline. Talk to us to get on the list.</p>
-      </div>
-      <a class="btn btn-primary" routerLink="/founder-brief">Talk to us <span class="arrow">→</span></a>
-    </div>
+      <ul class="dm-rows">
+        @for (p of portfolio; track p.id) {
+          <li>
+            <span class="dm-name">{{ p.name }}<small>{{ p.place }} · {{ p.standard }}</small></span>
+            <span class="dm-bar-track"><span class="dm-bar-fill" [style.width.%]="p.raised / p.target * 100"></span></span>
+            <span class="dm-status" [class.is-issued]="p.raised / p.target > 0.7">{{ p.raised / p.target > 0.7 ? 'On track' : 'Baseline' }}</span>
+          </li>
+        }
+      </ul>
+    </figure>
   </div>
 </section>
-
-<!-- Map Network -->
-<!-- <section>
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Live project network</div>
-        <h2 style="margin-top:24px">Active projects · growing across the continent.</h2>
-      </div>
-      <div class="right">
-        <p>From Senegal mangrove restoration to Ethiopian highland reforestation, the Foovante network spans the continent and grows weekly.</p>
-      </div>
-    </div>
-    <fv-map-section></fv-map-section>
-  </div>
-</section> -->
 
 <!-- CTA -->
-<section class="cta">
-  <div class="cta-in">
-    <h2>Start with a single project.</h2>
-    <p>Create a free buyer account, browse 282 verified projects, and make your first commitment in under 10 minutes.</p>
+<section class="cta cta-split">
+  <div class="wrap cta-in">
+    <div>
+      <h2>Start with a single project.</h2>
+      <p>Create a free buyer account, browse verified projects, and make your first commitment in under 10 minutes.</p>
+    </div>
     <div class="cta-actions">
       <a class="btn btn-primary btn-lg" href="https://foovant.vercel.app/" target="_blank" rel="noopener">Create buyer account <span class="arrow">→</span></a>
       <a class="btn btn-ghost btn-lg" routerLink="/founder-brief">Talk to the team</a>

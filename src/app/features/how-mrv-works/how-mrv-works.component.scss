@@ -399,3 +399,37 @@
   .legend > div { grid-template-columns: 90px 1fr; }
   .t2t-code { font-size: 11.5px; padding: 18px; }
 }
+
+// ─── CTA: console panel, matching the chain-of-custody payload ──────────────
+.cta-console {
+  background: var(--bg);
+  text-align: left;
+
+  .cta-in {
+    max-width: none;
+    padding: 64px;
+    background: #0E1916;
+    border: 1px solid #1F2F2A;
+    border-radius: 16px;
+  }
+
+  .prompt {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 14px;
+    color: var(--salmon-soft);
+    margin: 0 0 32px;
+    max-width: none;
+
+    span { color: var(--gold); margin-right: 6px; }
+  }
+
+  h2 { max-width: 16ch; }
+  p { margin-left: 0; color: rgba(255, 255, 255, 0.7); }
+  .cta-actions { justify-content: flex-start; }
+  .btn-primary { background: var(--gold); color: #fff; }
+  .btn-primary:hover { background: var(--rust); }
+}
+
+@media (max-width: 640px) {
+  .cta-console .cta-in { padding: 36px 24px; }
+}

@@ -1,104 +1,84 @@
 :host { display: block; }
 
-// Mission
-.mission { padding: 120px 0; }
+// ─── Mission: one oversized statement ───────────────────────────────────────
+.mission { padding: 140px 0 120px; }
 
-.mission-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.mission-grid blockquote {
+.mission-statement {
   font-family: var(--font-display);
-  font-size: clamp(22px, 3vw, 36px);
+  font-size: clamp(32px, 4.8vw, 64px);
   font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
   color: var(--ink);
-  margin: 0;
-
-  em { font-style: normal; color: var(--gold); }
+  max-width: 22ch;
+  margin: 0 0 72px;
 }
 
 .mission-body {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  columns: 2;
+  column-gap: 64px;
+  max-width: 980px;
+  margin-left: auto;
 
   p {
     font-size: 16px;
     color: var(--ink-2);
     line-height: 1.7;
-    margin: 0;
+    margin: 0 0 20px;
+    break-inside: avoid;
   }
 
   strong { color: var(--ink); }
 }
 
-// What
-.what { padding: 120px 0; }
+// ─── What we do: three pillars led by a verb ────────────────────────────────
+.what { background: var(--paper); }
+
+.what-title { margin: 0 0 64px; max-width: 16ch; }
 
 .what-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--line);
+  gap: 48px;
 }
 
 .what-card {
-  padding: 48px 32px 48px 0;
-  border-right: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  padding-top: 28px;
 
-  &:last-child { border-right: 0; padding-right: 0; }
-  &:not(:first-child) { padding-left: 32px; }
+  &:nth-child(2) { border-color: var(--salmon-soft); }
+  &:nth-child(3) { border-color: var(--rust); }
 
   .ix {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-  }
-
-  h3 {
-    font-size: 22px;
+    font-family: var(--font-display);
+    font-size: 44px;
     font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 14px;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 24px;
   }
 
-  p {
-    font-size: 14px;
-    color: var(--ink-2);
-    margin: 0;
-    line-height: 1.65;
-  }
-
-  .meta {
-    margin-top: 24px;
-    font-size: 12px;
-    color: var(--muted);
-    font-weight: 500;
-    letter-spacing: 0.02em;
-  }
+  h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 12px; }
+  p { font-size: 15px; color: var(--ink-2); margin: 0; line-height: 1.65; }
+  .meta { margin-top: 20px; font-size: 13px; color: var(--muted); line-height: 1.5; }
 }
 
-// Timeline
-.timeline { padding: 120px 0; }
+// ─── Milestones: slim banner ────────────────────────────────────────────────
+.timeline { padding: 0; }
 
 .tl-placeholder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+  padding: 72px var(--pad);
   border-top: 1px solid var(--line);
-  padding: 64px 0;
+  border-bottom: 1px solid var(--line);
 
-  p {
-    font-size: 16px;
-    color: var(--muted);
-    font-weight: 500;
-    margin: 0;
-  }
+  h2 { font-size: clamp(24px, 2.6vw, 32px); margin: 0 0 12px; max-width: 26ch; }
+  p { font-size: 15px; color: var(--ink-2); line-height: 1.6; margin: 0; max-width: 60ch; }
+  .btn { flex-shrink: 0; }
 }
 
 // Leadership
@@ -285,116 +265,123 @@
   to   { transform: translateX(calc(-100% / 5)); } // one of the 5 identical sets
 }
 
-// Advisors
-.advisors-band {
-  padding: 80px 0;
-  background: var(--bg);
-  border-top: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
+// ─── Advisors: names set as type ────────────────────────────────────────────
+.advisors-band { background: var(--bg); }
+
+.advisors-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 96px;
+  align-items: start;
+}
+
+.advisors-intro {
+  h2 { margin: 0 0 20px; max-width: 14ch; }
+  p { margin: 0; font-size: 16px; color: var(--ink-2); line-height: 1.6; max-width: 40ch; }
 }
 
 .advisors-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
 }
 
 .advisor {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--paper);
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
 
-  .nm   { font-family: var(--font-display); font-size: 16px; font-weight: 600; letter-spacing: -0.015em; }
-  .from { font-size: 13px; color: var(--muted); font-weight: 500; }
-  .ix   { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; }
+  .nm { font-family: var(--font-display); font-size: clamp(22px, 2.4vw, 30px); font-weight: 600; letter-spacing: -0.025em; }
+  .ix { font-size: 14px; color: var(--muted); text-align: right; }
 }
 
-// Credentials
+// ─── Credentials: orange ledger ─────────────────────────────────────────────
 .creds {
-  padding: 120px 0;
   background: var(--gold);
   color: #fff;
 
-  .eyebrow { color: var(--salmon-soft); &::before { background: var(--salmon-soft); } }
-  h2 { color: #fff; }
-  .sec-head p { color: rgba(255,255,255,.82); }
+  h2, h3 { color: #fff; }
+}
+
+.creds-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 64px;
+
+  h2 { margin: 0; max-width: 16ch; }
+  p { margin: 0; font-size: 17px; line-height: 1.55; color: rgba(255, 255, 255, 0.85); max-width: 46ch; }
 }
 
 .creds-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border-top: 1px solid rgba(255,255,255,.16);
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .cred-card {
-  padding: 48px 28px 48px 0;
-  border-right: 1px solid rgba(255,255,255,.16);
+  padding: 36px 40px 36px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
-  &:not(:first-child) { padding-left: 28px; }
-  &:last-child { border-right: 0; padding-right: 0; }
+  &:nth-child(even) { padding: 36px 0 36px 40px; border-left: 1px solid rgba(255, 255, 255, 0.3); }
 
-  h4 {
-    font-family: var(--font-display);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--green-light);
-    text-transform: uppercase;
-    margin: 0 0 18px;
+  h3 { font-size: 15px; font-weight: 600; margin: 0 0 10px; color: rgba(255, 255, 255, 0.85); }
+  .v { font-family: var(--font-display); font-size: 30px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin: 0 0 14px; }
+  p { margin: 0; font-size: 15px; color: rgba(255, 255, 255, 0.85); line-height: 1.6; max-width: 48ch; }
+}
+
+// ─── CTA: light split, after the orange band ────────────────────────────────
+.cta-about {
+  background: var(--gold-soft);
+  color: var(--ink);
+  text-align: left;
+
+  .cta-in {
+    max-width: var(--max);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
   }
 
-  .v {
-    font-family: var(--font-display);
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1.1;
-    color: #fff;
-    margin: 0 0 12px;
-  }
-
-  p { margin: 0; font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.55; }
+  h2 { color: var(--ink); margin-bottom: 16px; max-width: 16ch; }
+  p { margin: 0; color: var(--ink-2); max-width: 46ch; }
+  .cta-actions { justify-content: flex-end; flex-wrap: nowrap; flex-shrink: 0; }
+  .btn-primary { background: var(--gold); color: #fff; }
+  .btn-primary:hover { background: var(--rust); }
+  .btn-ghost { color: var(--ink); border-color: var(--line); }
+  .btn-ghost:hover { border-color: var(--ink); background: transparent; }
 }
 
 @media (max-width: 980px) {
-  .mission-grid   { grid-template-columns: 1fr; gap: 48px; }
-  .what-grid      { grid-template-columns: 1fr; }
-  .what-card      { border-right: 0; border-bottom: 1px solid var(--line); padding: 32px 0; &:not(:first-child) { padding-left: 0; } }
-  .tl-row         { grid-template-columns: 1fr; gap: 14px; }
-  .tl-year        { font-size: 36px; }
-  .tl-stats       { text-align: left; }
+  .mission-body { columns: 1; }
+  .what-grid { grid-template-columns: 1fr; gap: 40px; }
+  .tl-placeholder { flex-direction: column; align-items: start; }
+  .advisors-layout, .creds-head { grid-template-columns: 1fr; gap: 40px; }
+  .cta-about .cta-in { flex-direction: column; align-items: start; }
+  .cta-about .cta-actions { justify-content: flex-start; flex-wrap: wrap; }
   .lead-grid      { grid-template-columns: 1fr; }
   .lead-card      { grid-template-columns: 1fr; }
   .lead-pic       { aspect-ratio: 5 / 3; }
   .ops-grid       { grid-template-columns: 1fr 1fr; }
-  .advisors-grid  { grid-template-columns: 1fr 1fr; }
-  .creds-grid     { grid-template-columns: 1fr 1fr; }
-  .cred-card {
-    border-right: 0;
-    border-bottom: 1px solid rgba(255,255,255,.16);
-    padding: 28px 0 !important;
-  }
 }
 
 @media (max-width: 640px) {
-  .mission, .what, .timeline, .ops, .creds { padding: 72px 0; }
-  .advisors-band { padding: 56px 0; }
+  .mission { padding: 80px 0 64px; }
+  .mission-statement { margin-bottom: 40px; }
+  .tl-placeholder { padding: 56px var(--pad); }
+  .creds-grid { grid-template-columns: 1fr; }
+  .cred-card, .cred-card:nth-child(even) { padding: 28px 0; border-left: 0; }
+  .cred-card .v { font-size: 24px; }
+  .advisor { flex-direction: column; gap: 4px; }
+  .advisor .ix { text-align: left; }
   .ops-grid      { grid-template-columns: 1fr; }
-  .advisors-grid { grid-template-columns: 1fr; }
-  .creds-grid    { grid-template-columns: 1fr; }
-  .cred-card .v  { font-size: 22px; }
   .lead-body     { padding: 24px; }
   .carousel-item { height: 84px; }
   .carousel-item img { max-height: 84px; max-width: 160px; }
-}
-
-@media (max-width: 380px) {
-  .mission-grid { gap: 32px; }
-  .lead-body    { padding: 20px; }
-  .lead-body h3 { font-size: 22px; }
 }

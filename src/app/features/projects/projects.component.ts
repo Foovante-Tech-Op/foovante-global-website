@@ -96,6 +96,13 @@ export class ProjectsComponent {
     }
   ];
 
+  evidence = [
+    { h: 'Project documentation', p: 'Developers document their sustainable practices on Crevy from day one. Every activity is recorded, timestamped and kept as part of the evidence trail.', meta: 'Document, monitor, report, verify' },
+    { h: 'Real-time MRV monitoring', p: 'IoT sensor data feeds continuously into your project record, building the evidence auditors and standards bodies need to issue credits.', meta: 'IoT integration, real-time data' },
+    { h: 'Local verification', p: 'Our on-the-ground team, including our Verification Lead and Article 6 Expert, runs assessments and assembles the verification dossier with local agents who know the land.', meta: 'Ghana CMO aligned, local agents' },
+    { h: 'Pre-verification pipeline', p: 'Projects move through a structured pre-verification process aligned with international carbon standards, from zero documentation to audit-ready in weeks.', meta: 'CSRD-ready output' }
+  ];
+
   priorities = [
     {
       n: 'P1',

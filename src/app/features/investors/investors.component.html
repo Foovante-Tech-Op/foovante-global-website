@@ -9,107 +9,50 @@
   [cta2]="{label: 'Talk to the founders', routerLink: '/founder-brief'}"
 ></fv-hero>
 
-<!-- Stats Band -->
-<div class="stats">
-  <div class="wrap">
-    <div class="stats-grid">
-      <div class="stat"><div class="n">3</div><div class="l">Pilot projects · active documentation</div></div>
-      <div class="stat"><div class="n">3,620 ha</div><div class="l">Hectares under active documentation</div></div>
-      <div class="stat"><div class="n">2028</div><div class="l">Projected break-even</div></div>
-      <div class="stat"><div class="n">16</div><div class="l">Published references · Theory of Change</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- Traction Section -->
+<!-- Traction: the numbers, on a dark slide -->
 <section class="traction" id="traction">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Traction</div>
-        <h2 style="margin-top:24px">Pre-seed stage. Real foundations.</h2>
-      </div>
-      <div class="right">
-        <p>We are pre-revenue, building the infrastructure and pilot track record that unlocks the carbon market opportunity. Here is what is real and verified today.</p>
-      </div>
+    <div class="tr-head">
+      <h2>Pre-seed stage. Real foundations.</h2>
+      <p>We are pre-revenue, building the infrastructure and pilot track record that unlocks the carbon market. Here is what is real and verified today.</p>
     </div>
 
-    <div class="traction-grid">
-      <div class="panel">
-        <div>
-          <h3>Pilot projects</h3>
-          <p style="font-size:14px;color:var(--muted);margin-top:4px">The first step in our onboarding process. We review every application personally.</p>
+    <div class="tr-figures">
+      @for (t of traction; track t.l) {
+        <div class="tr-fig">
+          <div class="big-n">{{ t.n }}@if (t.unit) {<small>{{ t.unit }}</small>}</div>
+          <div class="tr-l">{{ t.l }}</div>
+          <p>{{ t.d }}</p>
+        </div>
+      }
+    </div>
 
-          
-          <p class="sub">Onboarded to Crevy · active documentation</p>
-        </div>
-        <div class="big-n">3</div>
-        <div style="margin-top:auto;font-size:14px;color:var(--ink-2)">
-          Ghana active · <strong>Nigeria pipeline</strong> for Q2 2027
-        </div>
+    <div class="tr-foundation">
+      <div class="tr-checks">
+        <h3>Foundation work complete</h3>
+        <ul>
+          <li>Legal infrastructure: privacy policy, terms and MOU templates</li>
+          <li>Financial model reviewed and stress-tested by our finance advisor</li>
+          <li>Theory of Change with 16 published references, reviewed by our impact advisor</li>
+          <li>25% community benefit-sharing, required for every project</li>
+        </ul>
       </div>
-
-      <div class="panel">
-        <div>
-          <h3>Hectares documented</h3>
-          <p style="font-size:14px;color:var(--muted);margin-top:4px">Verified evidence trail in Crevy for thousands of hectares of carbon projects.</p>
-          <p class="sub">Under active MRV documentation</p>
-        </div>
-        <div class="big-n">3,620<small> ha</small></div>
-        <div style="margin-top:auto;font-size:14px;color:var(--ink-2)">
-          Agriculture · forestry · waste project types
-        </div>
-      </div>
-
-      <div class="panel">
-        <div>
-          <h3>Projected 2026 revenue</h3>
-          <p style="font-size:14px;color:var(--muted);margin-top:4px">Revenue in 2026 will come from pilot projects and early platform fees as we build the foundation for growth.</p>
-          <p class="sub">Financial model · advisor-reviewed</p>
-        </div>
-        <div class="big-n">$28<small>k</small></div>
-        <div style="margin-top:auto;font-size:14px;color:var(--ink-2)">
-          Break-even projected <strong>2028</strong> · stress-tested model
-        </div>
-      </div>
-
-      <div class="panel">
-        <div>
-          <h3>Foundation work complete</h3>
-          <p style="font-size:14px;color:var(--muted);margin-top:4px">The legal, compliance, and evidence-gathering foundation for a credible carbon platform.</p>
-          <p class="sub">Compliance, legal & evidence base</p>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px">
-          <div style="font-size:14px;color:var(--ink-2)">✓ Legal infrastructure — Privacy Policy, T&amp;Cs, MOU templates</div>
-          <div style="font-size:14px;color:var(--ink-2)">✓ Financial model reviewed &amp; stress-tested by finance advisor</div>
-          <div style="font-size:14px;color:var(--ink-2)">✓ Theory of Change — 16 published references, impact-advisor reviewed</div>
-          <div style="font-size:14px;color:var(--ink-2)">✓ 25% community benefit-sharing — required for all projects</div>
-        </div>
-      </div>
-      <div class="panel panel-image">
-        <img src="assets/images/forest.jpg" alt="Plantation in Ghana" />
-      </div>
+      <img src="assets/images/forest.jpg" alt="Plantation in Ghana" />
     </div>
   </div>
 </section>
 
-<!-- Moat Section -->
-<section class="moat" id="moat" style="background:var(--paper)">
+<!-- Moat: one statement, evidence in rows -->
+<section class="moat" id="moat">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">The product moat</div>
-        <h2 style="margin-top:24px">We're not a marketplace. We're the verification layer.</h2>
-      </div>
-      <div class="right">
-        <p>The defensible asset in carbon markets is not the trading interface it is the verified evidence trail. Crevy is built to create that trail for African projects that have never had access to it.</p>
-      </div>
-    </div>
-    <div class="moat-grid">
+    <h2 class="moat-statement">We're not a marketplace. We're the verification layer.</h2>
+    <p class="moat-lead">The defensible asset in carbon markets is not the trading interface, it is the verified evidence trail. Crevy is built to create that trail for African projects that have never had access to it.</p>
+
+    <div class="moat-rows">
       @for (m of moatCards; track $index) {
         <div class="moat-card">
           <div class="num">{{ m.n }}</div>
-          <h4>{{ m.h }}</h4>
+          <h3>{{ m.h }}</h3>
           <p>{{ m.p }}</p>
         </div>
       }
@@ -117,68 +60,48 @@
   </div>
 </section>
 
-<!-- Business Model -->
-<section id="model">
+<!-- Business model: where an $18.50 credit goes -->
+<section class="model" id="model">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Business model</div>
-        <h2 style="margin-top:24px">Three fee streams. One platform.</h2>
-      </div>
-      <div class="right">
-        <p>Every dollar of revenue is attached to real carbon infrastructure work, not arbitrage. As the market grows, so do our take rates.</p>
-      </div>
+    <div class="model-head">
+      <h2>Three fee streams. One platform.</h2>
+      <p>Every dollar of revenue is attached to real carbon infrastructure work, not arbitrage.</p>
     </div>
 
-    <div class="model-grid">
-      <div class="model-visual">
-        <div class="credit-stack">
-          <div class="cs-row">
-            <i style="background:var(--green)"></i>
-            <strong>$13.32</strong>
-            <span>Project owner · 72% of credit value</span>
+    <figure class="split">
+      <figcaption>Where an $18.50 credit goes <span>(illustrative)</span></figcaption>
+      <div class="split-bar" role="img" aria-label="Project owner $13.32, Foovante platform fee $2.78, verification and issuance $1.85, methodology costs $0.55">
+        @for (c of creditSplit; track c.l) {
+          <div class="seg" [style.flex-grow]="c.v" [style.background]="c.color">
+            <strong>{{ '$' + c.v.toFixed(2) }}</strong>
+            <span>{{ c.l }}</span>
           </div>
-          <div class="cs-row">
-            <i style="background:var(--gold)"></i>
-            <strong>$2.78</strong>
-            <span>Foovante platform fee · 15%</span>
-          </div>
-          <div class="cs-row">
-            <i style="background:var(--ink-2)"></i>
-            <strong>$1.85</strong>
-            <span>Verification &amp; issuance · 10%</span>
-          </div>
-          <div class="cs-row">
-            <i style="background:var(--muted)"></i>
-            <strong>$0.55</strong>
-            <span>Methodology &amp; spec costs</span>
-          </div>
-        </div>
-        <div class="credit-label">Per $18.50 credit · illustrative</div>
+        }
       </div>
+      <ul class="split-legend">
+        @for (c of creditSplit; track c.l) {
+          <li><i [style.background]="c.color"></i><strong>{{ '$' + c.v.toFixed(2) }}</strong> {{ c.l }}</li>
+        }
+      </ul>
+    </figure>
 
-      <div>
-        <p style="font-family:var(--font-display);font-size:28px;font-weight:600;letter-spacing:-0.025em;margin:0 0 24px">
-          Three platform-fee streams.
-        </p>
-        <ul class="fee-list">
-          @for (f of feeStreams; track f.pct) {
-            <li>
-              <strong class="fee-pct">{{ f.pct }}</strong>
-              <span><strong>{{ f.h }}</strong> {{ f.d }}</span>
-            </li>
-          }
-        </ul>
-      </div>
-    </div>
+    <ul class="fee-list">
+      @for (f of feeStreams; track f.pct) {
+        <li>
+          <strong class="fee-pct">{{ f.pct }}</strong>
+          <h3>{{ f.h }}</h3>
+          <p>{{ f.d }}</p>
+        </li>
+      }
+    </ul>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta">
-  <div class="cta-in">
+<section class="cta cta-dark">
+  <div class="wrap cta-in">
     <h2>Ready to see the data room?</h2>
-    <p>We share financials, cap table, investor update, and full technical documentation with thesis-aligned funds. Drop your details and we'll send access within one business day.</p>
+    <p>We share financials, cap table, investor update and full technical documentation with thesis-aligned funds. We send access within one business day.</p>
     <div class="cta-actions">
       <a class="btn btn-primary btn-lg" href="https://foovant.vercel.app/" target="_blank" rel="noopener">Request data room <span class="arrow">→</span></a>
       <a class="btn btn-ghost btn-lg" routerLink="/founder-brief">Talk to the founders</a>

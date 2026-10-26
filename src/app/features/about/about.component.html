@@ -10,33 +10,23 @@
   [cta2]="{label: 'Read the founder brief', routerLink: '/founder-brief'}"
 ></fv-hero>
 
-<!-- Mission Section -->
+<!-- Mission: one statement, then the argument -->
 <section class="mission" id="mission">
-  <div class="wrap mission-grid">
-    <div>
-      <div class="eyebrow">Our mission</div>
-      <blockquote style="margin-top:24px">
-        Africa holds <em>significant carbon credit potential</em>, yet only <em>5% of its nature-based capacity has been unlocked as of 2025</em>. We exist to help close that gap.
-      </blockquote>
-    </div>
+  <div class="wrap">
+    <p class="mission-statement">Africa holds significant carbon credit potential, yet only 5% of its nature-based capacity had been unlocked by 2025. We exist to help close that gap.</p>
     <div class="mission-body">
-      <p>The voluntary carbon market is projected to reach $23.99B by 2030, and African ecosystems forests, mangroves, drylands, and agroforestry systems represent some of the highest-quality natural carbon assets on Earth. They should be the supply side of that market.</p>
-      <p>They are not. Today, African projects remain severely underrepresented in global carbon markets, because the verification, certification, and trading infrastructure was built for the global North not for a cooperative in Rwanda or a community forest in Ghana. The result: $2.6B in value lost to verification delays by 2030 if nothing changes.</p>
-      <p><strong>Foovante Global is building that infrastructure from Accra.</strong> Through Crevy, our digital platform, project developers can document sustainable practices, receive real-time IoT monitoring data, and build the verified evidence trail required for carbon credit issuance going from zero documentation to audit-ready in weeks, not years.</p>
-      <p>We are building the operating system for African carbon. And we are building it from the continent itself.</p>
+      <p>The voluntary carbon market is projected to reach $23.99B by 2030, and African ecosystems (forests, mangroves, drylands and agroforestry systems) represent some of the highest-quality natural carbon assets on Earth. They should be the supply side of that market.</p>
+      <p>They are not. African projects remain severely underrepresented because the verification, certification and trading infrastructure was built for the global North, not for a cooperative in Rwanda or a community forest in Ghana. The result: $2.6B in value lost to verification delays by 2030 if nothing changes.</p>
+      <p><strong>Foovante Global is building that infrastructure from Accra.</strong> Through Crevy, our digital platform, project developers document sustainable practices, receive real-time IoT monitoring data and build the evidence trail required for issuance, going from zero documentation to audit-ready in weeks.</p>
+      <p>We are building the operating system for African carbon, from the continent itself.</p>
     </div>
   </div>
 </section>
 
-<!-- What We Do -->
-<section class="what" style="background:var(--paper)">
+<!-- What we do: three pillars -->
+<section class="what">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">What we do</div>
-        <h2 style="margin-top:24px">Three capabilities. One platform.</h2>
-      </div>
-    </div>
+    <h2 class="what-title">Three capabilities. One platform.</h2>
     <div class="what-grid">
       @for (w of whatCards; track w.ix) {
         <div class="what-card">
@@ -50,47 +40,32 @@
   </div>
 </section>
 
-<!-- Timeline -->
+<!-- Milestones -->
 <section class="timeline" id="milestones">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Achievements & milestones</div>
-        <h2 style="margin-top:24px">Expanding from West Africa across emerging carbon markets globally.</h2>
-      </div>
-      <div class="right">
-        <p>From West Africa to the Caribbean and South America, Foovante is building the infrastructure for carbon markets that have long been underserved. Full updates available in the data room.</p>
-      </div>
+  <div class="wrap tl-placeholder">
+    <div>
+      <h2>Expanding from West Africa across emerging carbon markets.</h2>
+      <p>From West Africa to the Caribbean and South America, Foovante is building the infrastructure for carbon markets that have long been underserved. A detailed milestones view is coming soon.</p>
     </div>
-    <div class="tl-placeholder">
-      <p>A detailed milestones view is coming soon. Contact us for the full partner and investor update.</p>
-      <a routerLink="/founder-brief" fragment="contact" class="btn btn-primary" style="margin-top:24px;display:inline-flex;align-items:center;gap:8px">Talk to the team <span class="arrow">→</span></a>
-    </div>
+    <a routerLink="/founder-brief" fragment="contact" class="btn btn-primary">Ask for the full update</a>
   </div>
 </section>
 
-
-<!-- Advisory Board -->
+<!-- Advisory board: names set large -->
 <section class="advisors-band" id="team">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Advisory board</div>
-        <h2 style="margin-top:24px">Backed by senior voices from standards, capital, and climate.</h2>
-      </div>
-      <div class="right">
-        <p>Our advisory board provides governance, standards-body relationships, and capital-allocator perspective: quarterly cadence, with full board observation rights for lead investors.</p>
-      </div>
+  <div class="wrap advisors-layout">
+    <div class="advisors-intro">
+      <h2>Backed by senior voices from standards, capital and climate.</h2>
+      <p>Our advisory board provides governance, standards-body relationships and a capital-allocator perspective, meeting quarterly, with full board observation rights for lead investors.</p>
     </div>
-    <div class="advisors-grid">
+    <ul class="advisors-grid">
       @for (a of advisors; track a.nm) {
-        <div class="advisor">
-          <div class="ix">{{ a.ix }}</div>
-          <div class="nm">{{ a.nm }}</div>
-          <div class="from">{{ a.from }}</div>
-        </div>
+        <li class="advisor">
+          <span class="nm">{{ a.nm }}</span>
+          <span class="ix">{{ a.ix }}</span>
+        </li>
       }
-    </div>
+    </ul>
   </div>
 </section>
 
@@ -115,19 +90,14 @@
 <!-- Credentials -->
 <section class="creds" id="credentials">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">Credentials &amp; compliance</div>
-        <h2 style="margin-top:24px">Built to meet the standards the market requires.</h2>
-      </div>
-      <div class="right">
-        <p>We are building the compliance foundation expected of any platform handling verified carbon assets. Securing these credentials is part of our pre-seed roadmap.</p>
-      </div>
+    <div class="creds-head">
+      <h2>Built to meet the standards the market requires.</h2>
+      <p>We are building the compliance foundation expected of any platform handling verified carbon assets. Securing these credentials is part of our pre-seed roadmap.</p>
     </div>
     <div class="creds-grid">
       @for (c of credCards; track c.h) {
         <div class="cred-card">
-          <h4>{{ c.h }}</h4>
+          <h3>{{ c.h }}</h3>
           <div class="v">{{ c.v }}</div>
           <p>{{ c.d }}</p>
         </div>
@@ -137,10 +107,12 @@
 </section>
 
 <!-- CTA -->
-<section class="cta" id="cta">
-  <div class="cta-in">
-    <h2>Want to talk to us directly?</h2>
-    <p>Our founders take introductions from buyers, projects, partners, and press personally. Drop a note; we typically reply within one business day.</p>
+<section class="cta cta-about" id="cta">
+  <div class="wrap cta-in">
+    <div>
+      <h2>Want to talk to us directly?</h2>
+      <p>Our founders take introductions from buyers, projects, partners and press personally. We typically reply within one business day.</p>
+    </div>
     <div class="cta-actions">
       <a href="https://foovant.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Talk to the founders <span class="arrow">→</span></a>
       <a href="mailto:press@foovante.com" class="btn btn-ghost btn-lg">Press &amp; media</a>

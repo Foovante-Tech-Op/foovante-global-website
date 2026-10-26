@@ -7,11 +7,22 @@ const EASE = 'power3.out';
 const START = 'top 88%';
 
 /** Section intros: eyebrow, heading and side copy rise in one after another. */
-const HEADS = '.sec-head, .mrv-block-head';
+const HEADS = '.sec-head, .mrv-block-head, .journey-head, .tr-head, .model-head, .methods-head, .verify-head, .listing-head, .creds-head, .advisors-intro';
 
 /** Two-column intros and standalone panels that reveal as one piece. */
 const BLOCKS = [
-  '.mission-grid > *',
+  '.mission-statement',
+  '.mission-body',
+  '.prove-grid > *',
+  '.what-title',
+  '.moat-statement',
+  '.moat-lead',
+  '.split',
+  '.dash-copy > h2',
+  '.dash-lead',
+  '.dash-mock',
+  '.tr-foundation',
+  '.letter-in > *',
   '.context-grid > *',
   '.values-grid > :not(.values-list)',
   '.model-grid > *',
@@ -40,11 +51,17 @@ const ITEMS = [
   '.moat-card',
   '.meta-cell',
   '.telemetry-card',
-  '.formula-card'
+  '.formula-card',
+  '.stop',
+  '.feat',
+  '.tl-step',
+  '.mt-row',
+  '.tr-fig',
+  '.fee-list li'
 ].join(', ');
 
 /** Figures that count up from zero, keeping any prefix/suffix such as "~12 wks" or "3,620 ha". */
-const COUNTERS = '.stat .n, .big-n';
+const COUNTERS = '.stat .n, .big-n, .dm-n';
 
 /**
  * Scroll-reveal animations for a routed page. Call from the page component's
