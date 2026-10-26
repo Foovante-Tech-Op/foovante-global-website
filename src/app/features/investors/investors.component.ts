@@ -1,12 +1,10 @@
-import { Component, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { HeroComponent } from '../../shared/components/hero/hero.component';
 import { HeroSlide } from '../../core/models/hero-slide.model';
-import { isPlatformBrowser } from '@angular/common';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePageMotion } from '../../shared/motion/page-motion';
 
 @Component({
   selector: 'fv-investors',
@@ -14,8 +12,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   templateUrl: './investors.component.html',
   styleUrl: './investors.component.scss'
 })
-export class InvestorsComponent implements AfterViewInit {
-  private platformId = inject(PLATFORM_ID);
+export class InvestorsComponent {
+  constructor() {
+    usePageMotion();
+  }
 
   heroSlides: HeroSlide[] = [
     {
@@ -62,44 +62,4 @@ export class InvestorsComponent implements AfterViewInit {
     { pct: '15%', h: 'Platform fee.', d: 'Covers MRV monitoring, project listing, marketplace, and T+1 settlement. ~$2.78 per tCO₂e at platform-average pricing.' },
     { pct: '10%', h: 'Verification & issuance.', d: 'Passed through at cost to your chosen standard body: Verra, Gold Standard, or Plan Vivo.' }
   ];
-
-  ngAfterViewInit(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    this.animateStagger('.traction-grid', '.panel', { y: 28, stagger: 0.12 });
-    this.animateStagger('.moat-grid', '.moat-card', { y: 24, stagger: 0.1 });
-
-    gsap.from('.model-grid', {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.model-grid', start: 'top 80%' }
-    });
-
-    gsap.from('.cta-in', {
-      opacity: 0,
-      y: 32,
-      scale: 0.98,
-      duration: 0.8,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.cta', start: 'top 80%' }
-    });
-  }
-
-  private animateStagger(sectionSelector: string, childSelector: string, opts: { y: number; stagger: number }): void {
-    const section = document.querySelector(sectionSelector);
-    if (!section) return;
-    const children = section.querySelectorAll(childSelector);
-    if (!children.length) return;
-    gsap.from(children, {
-      opacity: 0,
-      y: opts.y,
-      duration: 0.6,
-      stagger: opts.stagger,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: section, start: 'top 85%' }
-    });
-  }
 }

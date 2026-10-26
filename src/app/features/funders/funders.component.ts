@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
@@ -6,9 +6,7 @@ import { HeroComponent } from '../../shared/components/hero/hero.component';
 import { HeroSlide } from '../../core/models/hero-slide.model';
 import { FV_PROJECTS } from '../../core/data/projects.data';
 import { Project } from '../../core/models/project.model';
-import { isPlatformBrowser } from '@angular/common';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePageMotion } from '../../shared/motion/page-motion';
 
 @Component({
   selector: 'fv-funders',
@@ -16,8 +14,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   templateUrl: './funders.component.html',
   styleUrl: './funders.component.scss'
 })
-export class FundersComponent implements AfterViewInit {
-  private platformId = inject(PLATFORM_ID);
+export class FundersComponent {
+  constructor() {
+    usePageMotion();
+  }
 
   projects: Project[] = FV_PROJECTS;
 
@@ -81,37 +81,5 @@ export class FundersComponent implements AfterViewInit {
 
   getRaisedPct(project: Project): number {
     return Math.round((project.raised / project.target) * 100);
-  }
-
-  ngAfterViewInit(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    this.animateSection('.stats', '.stats-grid .stat', { y: 20, stagger: 0.08 });
-    this.animateSection('.steps', '.step', { y: 28, stagger: 0.12 });
-    this.animateSection('.dashboard-features', '.df-card', { y: 24, stagger: 0.1 });
-
-    gsap.from('.spotlight-card', {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.spotlight-card', start: 'top 80%' }
-    });
-  }
-
-  private animateSection(sectionSelector: string, childSelector: string, opts: { y: number; stagger: number }): void {
-    const trigger = document.querySelector(sectionSelector);
-    if (!trigger) return;
-    const children = trigger.querySelectorAll(childSelector);
-    if (!children.length) return;
-    gsap.from(children, {
-      opacity: 0,
-      y: opts.y,
-      duration: 0.6,
-      stagger: opts.stagger,
-      ease: 'power2.out',
-      scrollTrigger: { trigger, start: 'top 85%' }
-    });
   }
 }

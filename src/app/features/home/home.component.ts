@@ -1,12 +1,10 @@
-import { Component, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { HeroComponent } from '../../shared/components/hero/hero.component';
 import { HeroSlide } from '../../core/models/hero-slide.model';
-import { isPlatformBrowser } from '@angular/common';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePageMotion } from '../../shared/motion/page-motion';
 
 @Component({
   selector: 'fv-home',
@@ -14,8 +12,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements AfterViewInit {
-  private platformId = inject(PLATFORM_ID);
+export class HomeComponent {
+  constructor() {
+    usePageMotion();
+  }
 
   heroSlides: HeroSlide[] = [
     {
@@ -103,58 +103,4 @@ export class HomeComponent implements AfterViewInit {
       p: 'Every credit on Foovante is issued under Verra VCS, Gold Standard, or Plan Vivo, and serialised on-chain for traceability.'
     }
   ];
-
-  ngAfterViewInit(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from('.live-band .live-strip > div', {
-      opacity: 0,
-      y: 16,
-      duration: 0.5,
-      stagger: 0.08,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.live-band',
-        start: 'top 85%'
-      }
-    });
-
-    gsap.utils.toArray<Element>('.sec-head').forEach(el => {
-      gsap.from(el, {
-        opacity: 0,
-        y: 24,
-        duration: 0.7,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 85%' }
-      });
-    });
-
-    gsap.from('.picker-grid .pick', {
-      opacity: 0,
-      y: 28,
-      duration: 0.7,
-      stagger: 0.12,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.picker-grid', start: 'top 80%' }
-    });
-
-    gsap.from('.values .v-item', {
-      opacity: 0,
-      x: 24,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.values-list', start: 'top 80%' }
-    });
-
-    gsap.from('.cta .cta-in', {
-      opacity: 0,
-      y: 32,
-      scale: 0.98,
-      duration: 0.8,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.cta', start: 'top 80%' }
-    });
-  }
 }

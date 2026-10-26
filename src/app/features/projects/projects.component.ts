@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
@@ -6,9 +6,7 @@ import { HeroComponent } from '../../shared/components/hero/hero.component';
 import { HeroSlide } from '../../core/models/hero-slide.model';
 import { METHODS } from '../../core/data/team.data';
 import { Method } from '../../core/models/team.model';
-import { isPlatformBrowser } from '@angular/common';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePageMotion } from '../../shared/motion/page-motion';
 
 @Component({
   selector: 'fv-projects',
@@ -16,8 +14,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent implements AfterViewInit {
-  private platformId = inject(PLATFORM_ID);
+export class ProjectsComponent {
+  constructor() {
+    usePageMotion();
+  }
 
   methods: Method[] = METHODS;
 
@@ -118,30 +118,4 @@ export class ProjectsComponent implements AfterViewInit {
       p: 'Every credit issued under Verra, Gold Standard, or Plan Vivo. Every tonne hashed and serialised so any buyer can trace it back to the polygon it came from.'
     }
   ];
-
-  ngAfterViewInit(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    this.animateStagger('.stats', '.stats-grid .stat', { y: 18, stagger: 0.08 });
-    this.animateStagger('.steps', '.step', { y: 26, stagger: 0.12 });
-    this.animateStagger('.verify-grid', '.verify-card', { y: 24, stagger: 0.1 });
-    this.animateStagger('.method-grid', '.method', { y: 24, stagger: 0.1 });
-    this.animateStagger('.priority-grid', '.priority-card', { y: 24, stagger: 0.1 });
-  }
-
-  private animateStagger(sectionSelector: string, childSelector: string, opts: { y: number; stagger: number }): void {
-    const section = document.querySelector(sectionSelector);
-    if (!section) return;
-    const children = section.querySelectorAll(childSelector);
-    if (!children.length) return;
-    gsap.from(children, {
-      opacity: 0,
-      y: opts.y,
-      duration: 0.6,
-      stagger: opts.stagger,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: section, start: 'top 85%' }
-    });
-  }
 }

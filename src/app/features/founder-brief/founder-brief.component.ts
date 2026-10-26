@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
@@ -6,9 +6,7 @@ import { HeroComponent } from '../../shared/components/hero/hero.component';
 import { HeroSlide } from '../../core/models/hero-slide.model';
 import { LEADERSHIP } from '../../core/data/team.data';
 import { TeamMember } from '../../core/models/team.model';
-import { isPlatformBrowser } from '@angular/common';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePageMotion } from '../../shared/motion/page-motion';
 
 @Component({
   selector: 'fv-founder-brief',
@@ -16,8 +14,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   templateUrl: './founder-brief.component.html',
   styleUrl: './founder-brief.component.scss'
 })
-export class FounderBriefComponent implements AfterViewInit {
-  private platformId = inject(PLATFORM_ID);
+export class FounderBriefComponent {
+  constructor() {
+    usePageMotion();
+  }
   founders: TeamMember[] = LEADERSHIP;
 
   heroSlides: HeroSlide[] = [
@@ -36,41 +36,4 @@ export class FounderBriefComponent implements AfterViewInit {
       live: 'Pre-seed · 2026'
     }
   ];
-
-  ngAfterViewInit(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from('.context-grid', {
-      opacity: 0,
-      y: 28,
-      duration: 0.8,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.context', start: 'top 80%' }
-    });
-
-    gsap.from('.cta .cta-in', {
-      opacity: 0,
-      y: 28,
-      scale: 0.98,
-      duration: 0.8,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.cta', start: 'top 80%' }
-    });
-  }
-
-  private animateStagger(sectionSelector: string, childSelector: string, opts: { y: number; stagger: number }): void {
-    const section = document.querySelector(sectionSelector);
-    if (!section) return;
-    const children = section.querySelectorAll(childSelector);
-    if (!children.length) return;
-    gsap.from(children, {
-      opacity: 0,
-      y: opts.y,
-      duration: 0.6,
-      stagger: opts.stagger,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: section, start: 'top 85%' }
-    });
-  }
 }

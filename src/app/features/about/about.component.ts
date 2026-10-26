@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
@@ -6,9 +6,7 @@ import { HeroComponent } from '../../shared/components/hero/hero.component';
 import { HeroSlide } from '../../core/models/hero-slide.model';
 import { LEADERSHIP, OPS_TEAM, ADVISORS } from '../../core/data/team.data';
 import { TeamMember, Advisor } from '../../core/models/team.model';
-import { isPlatformBrowser } from '@angular/common';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePageMotion } from '../../shared/motion/page-motion';
 
 @Component({
   selector: 'fv-about',
@@ -16,8 +14,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
-export class AboutComponent implements AfterViewInit {
-  private platformId = inject(PLATFORM_ID);
+export class AboutComponent {
+  constructor() {
+    usePageMotion();
+  }
 
   leadership: TeamMember[] = LEADERSHIP;
   opsTeam: TeamMember[] = OPS_TEAM;
@@ -102,58 +102,4 @@ export class AboutComponent implements AfterViewInit {
     { h: 'Theory of Change', v: 'Impact-verified · 16 published references', d: 'Our Theory of Change has been reviewed and updated with our impact advisor, underpinned by 16 published references. Every claim we make is evidenced.' },
     { h: 'Community Benefit-Sharing', v: 'Minimum 25% · Required for all projects', d: 'Every Foovante-supported project is required to have a community benefit-sharing arrangement, with a minimum of 25% of credit revenue returning to local households.' }
   ];
-
-  ngAfterViewInit(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    this.staggerSections([
-      '.mission',
-      '.what',
-      '.advisors-band',
-      '.creds',
-      '.cta'
-    ]);
-
-    gsap.from('.what-card', {
-      opacity: 0,
-      y: 32,
-      duration: 0.7,
-      stagger: 0.12,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.what-grid', start: 'top 80%' }
-    });
-
-    gsap.from('.advisor', {
-      opacity: 0,
-      y: 24,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.advisors-grid', start: 'top 80%' }
-    });
-
-    gsap.from('.cred-card', {
-      opacity: 0,
-      y: 28,
-      duration: 0.7,
-      stagger: 0.1,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.creds-grid', start: 'top 80%' }
-    });
-  }
-
-  private staggerSections(selectors: string[]): void {
-    selectors.forEach(sel => {
-      const el = document.querySelector(sel);
-      if (!el) return;
-      gsap.from(el, {
-        opacity: 0,
-        y: 24,
-        duration: 0.7,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 85%' }
-      });
-    });
-  }
 }
