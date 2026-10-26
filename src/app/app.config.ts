@@ -15,3 +15,4 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay(), withIncrementalHydration())
   ]
 };
+

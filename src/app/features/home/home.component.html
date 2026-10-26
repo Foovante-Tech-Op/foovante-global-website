@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="picker-grid">
+    <div class="picker-grid" fvStagger="fadeUp" fvStaggerSelector=".pick">
       @for (p of picks; track p.tag) {
         <a [routerLink]="p.route" class="pick">
           <div class="photo" [style.background-image]="'url(' + p.photo + ')'"></div>
@@ -65,7 +65,7 @@
         The carbon market is broken because verification is broken. We're rebuilding it from Accra, with satellites, soil samples, and local agents, so credits issued in Africa stand up to any scrutiny, anywhere.
       </p>
     </div>
-    <div class="values-list">
+    <div class="values-list" fvStagger="fadeUp" fvStaggerSelector=".v-item">
       @for (v of values; track v.h) {
         <div class="v-item">
           <h4>{{ v.h }}</h4>

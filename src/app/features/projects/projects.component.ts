@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
@@ -6,36 +6,41 @@ import { HeroComponent } from '../../shared/components/hero/hero.component';
 import { HeroSlide } from '../../core/models/hero-slide.model';
 import { METHODS } from '../../core/data/team.data';
 import { Method } from '../../core/models/team.model';
+import { isPlatformBrowser } from '@angular/common';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
-    selector: 'fv-projects',
-    imports: [NavComponent, FooterComponent, HeroComponent, RouterLink],
-    templateUrl: './projects.component.html',
-    styleUrl: './projects.component.scss'
+  selector: 'fv-projects',
+  imports: [NavComponent, FooterComponent, HeroComponent, RouterLink],
+  templateUrl: './projects.component.html',
+  styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements AfterViewInit {
+  private platformId = inject(PLATFORM_ID);
+
   methods: Method[] = METHODS;
 
   heroSlides: HeroSlide[] = [
     {
-      img:  'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=80&auto=format&fit=crop',
-      lbl:  'Agroforestry · ARR',
-      ttl:  'Akagera Agroforestry Co-op',
-      sub:  'Eastern Province, Rwanda · Verra VCS',
+      img: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=80&auto=format&fit=crop',
+      lbl: 'Agroforestry · ARR',
+      ttl: 'Akagera Agroforestry Co-op',
+      sub: 'Eastern Province, Rwanda · Verra VCS',
       live: '~12 weeks to first issuance'
     },
     {
-      img:  'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1800&q=80&auto=format&fit=crop',
-      lbl:  'Forestry · REDD+',
-      ttl:  'Kakum Forest Corridor',
-      sub:  'Central Region, Ghana · Verra VCS',
+      img: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1800&q=80&auto=format&fit=crop',
+      lbl: 'Forestry · REDD+',
+      ttl: 'Kakum Forest Corridor',
+      sub: 'Central Region, Ghana · Verra VCS',
       live: '78% of revenue to project'
     },
     {
-      img:  'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=1800&q=80&auto=format&fit=crop',
-      lbl:  'Blue carbon',
-      ttl:  'Volta Estuary Mangroves',
-      sub:  'Keta, Ghana · Plan Vivo',
+      img: 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=1800&q=80&auto=format&fit=crop',
+      lbl: 'Blue carbon',
+      ttl: 'Volta Estuary Mangroves',
+      sub: 'Keta, Ghana · Plan Vivo',
       live: 'Sentinel-2 baselining included'
     }
   ];
@@ -57,7 +62,7 @@ export class ProjectsComponent {
     },
     {
       tag: 'For farming programmes',
-      h: 'Turn your farmers\u2019 climate work into income.',
+      h: 'Turn your farmers’ climate work into income.',
       p: 'We onboard, train and monitor your farmers digitally, so their practices become measurable, verifiable and sellable.',
       cta: 'Enrol your programme',
       href: 'https://foovant.vercel.app/'
@@ -93,24 +98,50 @@ export class ProjectsComponent {
 
   priorities = [
     {
-      n:  'P1',
-      h:  'African projects only',
-      p:  'We focus exclusively on Sub-Saharan African projects. Every member of our verification team operates on the continent.'
+      n: 'P1',
+      h: 'African projects only',
+      p: 'We focus exclusively on Sub-Saharan African projects. Every member of our verification team operates on the continent.'
     },
     {
-      n:  'P2',
-      h:  'Land tenure and community consent documented',
-      p:  'We require proof of land rights and free, prior, and informed consent from affected communities before listing.'
+      n: 'P2',
+      h: 'Land tenure and community consent documented',
+      p: 'We require proof of land rights and free, prior, and informed consent from affected communities before listing.'
     },
     {
-      n:  'P3',
-      h:  'Eligible under at least one major standard',
-      p:  'Projects must be eligible for Verra VCS, Gold Standard, or Plan Vivo certification. We\'ll help you find the right methodology.'
+      n: 'P3',
+      h: 'Eligible under at least one major standard',
+      p: 'Projects must be eligible for Verra VCS, Gold Standard, or Plan Vivo certification. We\'ll help you find the right methodology.'
     },
     {
-      n:  'P4',
-      h:  'Standards-anchored, on-chain serialised',
-      p:  'Every credit issued under Verra, Gold Standard, or Plan Vivo. Every tonne hashed and serialised so any buyer can trace it back to the polygon it came from.'
+      n: 'P4',
+      h: 'Standards-anchored, on-chain serialised',
+      p: 'Every credit issued under Verra, Gold Standard, or Plan Vivo. Every tonne hashed and serialised so any buyer can trace it back to the polygon it came from.'
     }
   ];
+
+  ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    this.animateStagger('.stats', '.stats-grid .stat', { y: 18, stagger: 0.08 });
+    this.animateStagger('.steps', '.step', { y: 26, stagger: 0.12 });
+    this.animateStagger('.verify-grid', '.verify-card', { y: 24, stagger: 0.1 });
+    this.animateStagger('.method-grid', '.method', { y: 24, stagger: 0.1 });
+    this.animateStagger('.priority-grid', '.priority-card', { y: 24, stagger: 0.1 });
+  }
+
+  private animateStagger(sectionSelector: string, childSelector: string, opts: { y: number; stagger: number }): void {
+    const section = document.querySelector(sectionSelector);
+    if (!section) return;
+    const children = section.querySelectorAll(childSelector);
+    if (!children.length) return;
+    gsap.from(children, {
+      opacity: 0,
+      y: opts.y,
+      duration: 0.6,
+      stagger: opts.stagger,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: section, start: 'top 85%' }
+    });
+  }
 }

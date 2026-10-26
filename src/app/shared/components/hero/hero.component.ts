@@ -1,9 +1,11 @@
 import {
-  Component, Input, OnInit, OnDestroy, ChangeDetectorRef, ChangeDetectionStrategy, PLATFORM_ID, inject
+  Component, Input, OnInit, OnDestroy, ChangeDetectorRef, ChangeDetectionStrategy, PLATFORM_ID, inject, AfterViewInit
 } from '@angular/core';
 import { NgStyle, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
+import gsap from 'gsap';
 import { HeroSlide } from '../../../core/models/hero-slide.model';
+import { FvRevealDirective } from '../../directives/fv-reveal.directive';
 
 export interface HeroCta {
   label: string;
@@ -13,13 +15,13 @@ export interface HeroCta {
 }
 
 @Component({
-    selector: 'fv-hero',
-    imports: [NgStyle],
-    templateUrl: './hero.component.html',
-    styleUrl: './hero.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'fv-hero',
+  imports: [NgStyle, FvRevealDirective],
+  templateUrl: './hero.component.html',
+  styleUrl: './hero.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeroComponent implements OnInit, OnDestroy {
+export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() slides: HeroSlide[] = [];
   @Input() eyebrow = '';
   @Input() lines: string[] = [];
@@ -39,6 +41,32 @@ export class HeroComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     if (this.isBrowser && this.slides.length > 1) {
       this.startTimer();
+    }
+  }
+
+  ngAfterViewInit(): void {
+    if (this.isBrowser) {
+      gsap.from('.hero .wrap', {
+        opacity: 0,
+        y: 28,
+        duration: 0.9,
+        delay: 0.15,
+        ease: 'power3.out'
+      });
+      gsap.from('.hero .hero-slide .hero-img', {
+        scale: 1.08,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power2.out'
+      });
+      gsap.from('.hero .hero-dots button', {
+        opacity: 0,
+        y: 12,
+        duration: 0.5,
+        stagger: 0.08,
+        delay: 0.6,
+        ease: 'power2.out'
+      });
     }
   }
 

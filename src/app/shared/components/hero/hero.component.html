@@ -22,20 +22,20 @@
   -->
 
   <!-- Main Content -->
-  <div class="wrap" [class.is-dynamic]="dynamicContent" [attr.data-slide]="dynamicContent ? currentSlide : null" aria-live="polite">
-    <div class="eyebrow">{{ activeEyebrow }}</div>
+  <div class="wrap" [class.is-dynamic]="dynamicContent" [attr.data-slide]="dynamicContent ? currentSlide : null" aria-live="polite" fvReveal="fadeUp" [fvRevealDelay]="0.1">
+    <div class="eyebrow" fv-reveal-child>{{ activeEyebrow }}</div>
 
     <h1>
       @for (line of activeLines; track line; let i = $index) {
-        <span class="reveal">
-          <span [style.animation-delay]="(0.18 + i * 0.14) + 's'">{{ line }}</span>
+        <span class="reveal" fv-reveal-child [style.animation-delay]="(0.18 + i * 0.14) + 's'">
+          <span>{{ line }}</span>
         </span>
       }
     </h1>
 
-    <p class="lead">{{ activeLead }}</p>
+    <p class="lead" fv-reveal-child>{{ activeLead }}</p>
 
-    <div class="hero-cta">
+    <div class="hero-cta" fv-reveal-child>
       <a class="btn btn-primary btn-lg" (click)="navigateTo(activeCta1)">
         {{ activeCta1.label }} <span class="arrow">→</span>
       </a>
@@ -45,8 +45,6 @@
         </button>
       }
     </div>
-
-
   </div>
 
   
