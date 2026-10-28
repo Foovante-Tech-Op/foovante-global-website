@@ -106,7 +106,7 @@
       </div>
     </div>
     <div class="moat-grid">
-      @for (m of moatCards; track m.n) {
+      @for (m of moatCards; track $index) {
         <div class="moat-card">
           <div class="num">{{ m.n }}</div>
           <h4>{{ m.h }}</h4>

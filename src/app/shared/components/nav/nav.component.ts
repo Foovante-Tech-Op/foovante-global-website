@@ -9,10 +9,10 @@ export interface NavCta {
 }
 
 @Component({
-    selector: 'fv-nav',
-    imports: [RouterLink, RouterLinkActive, NgClass],
-    templateUrl: './nav.component.html',
-    styleUrl: './nav.component.scss'
+  selector: 'fv-nav',
+  imports: [RouterLink, RouterLinkActive, NgClass],
+  templateUrl: './nav.component.html',
+  styleUrl: './nav.component.scss'
 })
 export class NavComponent {
   @Input() dark = false;
@@ -21,9 +21,9 @@ export class NavComponent {
   menuOpen = false;
 
   navLinks = [
-    { label: 'About',         route: '/' },
-    { label: 'For Buyers',   route: '/funders' },
-    { label: 'For Projects',  route: '/projects' },
+    { label: 'About', route: '/' },
+    { label: 'For Buyers', route: '/funders' },
+    { label: 'For Projects', route: '/projects' },
     { label: 'For Investors', route: '/investors' }
   ];
 

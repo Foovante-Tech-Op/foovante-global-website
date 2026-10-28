@@ -57,6 +57,7 @@ export class MapSectionComponent implements AfterViewInit, OnDestroy {
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
         subdomains: 'abcd',
         maxZoom: 6,
+        attribution: '&copy; OpenStreetMap, &copy; CARTO'
       }).addTo(this.map);
 
       // Recalculate size once the browser has painted the container
@@ -73,7 +74,10 @@ export class MapSectionComponent implements AfterViewInit, OnDestroy {
 
   private async addCountryLayer(): Promise<void> {
     try {
-      const res = await fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson');
+      const res = await fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson', {
+        headers: { Accept: 'application/geo+json' }
+      });
+      if (!res.ok) return;
       const geoJson = await res.json();
 
       const L = this.L;
@@ -114,6 +118,7 @@ export class MapSectionComponent implements AfterViewInit, OnDestroy {
         .bindPopup(`<strong>${point.name}</strong><br><span style="color:#666;font-size:12px">${point.country}</span>`, {
           closeButton: false,
           className: 'fv-popup',
+          maxWidth: 240,
         });
     }
   }

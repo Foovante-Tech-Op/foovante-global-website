@@ -15,9 +15,11 @@
   </div>
 
   <!-- Counter -->
+  <!--
   <div class="hero-counter">
     {{ (currentSlide + 1).toString().padStart(2, '0') }} / {{ slides.length.toString().padStart(2, '0') }}
   </div>
+  -->
 
   <!-- Main Content -->
   <div class="wrap" [class.is-dynamic]="dynamicContent" [attr.data-slide]="dynamicContent ? currentSlide : null" aria-live="polite">
@@ -43,8 +45,6 @@
         </button>
       }
     </div>
-
-
   </div>
 
   

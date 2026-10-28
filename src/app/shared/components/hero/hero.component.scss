@@ -320,3 +320,21 @@
     h1 { font-size: 32px; }
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .reveal > span,
+  .hero .eyebrow,
+  .hero .lead,
+  .hero-cta,
+  .hero-meta {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .hero-img,
+  .hero-slide[data-on="on"] .hero-img {
+    transform: none;
+    transition: none;
+  }
+}

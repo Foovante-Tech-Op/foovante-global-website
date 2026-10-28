@@ -1,4 +1,48 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "outputDirectory": "dist/foovante/browser"
+  "outputDirectory": "dist/foovante/browser",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), autoplay=(), clipboard-read=(), clipboard-write=(), document-domain=(), encrypted-media=(), fullscreen=(self), gamepad=(), hid=(), idle-detection=(), interest-cohort=(), keyboard-map=(), midi=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), speaker-selection=(), storage-access=(), sync-xhr=(), web-share=(), xr-spatial-tracking=()"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://statics.moonclerk.com https://assets.jotform.com https://server.jotform.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://images.unsplash.com https://*.basemaps.cartocdn.com https://raw.githubusercontent.com https://foovanteglobal.earth https://www.google-analytics.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://raw.githubusercontent.com https://*.basemaps.cartocdn.com https://www.google-analytics.com https://*.google-analytics.com https://region1.google-analytics.com; frame-src https://form.jotform.com https://foovant.vercel.app https://www.youtube.com https://player.vimeo.com; object-src 'none'; base-uri 'self'; form-action 'self' https://form.jotform.com; frame-ancestors 'none'; upgrade-insecure-requests;"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
 }
