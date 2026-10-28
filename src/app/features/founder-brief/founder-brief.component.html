@@ -9,27 +9,31 @@
   [cta2]="{label: 'Back to about', routerLink: '/'}"
 ></fv-hero>
 
-<!-- Founding context, written as a letter -->
-<section class="letter">
-  <article class="letter-in">
-    <p class="letter-place">Accra, Ghana</p>
-    <h2>We saw the same bottleneck from different angles.</h2>
+<!-- Founding Context -->
+<section class="context" style="background:var(--paper)">
+  <div class="wrap context-grid">
+    <div>
+      <div class="eyebrow">Why we exist</div>
+      <h2 style="margin-top:24px">We saw the same bottleneck from different angles.</h2>
+    </div>
+    <div class="context-body">
+      <p>Africa holds roughly 10% of the world's carbon credit potential but issues a fraction of that, not because the ecosystems are any less real, but because the verification, certification, and trading infrastructure was built for the global North. The four of us had each spent years watching high-quality African projects stall, under-price, or fail entirely at the verification stage.</p>
+      <p>Foovante started as a single shared conviction: that continuous satellite monitoring, local field agents, and multi-standard issuance could solve the bottleneck and that building it from the continent itself was the only way to do it at the quality level the market deserves.</p>
+    </div>
+  </div>
+</section>
 
-    <p>Africa holds roughly 10% of the world's carbon credit potential but issues a fraction of that. Not because the ecosystems are any less real, but because the verification, certification and trading infrastructure was built for the global North.</p>
-    <p>The four of us had each spent years watching high-quality African projects stall, under-price or fail entirely at the verification stage.</p>
-    <p>Foovante started as a single shared conviction: that continuous satellite monitoring, local field agents and multi-standard issuance could solve the bottleneck, and that building it from the continent itself was the only way to do it at the quality the market deserves.</p>
 
-    <p class="signoff">The Foovante founding team</p>
-
-    <aside class="ps" id="contact">
-      <h3>Want to speak with us directly?</h3>
-      <p>We take introductions from buyers, projects, partners and press personally, and typically reply within one business day.</p>
-      <div class="ps-actions">
-        <a href="https://form.jotform.com/261642531528052" target="_blank" rel="noopener" class="btn btn-primary">Talk to the founders <span class="arrow">→</span></a>
-        <a routerLink="/" class="btn btn-ghost">Back to about</a>
-      </div>
-    </aside>
-  </article>
+<!-- Talk to the founders CTA -->
+<section class="cta" id="contact">
+  <div class="cta-in">
+    <h2>Want to speak with us directly?</h2>
+    <p>Our founders take introductions from buyers, projects, partners, and press personally. Drop a note and we typically reply within one business day.</p>
+    <div class="cta-actions">
+      <a href="https://form.jotform.com/261642531528052" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Talk to the founders <span class="arrow">→</span></a>
+      <a routerLink="/" class="btn btn-ghost btn-lg">Back to about</a>
+    </div>
+  </div>
 </section>
 
 <fv-footer></fv-footer>

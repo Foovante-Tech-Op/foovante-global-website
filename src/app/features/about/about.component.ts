@@ -77,19 +77,19 @@ export class AboutComponent {
 
   whatCards = [
     {
-      ix: 'Document',
+      ix: '01 · Document',
       h: 'Project documentation & evidence building.',
       p: 'Crevy enables project developers to document sustainable practices and build the verified evidence trail required for carbon credit issuance going from zero documentation to audit-ready in weeks, not years.',
       meta: '3 pilot projects onboarded · 3,620 hectares under active documentation · Ghana, Nigeria pipeline'
     },
     {
-      ix: 'Monitor',
+      ix: '02 · Monitor',
       h: 'Real-time MRV data collection.',
       p: 'Project developers receive real-time IoT sensor data feeding into a continuous monitoring, reporting, and verification framework aligned with international standards. Every data point builds the evidence trail auditors need.',
       meta: 'MRV framework · IoT sensor integration · pre-verification pipeline'
     },
     {
-      ix: 'Trade',
+      ix: '03 · Marketplace',
       h: 'Carbon credit trading platform.',
       p: 'Verified African carbon assets connect directly to global buyers  fully traceable and independently verified. Buyers get CSRD-ready documentation. Project communities receive a minimum 25% of credit revenue.',
       meta: 'Agriculture · energy · waste projects · CSRD-ready · community benefit-sharing'

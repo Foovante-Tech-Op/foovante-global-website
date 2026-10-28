@@ -34,20 +34,6 @@ export class InvestorsComponent {
     }
   ];
 
-  traction = [
-    { n: '3', unit: '', l: 'Pilot projects', d: 'Onboarded to Crevy and in active documentation. Ghana live, Nigeria pipeline for Q2 2027.' },
-    { n: '3,620', unit: ' ha', l: 'Hectares documented', d: 'Agriculture, forestry and waste projects under active MRV documentation.' },
-    { n: '$28', unit: 'k', l: 'Projected 2026 revenue', d: 'From pilot projects and early platform fees. Advisor-reviewed financial model.' },
-    { n: '2028', unit: '', l: 'Projected break-even', d: 'From a stress-tested five-year model.' }
-  ];
-
-  creditSplit = [
-    { v: 13.32, l: 'Project owner', color: 'var(--gold)' },
-    { v: 2.78, l: 'Foovante platform fee', color: 'var(--rust)' },
-    { v: 1.85, l: 'Verification & issuance', color: 'var(--ink-2)' },
-    { v: 0.55, l: 'Methodology', color: 'var(--muted)' }
-  ];
-
   moatCards = [
     {
       n: '3',

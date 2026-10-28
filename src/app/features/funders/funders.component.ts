@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { NavComponent } from '../../shared/components/nav/nav.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
@@ -11,7 +10,7 @@ import { usePageMotion } from '../../shared/motion/page-motion';
 
 @Component({
   selector: 'fv-funders',
-  imports: [NavComponent, FooterComponent, HeroComponent, RouterLink, DecimalPipe],
+  imports: [NavComponent, FooterComponent, HeroComponent, RouterLink],
   templateUrl: './funders.component.html',
   styleUrl: './funders.component.scss'
 })
@@ -21,22 +20,6 @@ export class FundersComponent {
   }
 
   projects: Project[] = FV_PROJECTS;
-  portfolio = FV_PROJECTS.slice(0, 4);
-  portfolioTonnes = this.portfolio.reduce((sum, p) => sum + p.available, 0);
-
-  journey = [
-    { stage: 'Document', h: 'Projects submit to Crevy', p: 'Developers bring their land or energy work onto Crevy, and our team builds the documentation foundation verification needs.', meta: 'Agriculture, energy and waste projects' },
-    { stage: 'Monitor', h: 'Real-time data collection', p: 'IoT sensor data feeds continuously into each project record. Every data point is timestamped and tamper-evident.', meta: 'MRV framework with IoT integration' },
-    { stage: 'Verify', h: 'Pre-verification and audit-readiness', p: 'Projects move through a pre-verification pipeline aligned with international carbon standards, in weeks rather than years.', meta: 'Ghana CMO aligned' },
-    { stage: 'Buy', h: 'You buy with full traceability', p: 'Verified African credits reach you directly, with CSRD-ready documentation. Communities receive at least 25% of credit revenue.', meta: 'Independently verified, CSRD-ready' }
-  ];
-
-  dashFeatures = [
-    { h: 'Credit portfolio', p: 'Every credit you hold across all projects, with project type, verification status and retirement status in one place.' },
-    { h: 'Commitment tracking', p: 'Follow each pre-purchase from commitment to issuance, with a full audit trail per tonne.' },
-    { h: 'MRV data feed', p: 'The live monitoring data behind every project you have backed — the same evidence auditors and regulators see.' },
-    { h: 'Impact metrics', p: 'Hectares documented, communities with benefit-sharing agreements and SDG alignment, ready for your CSRD reporting.' }
-  ];
 
   heroSlides: HeroSlide[] = [
     {
